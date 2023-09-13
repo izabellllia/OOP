@@ -2,6 +2,7 @@ package zhitnik;
 
 public class Main { //объявляем класс Main
     public static void heapSort(int[] array) {
+
         int n = array.length; //иниц n с длиной массива
 
         //Начинаем построение max-кучи. Идем по элементам с конца до середины
