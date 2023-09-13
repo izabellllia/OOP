@@ -1,9 +1,11 @@
 package zhitnik;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import org.junit.jupiter.api.Test;
 
+
+/**Тест*/
 public class MainTest {
     @Test
     public void testHeapSort() {

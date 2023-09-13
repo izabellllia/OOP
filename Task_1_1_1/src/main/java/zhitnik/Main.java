@@ -1,6 +1,8 @@
 package zhitnik;
+
 /**класс Main внутри которого методы heapSort и heapify.*/
 public class Main {
+
     /**heapSort, который принимает массив чисел и выполняет пирамидальную сортировку.*/
     public static void heapSort(int[] array) {
         int n = array.length;
