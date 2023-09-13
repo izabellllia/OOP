@@ -14,6 +14,7 @@ public class Main {
             heapify(array, i, 0);
         }
     }
+
     /**Метод heapify принимает массив, его размер и индекс текущего элемента.*/
     public static void heapify(int[] array, int n, int i) {
         int largest = i;
