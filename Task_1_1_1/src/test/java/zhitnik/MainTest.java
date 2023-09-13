@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 
 public class MainTest {
-
     @Test
     public void testHeapSort() {
         int[] arr = {9, 5, 2, 7, 1};
