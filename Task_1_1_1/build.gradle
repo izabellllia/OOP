@@ -3,6 +3,12 @@ plugins {
     id 'jacoco'
 }
 
+ext {
+    versions = [
+            junit: '5.9.1'
+    ]
+}
+
 group = 'zhitnik'
 version = '1.0-SNAPSHOT'
 
@@ -11,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation platform('org.junit:junit-bom:${versions.junit}')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
