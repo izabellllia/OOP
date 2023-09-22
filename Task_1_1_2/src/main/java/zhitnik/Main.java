@@ -1,5 +1,6 @@
 package zhitnik;
 /**Объявление класса Main, который представляет полином.*/
+import java.lang.Math;
 public class Main{
     private int degree; //степень полинома
     private int[] coefficients; //коэф полинома
@@ -126,4 +127,22 @@ public class Main{
         System.out.println(p1.plus(p2.differentiate(1)).toString());
         System.out.println(p1.times(p2).evaluate(2));
     }
+
+    public int[] getCoefficients() {
+        return coefficients;
+    }
+    public int evaluate(int x) {
+        int result = 0;
+        int power = 0;
+
+        for (int i = 0; i < coefficients.length; i++) {
+            result += coefficients[i] * Math.pow(x, power);
+            power++;
+        }
+
+        return result;
+    }
+
+
+
 }
