@@ -121,8 +121,6 @@ public class Main{
         }
         return sb.toString(); //метод toString() возвращает строку, которая представляет полином
     }
-
-
     public static void main(String[] args) {
         Main p1 = new Main(new int[] {4, 3, 6, 7});
         Main p2 = new Main(new int[] {3, 2, 8});
