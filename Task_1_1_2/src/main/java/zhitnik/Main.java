@@ -3,7 +3,6 @@ package zhitnik;
 public class Main{
     private int degree; //степень полинома
     private int[] coefficients; //коэф полинома
-
     /**Конструктор принимает массив целых чисел coefficients и инициализирует переменные degree и coefficients.*/
     public Main(int[] coefficients) {
         this.degree = coefficients.length - 1; //вычисляем степень полинома
