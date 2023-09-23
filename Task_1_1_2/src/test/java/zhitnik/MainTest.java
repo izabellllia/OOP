@@ -52,7 +52,7 @@ public class MainTest {
         assertArrayEquals(expectedCoefficients, product.getCoefficients());
     }
 
-    @Test
+    //Test
     /**public void testEvaluate() {
         int[] coefficients = {1, 2, 3}; // x^2 + 2x + 3
 
