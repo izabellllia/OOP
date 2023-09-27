@@ -15,6 +15,9 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
+test {
+    useJUnitPlatform()
+}
 
 javadoc {
     destinationDir = file("${buildDir}/docs/javadoc")

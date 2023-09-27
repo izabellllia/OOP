@@ -1,9 +1,8 @@
 package zhitnik;
-/**Объявление класса Main, который представляет полином.*/
 import java.lang.Math;
 public class Main{
-    private int degree; //степень полинома
-    private int[] coefficients; //коэф полинома
+    private int degree;
+    private int[] coefficients;
     /**Конструктор принимает массив целых чисел coefficients и инициализирует
      * переменные degree и coefficients.*/
     public Main(int[] coefficients) {
@@ -14,7 +13,8 @@ public class Main{
         }
     }
     /**Метод plus, принимает другой полином в качестве аргумента и возвращает
-     *новый полином, являющийся суммой текущего полинома и переданного полинома.*/
+     *новый полином, являющийся суммой текущего
+     * полинома и переданного полинома.*/
     public Main plus(Main other) {
         int maxDegree = Math.max(this.degree, other.degree);
         int[] resultCoefficients = new int[maxDegree + 1];
@@ -27,8 +27,9 @@ public class Main{
         return new Main(resultCoefficients);
     }
 
-    /**Метод minus аналогично plus, принимает другой полином в качестве аргумента и возвращает
-     *новый полином, являющийся суммой текущего полинома и переданного полинома.*/
+    /**Метод minus аналогично plus, принимает другой полином в
+     * качестве аргумента и возвращает новый полином, являющийся
+     * суммой текущего полинома и переданного полинома.*/
     public Main minus(Main other) {
         int maxDegree = Math.max(this.degree, other.degree);
         int[] resultCoefficients = new int[maxDegree + 1];
@@ -41,7 +42,8 @@ public class Main{
         return new Main(resultCoefficients);
     }
 
-    /**Таким образом, метод times выполняет умножение двух полиномов, создает новый полином с
+    /**Таким образом, метод times выполняет умножение
+     * двух полиномов, создает новый полином с
      * полученными коэффициентами и возвращает его*/
     public Main times(Main other) {
         int resultDegree = this.degree + other.degree;
@@ -110,6 +112,7 @@ public class Main{
         }
         return sb.toString();
     }
+    /**main*/
     public static void main(String[] args) {
         Main p1 = new Main(new int[] {4, 3, 6, 7});
         Main p2 = new Main(new int[] {3, 2, 8});
@@ -117,9 +120,12 @@ public class Main{
         System.out.println(p1.times(p2).evaluate(2));
     }
 
+    /**коэффициенты.*/
     public int[] getCoefficients() {
         return coefficients;
     }
+
+    /**оценка.*/
     public int evaluate(int x) {
         int result = 0;
         int power = 0;
