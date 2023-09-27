@@ -1,4 +1,5 @@
 package zhitnik;
+import static org.junit.jupiter.api.Assertions.*;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -49,47 +50,48 @@ public class MainTest {
 
         assertArrayEquals(expectedCoefficients, product.getCoefficients());
     }
-
     @Test
-    public void testPlus2() {
-        int[] coefficients1 = {2, 3, 4}; // 2x^2 + 3x + 4
-        int[] coefficients2 = {5, 6, 7}; // 5x^2 + 6x + 7
+    public void testPlusWithDifferentLengths() {
+
+        int[] coefficients1 = {2, 4, 6};
+        int[] coefficients2 = {8, 10};
 
         Main polynomial1 = new Main(coefficients1);
         Main polynomial2 = new Main(coefficients2);
-        Main sum = polynomial1.plus(polynomial2);
+        Main result = polynomial1.plus(polynomial2);
 
-        int[] expectedCoefficients = {7, 9, 11};
+        int[] expectedCoefficients = {10, 14, 6};
 
-        assertArrayEquals(expectedCoefficients, sum.getCoefficients());
+        Main expected = new Main(expectedCoefficients);
+
+        assertTrue(result.equals(expected));
     }
 
     @Test
-    public void testMinus2() {
-        int[] coefficients1 = {2, 3, 4}; // 2x^2 + 3x + 4
-        int[] coefficients2 = {5, 6, 7}; // 5x^2 + 6x + 7
+    public void testMinusWithNegativeCoefficients() {
+        int[] coefficients1 = {2, -4, 6};
+        int[] coefficients2 = {8, -10, 12};
 
         Main polynomial1 = new Main(coefficients1);
         Main polynomial2 = new Main(coefficients2);
-        Main difference = polynomial1.minus(polynomial2);
+        Main result = polynomial1.minus(polynomial2);
 
-        int[] expectedCoefficients = {-3, -3, -3};
+        int[] expectedCoefficients = {-6, 6, -6};
 
-        assertArrayEquals(expectedCoefficients, difference.getCoefficients());
+        Main expected = new Main(expectedCoefficients);
+
+        assertTrue(result.equals(expected));
     }
 
     @Test
-    public void testTimes2() {
-        int[] coefficients1 = {2, 3, 4}; // 2x^2 + 3x + 4
-        int[] coefficients2 = {5, 6}; // 5x + 6
+    public void testEqualsWithDifferentCoefficients() {
+        int[] coefficients1 = {2, 4, 6};
+        int[] coefficients2 = {8, 10, 12};
 
         Main polynomial1 = new Main(coefficients1);
         Main polynomial2 = new Main(coefficients2);
-        Main product = polynomial1.times(polynomial2);
 
-        int[] expectedCoefficients = {10, 27, 38, 24};
-
-        assertArrayEquals(expectedCoefficients, product.getCoefficients());
+        assertFalse(polynomial1.equals(polynomial2));
     }
 
 }
