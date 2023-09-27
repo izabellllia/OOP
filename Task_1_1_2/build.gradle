@@ -1,8 +1,9 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
 
-group = 'zhitnik'
+group = 'ru.nsu.Yukhnina'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -14,6 +15,18 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
+
+javadoc {
+    destinationDir = file("${buildDir}/docs/javadoc")
+}
+
+
 test {
     useJUnitPlatform()
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
 }
