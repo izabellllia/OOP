@@ -42,7 +42,6 @@ public class Main{
         for (int i = 0; i <= other.degree; i++) {
             resultCoefficients[i] -= other.coefficients[i];
         }
-
         return new Main(resultCoefficients);
     }
 
@@ -59,15 +58,6 @@ public class Main{
             }
         }
         return new Main(resultCoefficients);
-    }
-
-    /**Mетод evaluate используется для вычисления значения полинома для заданного значения x.*/
-    public double evaluate(double x) {
-        double result = 0;
-        for (int i = 0; i <= this.degree; i++) {
-            result += this.coefficients[i] * Math.pow(x, i);
-        }
-        return result;
     }
 
     /**Метод принимает на вход целочисленный аргумент times, который указывает,
@@ -140,12 +130,12 @@ public class Main{
     public int evaluate(int x) {
         int result = 0;
         int power = 0;
-
         for (int i = 0; i < coefficients.length; i++) {
             result += coefficients[i] * Math.pow(x, power);
             power++;
         }
-
         return result;
     }
+
+
 }

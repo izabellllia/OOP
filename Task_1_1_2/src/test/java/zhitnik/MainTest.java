@@ -50,6 +50,8 @@ public class MainTest {
 
         assertArrayEquals(expectedCoefficients, product.getCoefficients());
     }
+
+    /**testPlusWithDifferentLengths.*/
     @Test
     public void testPlusWithDifferentLengths() {
 
@@ -67,6 +69,7 @@ public class MainTest {
         assertTrue(result.equals(expected));
     }
 
+    /**testMinusWithNegativeCoefficients.*/
     @Test
     public void testMinusWithNegativeCoefficients() {
         int[] coefficients1 = {2, -4, 6};
@@ -83,6 +86,8 @@ public class MainTest {
         assertTrue(result.equals(expected));
     }
 
+
+    /**testEqualsWithDifferentCoefficients.*/
     @Test
     public void testEqualsWithDifferentCoefficients() {
         int[] coefficients1 = {2, 4, 6};
@@ -93,5 +98,6 @@ public class MainTest {
 
         assertFalse(polynomial1.equals(polynomial2));
     }
+
 
 }
