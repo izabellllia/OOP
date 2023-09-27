@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 
 /**Тест.*/
 public class MainTest {
-
     @Test
+    /**plus.*/
     public void testPlus() {
         int[] coefficients1 = {1, 2, 3}; // x^2 + 2x + 3
         int[] coefficients2 = {4, 5, 6}; // 4x^2 + 5x + 6
@@ -22,6 +22,7 @@ public class MainTest {
         assertArrayEquals(expectedCoefficients, sum.getCoefficients());
     }
 
+    /**minus.*/
     @Test
     public void testMinus() {
         int[] coefficients1 = {1, 2, 3}; // x^2 + 2x + 3
@@ -37,6 +38,7 @@ public class MainTest {
         assertArrayEquals(expectedCoefficients, difference.getCoefficients());
     }
 
+    /**times.*/
     @Test
     public void testTimes() {
         int[] coefficients1 = {1, 2, 3}; // x^2 + 2x + 3
@@ -52,17 +54,33 @@ public class MainTest {
         assertArrayEquals(expectedCoefficients, product.getCoefficients());
     }
 
-    //Test
-    public void testEvaluate() {
-        int[] coefficients = {1, 2, 3}; // x^2 + 2x + 3
+    /**length.*/
+    @Test
+    public void length() {
+        int[] coefficients1 = {2, 4, 6};
+        int[] coefficients2 = {8, 10};
 
-        Main polynomial = new Main(coefficients);
+        Main polynomial1 = new Main(coefficients1);
+        Main polynomial2 = new Main(coefficients2);
 
-        int x = 2;
-        int result = polynomial.evaluate(x);
+        Main result = polynomial1.plus(polynomial2);
 
-        int expectedResult = 11; // (2^2) + (2*2) + 3 = 4 + 4 + 3 = 11
+        int[] expectedCoefficients = {10, 14, 6};
 
-        assertEquals(expectedResult, result);
+        Main expected = new Main(expectedCoefficients);
+        assertTrue(result.equals(expected));
     }
+    /**length.*/
+    @Test
+    public void negative() {
+        int[] coefficients1 = {2, -4, 6};
+        int[] coefficients2 = {8, -10, 12};
+        Main polynomial1 = new Main(coefficients1);
+        Main polynomial2 = new Main(coefficients2);
+        Main result = polynomial1.minus(polynomial2);
+        int[] expectedCoefficients = {-6, 6, -6};
+        Main expected = new Main(expectedCoefficients);
+        assertTrue(result.equals(expected));
+    }
+
 }
