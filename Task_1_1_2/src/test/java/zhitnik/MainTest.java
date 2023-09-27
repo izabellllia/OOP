@@ -69,6 +69,7 @@ public class MainTest {
         Main.main(new String[]{});
         Assertions.assertTrue(true);
     }
+
     @Test
     void test2() {
         Main p1 = new Main(new int[]{1, 2, 3});
@@ -96,8 +97,7 @@ public class MainTest {
     void test5() {
         Main p1 = new Main(new int[]{9, 29, 11});
         Assertions.assertEquals(
-                p1.differentiate(0), p1
-        );
+                p1.differentiate(0), p1);
     }
 
     @Test
