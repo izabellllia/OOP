@@ -1,6 +1,7 @@
 package zhitnik;
 import java.lang.Math;
 public class Main{
+
     private int degree;
     private int[] coefficients;
     /**Конструктор принимает массив целых чисел coefficients и инициализирует
