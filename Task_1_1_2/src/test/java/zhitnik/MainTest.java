@@ -53,7 +53,7 @@ public class MainTest {
     }
 
     //Test
-    /**public void testEvaluate() {
+    public void testEvaluate() {
         int[] coefficients = {1, 2, 3}; // x^2 + 2x + 3
 
         Main polynomial = new Main(coefficients);
@@ -64,5 +64,5 @@ public class MainTest {
         int expectedResult = 11; // (2^2) + (2*2) + 3 = 4 + 4 + 3 = 11
 
         assertEquals(expectedResult, result);
-    }*/
+    }
 }

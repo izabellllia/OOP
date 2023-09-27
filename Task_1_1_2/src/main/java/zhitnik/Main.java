@@ -4,7 +4,8 @@ import java.lang.Math;
 public class Main{
     private int degree; //степень полинома
     private int[] coefficients; //коэф полинома
-    /**Конструктор принимает массив целых чисел coefficients и инициализирует переменные degree и coefficients.*/
+    /**Конструктор принимает массив целых чисел coefficients и инициализирует
+     * переменные degree и coefficients.*/
     public Main(int[] coefficients) {
         this.degree = coefficients.length - 1;
         this.coefficients = new int[coefficients.length];
@@ -87,7 +88,8 @@ public class Main{
             }
         }
         return true;
-    } /**Если ни одно из условий выше не выполняется, то метод возвращает true, что означает, что объекты равны.*/
+    } /**Если ни одно из условий выше не выполняется, то метод возвращает true,
+     что означает, что объекты равны.*/
 
     @Override
     public String toString() {
