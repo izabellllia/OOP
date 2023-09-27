@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 /**Тест.*/
 public class MainTest {
+    /**plus1.*/
     @Test
     public void testPlus() {
         int[] coefficients1 = {1, 2, 3}; // x^2 + 2x + 3
@@ -17,6 +18,21 @@ public class MainTest {
         Main sum = polynomial1.plus(polynomial2);
 
         int[] expectedCoefficients = {5, 7, 9};
+
+        assertArrayEquals(expectedCoefficients, sum.getCoefficients());
+    }
+
+    /**plus2.*/
+    @Test
+    public void testPlus2() {
+        int[] coefficients1 = {0, 0, 0, 5};
+        int[] coefficients2 = {3, -2, 1};
+
+        Main polynomial1 = new Main(coefficients1);
+        Main polynomial2 = new Main(coefficients2);
+        Main sum = polynomial1.plus(polynomial2);
+
+        int[] expectedCoefficients = {3, -2, 1, 5};
 
         assertArrayEquals(expectedCoefficients, sum.getCoefficients());
     }
@@ -86,7 +102,6 @@ public class MainTest {
         assertTrue(result.equals(expected));
     }
 
-
     /**testEqualsWithDifferentCoefficients.*/
     @Test
     public void testEqualsWithDifferentCoefficients() {
@@ -98,6 +113,4 @@ public class MainTest {
 
         assertFalse(polynomial1.equals(polynomial2));
     }
-
-
 }
