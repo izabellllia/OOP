@@ -1,9 +1,8 @@
 package zhitnik;
-import static org.junit.jupiter.api.Assertions.*;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**Тест.*/
 public class MainTest {
@@ -67,50 +66,56 @@ public class MainTest {
         assertArrayEquals(expectedCoefficients, product.getCoefficients());
     }
 
-    /**testPlusWithDifferentLengths.*/
     @Test
-    public void testPlusWithDifferentLengths() {
-
-        int[] coefficients1 = {2, 4, 6};
-        int[] coefficients2 = {8, 10};
-
-        Main polynomial1 = new Main(coefficients1);
-        Main polynomial2 = new Main(coefficients2);
-        Main result = polynomial1.plus(polynomial2);
-
-        int[] expectedCoefficients = {10, 14, 6};
-
-        Main expected = new Main(expectedCoefficients);
-
-        assertTrue(result.equals(expected));
+    void testMainRunning() {
+        Main.main(new String[]{});
+        Assertions.assertTrue(true);
+    }
+    @Test
+    void simpleEval() {
+        Main p1 = new Main(new int[]{1, 2, 3});
+        Assertions.assertEquals(
+                p1.evaluate(5), 5 * 5 * 3 + 2 * 5 + 1);
     }
 
-    /**testMinusWithNegativeCoefficients.*/
     @Test
-    public void testMinusWithNegativeCoefficients() {
-        int[] coefficients1 = {2, -4, 6};
-        int[] coefficients2 = {8, -10, 12};
-
-        Main polynomial1 = new Main(coefficients1);
-        Main polynomial2 = new Main(coefficients2);
-        Main result = polynomial1.minus(polynomial2);
-
-        int[] expectedCoefficients = {-6, 6, -6};
-
-        Main expected = new Main(expectedCoefficients);
-
-        assertTrue(result.equals(expected));
+    void lowerZerosEval() {
+        Main p1 = new Main(new int[]{0, 0, 0, 5});
+        Assertions.assertEquals(
+                p1.evaluate(4), 4 * 4 * 4 * 5
+        );
     }
 
-    /**testEqualsWithDifferentCoefficients.*/
     @Test
-    public void testEqualsWithDifferentCoefficients() {
-        int[] coefficients1 = {2, 4, 6};
-        int[] coefficients2 = {8, 10, 12};
-
-        Main polynomial1 = new Main(coefficients1);
-        Main polynomial2 = new Main(coefficients2);
-
-        assertFalse(polynomial1.equals(polynomial2));
+    void voidEval() {
+        Main p1 = new Main(new int[]{});
+        Assertions.assertEquals(
+                p1.evaluate(5), 0
+        );
     }
+
+
+    @Test
+    void nonDiff() {
+        Main p1 = new Main(new int[]{1, 2, 3});
+        Assertions.assertEquals(
+                p1.differentiate(0), p1
+        );
+    }
+
+    @Test
+    void simpleNotEqual() {
+        Main p1 = new Main(new int[]{1, 2, 3});
+        Main p2 = new Main(new int[]{3, 2, 1});
+        Assertions.assertNotEquals(p1, p2);
+    }
+
+
+    @Test
+    void voidSecond() {
+        Main p1 = new Main(new int[]{1, 2, 3});
+        Main p2 = new Main(new int[]{});
+        Assertions.assertNotEquals(p1, p2);
+    }
+
 }
