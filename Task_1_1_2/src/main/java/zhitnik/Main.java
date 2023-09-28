@@ -1,21 +1,25 @@
 package zhitnik;
+
 import java.lang.Math;
+
 /**класс Main.*/
 public class Main {
     private int degree;
     private int[] coefficients;
     /**Конструктор принимает массив целых чисел coefficients и инициализирует
      * переменные degree и coefficients.*/
+
     public Main(int[] coefficients) {
         this.degree = coefficients.length - 1;
         this.coefficients = new int[coefficients.length];
-        for (int i = 0; i < coefficients.length; i++){
+        for (int i = 0; i < coefficients.length; i++) {
             this.coefficients[i] = coefficients[i];
         }
     }
     /**Метод plus, принимает другой полином в качестве аргумента и возвращает
      *новый полином, являющийся суммой текущего
      * полинома и переданного полинома.*/
+
     public Main plus(Main other) {
         int maxDegree = Math.max(this.degree, other.degree);
         int[] resultCoefficients = new int[maxDegree + 1];
@@ -89,6 +93,7 @@ public class Main {
     }
     /**Если ни одно из условий выше не выполняется, то метод возвращает true,
      что означает, что объекты равны.*/
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

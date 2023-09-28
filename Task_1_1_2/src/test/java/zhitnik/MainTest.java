@@ -2,6 +2,7 @@ package zhitnik;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**Тест.*/
@@ -64,6 +65,7 @@ public class MainTest {
 
         assertArrayEquals(expectedCoefficients, product.getCoefficients());
     }
+
     @Test
     void test1() {
         Main.main(new String[]{});
