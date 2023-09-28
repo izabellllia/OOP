@@ -44,20 +44,20 @@ public class MainTest {
     }
 
     @Test
-    void GeneralTest() {
+    void generalTest() {
         Main.main(new String[]{});
         Assertions.assertTrue(true);
     }
 
     @Test
-    void TestEvaluate1() {
+    void testEvaluate1() {
         Main p1 = new Main(new int[]{1, 2, 3});
         Assertions.assertEquals(
                 p1.evaluate(5), 5 * 5 * 3 + 2 * 5 + 1);
     }
 
     @Test
-    void TestEvaluate2() {
+    void testEvaluate2() {
         Main p1 = new Main(new int[]{0, 0, 0, 5});
         Assertions.assertEquals(
                 p1.evaluate(4), 4 * 4 * 4 * 5
@@ -65,7 +65,7 @@ public class MainTest {
     }
 
     @Test
-    void TestEvaluate3() {
+    void testEvaluate3() {
         Main p1 = new Main(new int[]{});
         Assertions.assertEquals(
                 p1.evaluate(5), 0
@@ -73,21 +73,21 @@ public class MainTest {
     }
 
     @Test
-    void TestDifferentiate1() {
+    void testDifferentiate1() {
         Main p1 = new Main(new int[]{9, 29, 11});
         Assertions.assertEquals(
                 p1.differentiate(0), p1);
     }
 
     @Test
-    void TestEquals1() {
+    void testEquals1() {
         Main p1 = new Main(new int[]{29, 9, 11});
         Main p2 = new Main(new int[]{11, 9, 29});
         Assertions.assertNotEquals(p1, p2);
     }
 
     @Test
-    void TestEquals2() {
+    void testEquals2() {
         Main p1 = new Main(new int[]{29, 9, 11});
         Main p2 = new Main(new int[]{});
         Assertions.assertNotEquals(p1, p2);
