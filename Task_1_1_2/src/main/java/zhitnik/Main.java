@@ -80,7 +80,15 @@ public class Main {
     }
 
     /**используется для сравнения двух объектов типа Main.*/
-    public boolean equals(Main other) {
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Main other = (Main) obj;
         if (this.degree != other.degree) {
             return false;
         }
