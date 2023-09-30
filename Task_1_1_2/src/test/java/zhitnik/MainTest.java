@@ -7,6 +7,12 @@ import org.junit.jupiter.api.Test;
 public class MainTest {
 
     @Test
+    void testMainRunning() {
+        Main.Main(new String[]{});
+        Assertions.assertTrue(true);
+    }
+
+    @Test
     void testPlus1() {
         Polinom p1 = new Polinom(new int[]{1, 2, 3});
         Polinom p2 = new Polinom(new int[]{4, 5, 6});
