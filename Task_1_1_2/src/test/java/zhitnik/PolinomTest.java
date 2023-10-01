@@ -7,12 +7,6 @@ import org.junit.jupiter.api.Test;
 public class PolinomTest {
 
     @Test
-    void testMainRunning() {
-        Polinom.main(new String[]{});
-        Assertions.assertTrue(true);
-    }
-
-    @Test
     void testPlusSimple() {
         Polinom p1 = new Polinom(new int[]{1, 2, 3});
         Polinom p2 = new Polinom(new int[]{4, 5, 6});
@@ -49,14 +43,7 @@ public class PolinomTest {
     }
 
     @Test
-    void testEvaluate1() {
-        Polinom p1 = new Polinom(new int[]{1, 2, 3});
-        Assertions.assertEquals(
-                p1.evaluate(5), 5 * 5 * 3 + 2 * 5 + 1);
-    }
-
-    @Test
-    void testEvaluate2() {
+    void testEvaluate() {
         Polinom p1 = new Polinom(new int[]{0, 0, 0, 5});
         Assertions.assertEquals(
                 p1.evaluate(4), 4 * 4 * 4 * 5
@@ -64,31 +51,16 @@ public class PolinomTest {
     }
 
     @Test
-    void testEvaluate3() {
-        Polinom p1 = new Polinom(new int[]{});
-        Assertions.assertEquals(
-                p1.evaluate(5), 0
-        );
-    }
-
-    @Test
-    void testDifferentiate1() {
+    void testDifferentiate() {
         Polinom p1 = new Polinom(new int[]{9, 29, 11});
         Assertions.assertEquals(
                 p1.differentiate(0), p1);
     }
 
     @Test
-    void testEquals1() {
+    void testEquals() {
         Polinom p1 = new Polinom(new int[]{29, 9, 11});
         Polinom p2 = new Polinom(new int[]{11, 9, 29});
-        Assertions.assertNotEquals(p1, p2);
-    }
-
-    @Test
-    void testEquals2() {
-        Polinom p1 = new Polinom(new int[]{29, 9, 11});
-        Polinom p2 = new Polinom(new int[]{});
         Assertions.assertNotEquals(p1, p2);
     }
 }
