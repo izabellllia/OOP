@@ -139,7 +139,8 @@ public class Polinom {
         return result;
     }
 
-    public static void Main(String[] args) {
+    /**Main.*/
+    public static void main(String[] args) {
         Polinom p1 = new Polinom(new int[] {4, 3, 6, 7});
         Polinom p2 = new Polinom(new int[] {3, 2, 8});
         System.out.println(p1.plus(p2.differentiate(1)).toString());

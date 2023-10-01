@@ -1,7 +1,6 @@
 package zhitnik;
 
 import org.junit.jupiter.api.Assertions;
-
 import org.junit.jupiter.api.Test;
 
 /**Тест.*/
@@ -9,7 +8,7 @@ public class PolinomTest {
 
     @Test
     void testMainRunning() {
-        Polinom.Main(new String[]{});
+        Polinom.main(new String[]{});
         Assertions.assertTrue(true);
     }
 
