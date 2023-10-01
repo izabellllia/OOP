@@ -1,8 +1,9 @@
 package zhitnik;
+
 import java.util.Arrays;
 
 /**класс Polinom.*/
-public class Polinom{
+public class Polinom {
     private int degree;
     private int[] coefficients;
     /**Конструктор принимает массив целых чисел coefficients и инициализирует
@@ -136,5 +137,12 @@ public class Polinom{
             power++;
         }
         return result;
+    }
+
+    public static void Main(String[] args) {
+        Polinom p1 = new Polinom(new int[] {4, 3, 6, 7});
+        Polinom p2 = new Polinom(new int[] {3, 2, 8});
+        System.out.println(p1.plus(p2.differentiate(1)).toString());
+        System.out.println(p1.times(p2).evaluate(2));
     }
 }

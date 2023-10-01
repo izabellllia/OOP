@@ -1,19 +1,20 @@
 package zhitnik;
 
 import org.junit.jupiter.api.Assertions;
+
 import org.junit.jupiter.api.Test;
 
 /**Тест.*/
-public class MainTest {
+public class PolinomTest {
 
     @Test
     void testMainRunning() {
-        Main.Main(new String[]{});
+        Polinom.Main(new String[]{});
         Assertions.assertTrue(true);
     }
 
     @Test
-    void testPlus1() {
+    void testPlusSimple() {
         Polinom p1 = new Polinom(new int[]{1, 2, 3});
         Polinom p2 = new Polinom(new int[]{4, 5, 6});
         Assertions.assertEquals(
@@ -22,7 +23,7 @@ public class MainTest {
     }
 
     @Test
-    void testPlus2() {
+    void testPlusNegative() {
         Polinom p1 = new Polinom(new int[]{0, 0, 0, 5});
         Polinom p2 = new Polinom(new int[]{3, -2, 1});
         Assertions.assertEquals(
