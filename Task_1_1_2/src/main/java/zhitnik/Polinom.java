@@ -123,11 +123,6 @@ public class Polinom {
         return sb.toString();
     }
 
-    /**коэффициенты.*/
-    public int[] getCoefficients() {
-        return coefficients;
-    }
-
     /**оценка.*/
     public int evaluate(int x) {
         int result = 0;
