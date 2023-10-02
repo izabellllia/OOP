@@ -3,6 +3,7 @@ package zhitnik;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+
 /**Тест.*/
 public class PolinomTest {
 
@@ -83,5 +84,13 @@ public class PolinomTest {
         Polinom p1 = new Polinom(new int[]{});
         Polinom p2 = new Polinom(new int[]{});
         Assertions.assertEquals(p1, p2);
+    }
+
+    @Test
+    void stringTest() {
+        Polinom p1 = new Polinom(new int[]{2, 0, -3, 1});
+        Assertions.assertEquals(
+                p1.toString(), "1x^3 + -3x^2 + 2"
+        );
     }
 }
