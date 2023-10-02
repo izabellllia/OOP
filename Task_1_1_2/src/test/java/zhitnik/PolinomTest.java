@@ -65,6 +65,13 @@ public class PolinomTest {
     }
 
     @Test
+    void testIsEqualsSimple() {
+        Polinom p1 = new Polinom(new int[]{29, 9, 11});
+        Polinom p2 = new Polinom(new int[]{29, 9, 11});
+        Assertions.assertEquals(p1, p2);
+    }
+
+    @Test
     void testNotEqualsSimple() {
         Polinom p1 = new Polinom(new int[]{29, 9, 11});
         Polinom p2 = new Polinom(new int[]{11, 9, 29});
@@ -72,9 +79,9 @@ public class PolinomTest {
     }
 
     @Test
-    void testIsEqualsSimple() {
-        Polinom p1 = new Polinom(new int[]{29, 9, 11});
-        Polinom p2 = new Polinom(new int[]{29, 9, 11});
+    void testEqualsBoth() {
+        Polinom p1 = new Polinom(new int[]{});
+        Polinom p2 = new Polinom(new int[]{});
         Assertions.assertEquals(p1, p2);
     }
 }
