@@ -10,9 +10,9 @@ public class PolinomTest {
     @Test
     void testPlusSimple() {
         Polinom p1 = new Polinom(new int[]{1, 2, 3});
-        Polinom p2 = new Polinom(new int[]{4, 5, 6});
+        Polinom p2 = new Polinom(new int[]{5, 6, 7});
         Assertions.assertEquals(
-                p1.plus(p2), new Polinom(new int[]{5, 7, 9})
+                p1.plus(p2), new Polinom(new int[]{6, 8, 10})
         );
     }
 
@@ -26,11 +26,29 @@ public class PolinomTest {
     }
 
     @Test
-    void testMinus() {
+    void testMinusSimple() {
         Polinom p1 = new Polinom(new int[]{1, 2, 3});
         Polinom p2 = new Polinom(new int[]{4, 5, 6});
         Assertions.assertEquals(
                 p1.minus(p2), new Polinom(new int[]{-3, -3, -3})
+        );
+    }
+
+    @Test
+    void testMinusZero() {
+        Polinom p1 = new Polinom(new int[]{0, 0, 0, 11});
+        Polinom p2 = new Polinom(new int[]{9, -1, 1});
+        Assertions.assertEquals(
+                p1.minus(p2), new Polinom(new int[]{-9, 1, -1, 11})
+        );
+    }
+
+    @Test
+    void testMinusSame() {
+        Polinom p1 = new Polinom(new int[]{9, 29, 9});
+        Polinom p2 = new Polinom(new int[]{9, 29, 9});
+        Assertions.assertEquals(
+                p1.minus(p2), new Polinom(new int[]{0, 0, 0})
         );
     }
 
@@ -40,6 +58,15 @@ public class PolinomTest {
         Polinom p2 = new Polinom(new int[]{4, 5});
         Assertions.assertEquals(
                 p1.times(p2), new Polinom(new int[]{4, 13, 22, 15})
+        );
+    }
+
+    @Test
+    void testTimesZero() {
+        Polinom p1 = new Polinom(new int[]{0, 0, 0, 5});
+        Polinom p2 = new Polinom(new int[]{3, -2, 1});
+        Assertions.assertEquals(
+                p1.times(p2), new Polinom(new int[]{0, 0, 0, 15, -10, 5})
         );
     }
 
@@ -63,6 +90,14 @@ public class PolinomTest {
         Polinom p1 = new Polinom(new int[]{9, 29, 11});
         Assertions.assertEquals(
                 p1.differentiate(0), p1);
+    }
+
+    @Test
+    void testDifferentiateHigh() {
+        Polinom p1 = new Polinom(new int[]{7, 6, 5, 4, 3, 2, 1});
+        Assertions.assertEquals(
+                p1.differentiate(5), new Polinom(new int[]{240, 720})
+        );
     }
 
     @Test
