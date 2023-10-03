@@ -128,6 +128,7 @@ public class PolinomTest {
                 p1.toString(), "1x^3 + -3x^2 + 2"
         );
     }
+
     @Test
     void stringTestZero() {
         Polinom p1 = new Polinom(new int[]{0, 0, 0, 0});
