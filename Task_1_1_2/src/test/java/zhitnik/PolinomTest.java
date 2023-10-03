@@ -130,9 +130,9 @@ public class PolinomTest {
     }
     @Test
     void stringTestZero() {
-        Polinom p1 = new Polinom(new int[]{0, 0, 0, 1});
+        Polinom p1 = new Polinom(new int[]{0, 0, 0});
         Assertions.assertEquals(
-                p1.toString(), "1x^3"
+                p1.toString(), ""
         );
     }
 }
