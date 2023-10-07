@@ -1,33 +1,75 @@
 package zhitnik;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 public class TreeTest {
-    public static void main(String[] args) {
-        // Create a tree with integers
-        Tree<Integer> tree = new Tree<>(1);
-        Node<Integer> root = tree.getRoot();
 
-        Node<Integer> node2 = new Node<>(2);
-        Node<Integer> node3 = new Node<>(3);
-        Node<Integer> node4 = new Node<>(4);
-        Node<Integer> node5 = new Node<>(5);
-        Node<Integer> node6 = new Node<>(6);
+    @Test
+    public void testIsEmpty() {
+        // Create a tree with strings
+        Tree<String> tree = new Tree<>("A");
+        Node<String> root = tree.getRoot();
 
-        root.addChild(node2);
-        root.addChild(node3);
-        node2.addChild(node4);
-        node2.addChild(node5);
-        node3.addChild(node6);
+        Node<String> nodeB = new Node<>("B");
+        Node<String> nodeC = new Node<>("C");
+        Node<String> nodeD = new Node<>("D");
+        Node<String> nodeE = new Node<>("E");
+        Node<String> nodeF = new Node<>("F");
 
-        // Test isEmpty()
-        System.out.println("Is tree empty? " + tree.isEmpty()); // false
+        root.addChild(nodeB);
+        root.addChild(nodeC);
+        nodeB.addChild(nodeD);
+        nodeB.addChild(nodeE);
+        nodeC.addChild(nodeF);
 
-        // Test getHeight()
-        System.out.println("Tree height: " + tree.getHeight()); // 3
+        Assertions.assertFalse(tree.isEmpty());
+    }
 
-        // Test BreadthFirstIterator
-        System.out.println("Breadth-First Traversal:");
-        for (Node<Integer> node : new BreadthFirstIterator<>(root)) {
-            System.out.print(node.getData() + " "); // 1 2 3 4 5 6
+    @Test
+    public void testGetHeight() {
+        // Create a tree with strings
+        Tree<String> tree = new Tree<>("A");
+        Node<String> root = tree.getRoot();
+
+        Node<String> nodeB = new Node<>("B");
+        Node<String> nodeC = new Node<>("C");
+        Node<String> nodeD = new Node<>("D");
+        Node<String> nodeE = new Node<>("E");
+        Node<String> nodeF = new Node<>("F");
+
+        root.addChild(nodeB);
+        root.addChild(nodeC);
+        nodeB.addChild(nodeD);
+        nodeB.addChild(nodeE);
+        nodeC.addChild(nodeF);
+
+        Assertions.assertEquals(3, tree.getHeight());
+    }
+
+    @Test
+    public void testBreadthFirstTraversal() {
+        // Create a tree with strings
+        Tree<String> tree = new Tree<>("A");
+        Node<String> root = tree.getRoot();
+
+        Node<String> nodeB = new Node<>("B");
+        Node<String> nodeC = new Node<>("C");
+        Node<String> nodeD = new Node<>("D");
+        Node<String> nodeE = new Node<>("E");
+        Node<String> nodeF = new Node<>("F");
+
+        root.addChild(nodeB);
+        root.addChild(nodeC);
+        nodeB.addChild(nodeD);
+        nodeB.addChild(nodeE);
+        nodeC.addChild(nodeF);
+
+        StringBuilder output = new StringBuilder();
+        for (Node<String> node : new BreadthFirstIterator<>(root)) {
+            output.append(node.getData()).append(" ");
         }
+
+        Assertions.assertEquals("A B C D E F ", output.toString());
     }
 }
