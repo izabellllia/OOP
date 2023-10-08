@@ -89,25 +89,25 @@ class Node<T> {
      * Создает новый объект с переданными данными и
      * инициализирует пустой список дочерних узлов.*/
 
-     public Node(T data) {
+    public Node(T data) {
         this.data = data;
         this.children = new ArrayList<>();
-     }
+    }
 
      /**метод, возвращающий данные узла.*/
-     public T getData() {
+    public T getData() {
         return data;
-     }
+    }
 
      /** метод, устанавливающий переданные данные как данные узла.*/
-     public void setData(T data) {
+    public void setData(T data) {
         this.data = data;
-     }
+    }
 
      /**метод, возвращающий список дочерних узлов текущего узла.*/
-     public List<Node<T>> getChildren() {
+    public List<Node<T>> getChildren() {
         return children;
-     }
+    }
 
     /**метод, устанавливающий переданный список
      * дочерних узлов как список дочерних узлов текущего узла.*/
@@ -116,7 +116,7 @@ class Node<T> {
     }
 
      /**метод, добавляющий переданный узел в список дочерних узлов текущего узла.*/
-     public void addChild(Node<T> child) {
+    public void addChild(Node<T> child) {
         children.add(child);
     }
 
