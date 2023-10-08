@@ -1,6 +1,12 @@
 package zhitnik;
 
-import java.util.*;
+import java.util.Objects;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Queue;
+import java.util.LinkedList;
+import java.util.NoSuchElementException;
 
 /**Класс Tree представляет дерево и имеет корневой узел. Он предоставляет
  * методы для проверки, пустое ли дерево, и для получения высоты дерева.*/
@@ -8,7 +14,7 @@ class Tree<T> {
     /**приватное поле, представляющее корневой узел дерева.*/
     private Node<T> root;
 
-    /**конструктор класса, cоздает новый объект Node<T> с
+    /**конструктор класса, cоздает новый объект с
      * переданными данными и устанавливает его как корень дерева.*/
     public Tree(T data) {
         this.root = new Node<>(data);
@@ -24,8 +30,8 @@ class Tree<T> {
         this.root = root;
     }
 
-    /**метод, проверяющий, пустое ли дерево (корневой узел равен null).
-     * Возвращает true, если дерево пустое, иначе false.*/
+    /**метод, проверяющий, пустое ли дерево (корневой узел равен null)
+     * возвращает true, если дерево пустое, иначе false.*/
     public boolean isEmpty() {
         return root == null;
     }

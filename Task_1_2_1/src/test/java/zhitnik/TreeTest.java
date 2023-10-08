@@ -14,8 +14,9 @@ public class TreeTest {
         Node<String> nodeB = new Node<>("B");
         Node<String> nodeC = new Node<>("C");
         Node<String> nodeD = new Node<>("D");
-        Node<String> nodeE = new Node<>("E");
-        Node<String> nodeF = new Node<>("F");
+        final Node<String> nodeE = new Node<>("E");
+        final Node<String> nodeF = new Node<>("F");
+
 
         root.addChild(nodeB);
         root.addChild(nodeC);
@@ -28,15 +29,14 @@ public class TreeTest {
 
     @Test
     public void testGetHeight() {
-        // Create a tree with strings
         Tree<String> tree = new Tree<>("A");
         Node<String> root = tree.getRoot();
 
         Node<String> nodeB = new Node<>("B");
         Node<String> nodeC = new Node<>("C");
         Node<String> nodeD = new Node<>("D");
-        Node<String> nodeE = new Node<>("E");
-        Node<String> nodeF = new Node<>("F");
+        final Node<String> nodeE = new Node<>("E");
+        final Node<String> nodeF = new Node<>("F");
 
         root.addChild(nodeB);
         root.addChild(nodeC);
@@ -49,15 +49,14 @@ public class TreeTest {
 
     @Test
     public void testBreadthFirstTraversal() {
-        // Create a tree with strings
         Tree<String> tree = new Tree<>("A");
         Node<String> root = tree.getRoot();
 
         Node<String> nodeB = new Node<>("B");
         Node<String> nodeC = new Node<>("C");
         Node<String> nodeD = new Node<>("D");
-        Node<String> nodeE = new Node<>("E");
-        Node<String> nodeF = new Node<>("F");
+        final Node<String> nodeE = new Node<>("E");
+        final Node<String> nodeF = new Node<>("F");
 
         root.addChild(nodeB);
         root.addChild(nodeC);
