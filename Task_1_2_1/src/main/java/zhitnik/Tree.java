@@ -146,14 +146,15 @@ class Node<T> {
 class BreadthFirstIterator<T> implements Iterable<Node<T>> {
     /**приватное поле, хранящее корневой узел дерева.*/
     private Node<T> root;
+
     /**конструктор класса.Инициализирует поле root переданным узлом.*/
     public BreadthFirstIterator(Node<T> root) {
         this.root = root;
     }
 
-    /**переопределенный метод iterator интерфейса Iterable. Создает и возвращает новый объект Iterator<Node<T>>,
-     * который будет использоваться для итерации по дереву.*/
-     @Override
+    /**переопределенный метод iterator интерфейса Iterable. Создает и возвращает новый
+     * объект Iterator,который будет использоваться для итерации по дереву.*/
+    @Override
     public Iterator<Node<T>> iterator() {
         return new Iterator<Node<T>>() {
             /**приватное поле, хранящее очередь узлов для обхода в ширину.*/
@@ -163,7 +164,7 @@ class BreadthFirstIterator<T> implements Iterable<Node<T>> {
                 queue.add(root);
             }
 
-            /**переопределенный метод hasNext интерфейса Iterator. Возвращает true, если очередь не пуста
+            /**переопределенный метод hasNext Iterator. Возвращает true,если очередь не пуста
              * (есть еще узлы для обхода), и false в противном случае.*/
              @Override
             public boolean hasNext() {
