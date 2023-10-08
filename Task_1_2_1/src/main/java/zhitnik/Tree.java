@@ -158,7 +158,7 @@ class BreadthFirstIterator<T> implements Iterable<Node<T>> {
     public Iterator<Node<T>> iterator() {
         return new Iterator<Node<T>>() {
             /**приватное поле, хранящее очередь узлов для обхода в ширину.*/
-             private Queue<Node<T>> queue = new LinkedList<>();
+            private Queue<Node<T>> queue = new LinkedList<>();
 
             {
                 queue.add(root);
@@ -166,15 +166,18 @@ class BreadthFirstIterator<T> implements Iterable<Node<T>> {
 
             /**переопределенный метод hasNext Iterator. Возвращает true,если очередь не пуста
              * (есть еще узлы для обхода), и false в противном случае.*/
-             @Override
+            @Override
             public boolean hasNext() {
                 return !queue.isEmpty();
             }
-            /**переопределенный метод next интерфейса Iterator. Возвращает следующий узел для обхода в ширину.
+            /**переопределенный метод next интерфейса Iterator.
+             *  Возвращает следующий узел для обхода в ширину.
              * Если очередь пуста, генерируется исключение NoSuchElementException.
-             * Иначе, извлекается первый узел из очереди, и для каждого дочернего узла текущего узла добавляется в
+             * Иначе, извлекается первый узел из очереди, и для каждого дочернего
+             * узла текущего узла добавляется в
              * очередь. Возвращается извлеченный узел.*/
-             @Override
+
+            @Override
             public Node<T> next() {
                 if (!hasNext()) {
                     throw new NoSuchElementException();
