@@ -86,10 +86,10 @@ class Node<T> {
     private T data;
     /**приватное поле, хранящее список детей текущего узла.*/
     private List<Node<T>> children;
+
     /**конструктор класса, принимающий данные для создания узла.
      * Создает новый объект с переданными данными и
      * инициализирует пустой список дочерних узлов.*/
-
     public Node(T data) {
         this.data = data;
         this.children = new ArrayList<>();
@@ -121,6 +121,46 @@ class Node<T> {
         children.add(child);
     }
 
+    /**Это основной метод удаления листового узла из дерева.
+     * В качестве аргумента принимает листовой узел.*/
+    public void removeLeaf(Node<T> leaf) {
+        if (leaf == null) {
+            throw new IllegalArgumentException("Leaf cannot be null");
+        }
+
+        if (leaf.getData().equals(data)) {
+            throw new IllegalArgumentException("Cannot remove root node");
+        }
+
+        Node<T> parent = findParent(this, leaf);
+        if (parent == null) {
+            throw new IllegalArgumentException("Node is not part of the tree");
+        }
+
+        parent.getChildren().remove(leaf);
+    }
+
+    /**Это вспомогательный метод, используемый методом RemoveLeaf
+     * для поиска родительского узла targetNode в дереве.*/
+    private Node<T> findParent(Node<T> currentNode, Node<T> targetNode) {
+        if (currentNode == null || currentNode.getChildren() == null) {
+            return null;
+        }
+
+        for (Node<T> child : currentNode.getChildren()) {
+            if (child.getData().equals(targetNode.getData())) {
+                return currentNode;
+            }
+
+            Node<T> parent = findParent(child, targetNode);
+            if (parent != null) {
+                return parent;
+            }
+        }
+
+        return null;
+    }
+
     /**сравнивает текущий узел с переданным объектом.
      * Если объекты равны по ссылке, возвращает true. Если переданный объект равен null
      * или не является экземпляром класса Node, возвращает false. Если переданный объект
@@ -140,22 +180,69 @@ class Node<T> {
     }
 }
 
+/**класс, который реализует интерфейс Iterable<Node<T>>. Он позволяет
+ * создать итератор для обхода узлов дерева в порядке BFS.*/
+class TreeIterableBFS<T> implements Iterable<Node<T>> {
+    /**приватное поле, хранящее корневой узел дерева.*/
+    private Node<T> root;
+
+    public TreeIterableBFS(Node<T> root) {
+        this.root = root;
+    }
+
+    /**метод, переопределенный из интерфейса Iterable,
+     * который создает и возвращает новый объект BreadthFirstIterator,
+     * который будет использоваться для итерации по дереву.*/
+    @Override
+    public Iterator<Node<T>> iterator() {
+        return new BreadthFirstIterator(root);
+    }
 
 
+/**это вложенный класс, который реализует интерфейс
+ * Iterator<Node<T>>. Он реализует итерацию по узлам дерева в порядке BFS.*/
+private class BreadthFirstIterator<T> implements Iterator<Node<T>> {
+    /**приватное поле, хранящее очередь узлов для обхода в ширину.*/
+    private Queue<Node<T>> queue = new LinkedList<>();
 
+    public BreadthFirstIterator(Node<T> root) {
+        if (root != null) {
+            queue.add(root);
+        }
+    }
+    /**переопределенный метод hasNext Iterator. Возвращает true,если очередь не пуста
+     * (есть еще узлы для обхода), и false в противном случае.*/
+    @Override
+    public boolean hasNext() {
+        return !queue.isEmpty();
+    }
 
+    /**переопределенный метод next интерфейса Iterator.
+     *  Возвращает следующий узел для обхода в ширину.
+     * Если очередь пуста, генерируется исключение NoSuchElementException.
+     * Иначе, извлекается первый узел из очереди, и для каждого дочернего
+     * узла текущего узла добавляется в
+     * очередь. Возвращается извлеченный узел.*/
+    @Override
+    public Node<T> next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
+        Node<T> current = queue.poll();
+        for (Node<T> child : current.getChildren()) {
+            queue.offer(child);
+        }
+        return current;
+    }
+}
+}
 
-
-
-
-
-
-class TreeIterable<T> implements Iterable<Node<T>> {
+class TreeIterableDFS<T> implements Iterable<Node<T>> {
     /**приватное поле, хранящее корневой узел дерева.*/
     private Node<T> root;
 
     /**конструктор класса.Инициализирует поле root переданным узлом.*/
-    public TreeIterable(Node<T> root) {
+    public TreeIterableDFS(Node<T> root) {
         this.root = root;
     }
 
@@ -163,41 +250,7 @@ class TreeIterable<T> implements Iterable<Node<T>> {
      * объект Iterator,который будет использоваться для итерации по дереву.*/
     @Override
     public Iterator<Node<T>> iterator() {
-        return new BreadthFirstIterator();
-    }
-
-    private class BreadthFirstIterator implements Iterator<Node<T>> {
-        /**приватное поле, хранящее очередь узлов для обхода в ширину.*/
-        private Queue<Node<T>> queue = new LinkedList<>();
-
-        {
-            queue.add(root);
-        }
-
-        /**переопределенный метод hasNext Iterator. Возвращает true,если очередь не пуста
-         * (есть еще узлы для обхода), и false в противном случае.*/
-        @Override
-        public boolean hasNext() {
-            return !queue.isEmpty();
-        }
-        /**переопределенный метод next интерфейса Iterator.
-         *  Возвращает следующий узел для обхода в ширину.
-         * Если очередь пуста, генерируется исключение NoSuchElementException.
-         * Иначе, извлекается первый узел из очереди, и для каждого дочернего
-         * узла текущего узла добавляется в
-         * очередь. Возвращается извлеченный узел.*/
-
-        @Override
-        public Node<T> next() {
-            if (!hasNext()) {
-                throw new NoSuchElementException();
-            }
-            Node<T> current = queue.poll();
-            for (Node<T> child : current.getChildren()) {
-                queue.offer(child);
-            }
-            return current;
-        }
+        return new DepthFirstIterator();
     }
 
     private class DepthFirstIterator implements Iterator<Node<T>> {
