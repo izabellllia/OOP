@@ -157,7 +157,6 @@ class Node<T> {
                 return parent;
             }
         }
-
         return null;
     }
 
