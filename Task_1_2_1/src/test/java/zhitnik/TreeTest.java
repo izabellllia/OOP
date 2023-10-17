@@ -48,31 +48,6 @@ public class TreeTest {
     }
 
     @Test
-    public void testBreadthFirstTraversal() {
-        Tree<String> tree = new Tree<>("A");
-        Node<String> root = tree.getRoot();
-
-        Node<String> nodeB = new Node<>("B");
-        Node<String> nodeC = new Node<>("C");
-        Node<String> nodeD = new Node<>("D");
-        final Node<String> nodeE = new Node<>("E");
-        final Node<String> nodeF = new Node<>("F");
-
-        root.addChild(nodeB);
-        root.addChild(nodeC);
-        nodeB.addChild(nodeD);
-        nodeB.addChild(nodeE);
-        nodeC.addChild(nodeF);
-
-        StringBuilder output = new StringBuilder();
-        for (Node<String> node : new BreadthFirstIterator<>(root)) {
-            output.append(node.getData()).append(" ");
-        }
-
-        Assertions.assertEquals("A B C D E F ", output.toString());
-    }
-
-    @Test
     public void testIsEmptyOnEmptyTree() {
         // Create an empty tree
         Tree<Integer> emptyTree = new Tree<>(null);

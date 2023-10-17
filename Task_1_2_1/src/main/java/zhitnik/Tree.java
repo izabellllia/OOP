@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Queue;
+import java.util.Stack;
 
 /**Класс Tree представляет дерево и имеет корневой узел. Он предоставляет
  * методы для проверки, пустое ли дерево, и для получения высоты дерева.*/
@@ -60,9 +61,9 @@ class Tree<T> {
     }
 
     /**сравнивает текущее дерево с переданным объектом. Если объекты равны по ссылке, то они равны.
-      * Если переданный объект является null или принадлежит другому классу, то они не равны.
-      * Затем метод сравнивает корневые узлы двух деревьев с помощью метода Objects.equals,
-      * который сравнивает объекты на равенство, учитывая возможность null значений.*/
+     * Если переданный объект является null или принадлежит другому классу, то они не равны.
+     * Затем метод сравнивает корневые узлы двух деревьев с помощью метода Objects.equals,
+     * который сравнивает объекты на равенство, учитывая возможность null значений.*/
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -78,8 +79,8 @@ class Tree<T> {
 }
 
 /**Представляет узел в дереве. Каждый узел имеет данные типа T и список дочерних узлов.
-  * Он предоставляет методы для получения и установки данных и дочерних узлов,
-  * а также для добавления дочернего узла.*/
+ * Он предоставляет методы для получения и установки данных и дочерних узлов,
+ * а также для добавления дочернего узла.*/
 class Node<T> {
     /**приватное поле, хранящее данные узла.*/
     private T data;
@@ -139,16 +140,22 @@ class Node<T> {
     }
 }
 
-/**Реализует интерфейс Iterable, позволяя его использовать в цикле foreach.
- * Он принимает корневой узел в конструкторе и предоставляет итератор,
- * который выполняет обход дерева в ширину. Итератор использует очередь для отслеживания узлов,
- * которые нужно посетить следующими.*/
-class BreadthFirstIterator<T> implements Iterable<Node<T>> {
+
+
+
+
+
+
+
+
+
+
+class TreeIterable<T> implements Iterable<Node<T>> {
     /**приватное поле, хранящее корневой узел дерева.*/
     private Node<T> root;
 
     /**конструктор класса.Инициализирует поле root переданным узлом.*/
-    public BreadthFirstIterator(Node<T> root) {
+    public TreeIterable(Node<T> root) {
         this.root = root;
     }
 
@@ -156,38 +163,65 @@ class BreadthFirstIterator<T> implements Iterable<Node<T>> {
      * объект Iterator,который будет использоваться для итерации по дереву.*/
     @Override
     public Iterator<Node<T>> iterator() {
-        return new Iterator<Node<T>>() {
-            /**приватное поле, хранящее очередь узлов для обхода в ширину.*/
-            private Queue<Node<T>> queue = new LinkedList<>();
+        return new BreadthFirstIterator();
+    }
 
-            {
-                queue.add(root);
-            }
+    private class BreadthFirstIterator implements Iterator<Node<T>> {
+        /**приватное поле, хранящее очередь узлов для обхода в ширину.*/
+        private Queue<Node<T>> queue = new LinkedList<>();
 
-            /**переопределенный метод hasNext Iterator. Возвращает true,если очередь не пуста
-             * (есть еще узлы для обхода), и false в противном случае.*/
-            @Override
-            public boolean hasNext() {
-                return !queue.isEmpty();
-            }
-            /**переопределенный метод next интерфейса Iterator.
-             *  Возвращает следующий узел для обхода в ширину.
-             * Если очередь пуста, генерируется исключение NoSuchElementException.
-             * Иначе, извлекается первый узел из очереди, и для каждого дочернего
-             * узла текущего узла добавляется в
-             * очередь. Возвращается извлеченный узел.*/
+        {
+            queue.add(root);
+        }
 
-            @Override
-            public Node<T> next() {
-                if (!hasNext()) {
-                    throw new NoSuchElementException();
-                }
-                Node<T> current = queue.poll();
-                for (Node<T> child : current.getChildren()) {
-                    queue.offer(child);
-                }
-                return current;
+        /**переопределенный метод hasNext Iterator. Возвращает true,если очередь не пуста
+         * (есть еще узлы для обхода), и false в противном случае.*/
+        @Override
+        public boolean hasNext() {
+            return !queue.isEmpty();
+        }
+        /**переопределенный метод next интерфейса Iterator.
+         *  Возвращает следующий узел для обхода в ширину.
+         * Если очередь пуста, генерируется исключение NoSuchElementException.
+         * Иначе, извлекается первый узел из очереди, и для каждого дочернего
+         * узла текущего узла добавляется в
+         * очередь. Возвращается извлеченный узел.*/
+
+        @Override
+        public Node<T> next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
             }
-        };
+            Node<T> current = queue.poll();
+            for (Node<T> child : current.getChildren()) {
+                queue.offer(child);
+            }
+            return current;
+        }
+    }
+
+    private class DepthFirstIterator implements Iterator<Node<T>> {
+        private Stack<Node<T>> stack = new Stack<>();
+
+        {
+            stack.push(root);
+        }
+
+        @Override
+        public boolean hasNext() {
+            return !stack.isEmpty();
+        }
+
+        @Override
+        public Node<T> next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            Node<T> current = stack.pop();
+            for (int i = current.getChildren().size() - 1; i >= 0; i--) {
+                stack.push(current.getChildren().get(i));
+            }
+            return current;
+        }
     }
 }
