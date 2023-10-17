@@ -132,7 +132,7 @@ public class TreeTest {
         nodeC.addChild(nodeF);
 
         StringBuilder output = new StringBuilder();
-        for (Node<String> node : new TreeIterableBFS<>(root)) {
+        for (Node<String> node : new TreeIterableBfs<>(root)) {
             output.append(node.getData()).append(" ");
         }
 
@@ -146,8 +146,8 @@ public class TreeTest {
         Node<String> nodeB = new Node<>("B");
         Node<String> nodeC = new Node<>("C");
         Node<String> nodeD = new Node<>("D");
-        Node<String> nodeE = new Node<>("E");
-        Node<String> nodeF = new Node<>("F");
+        final Node<String> nodeE = new Node<>("E");
+        final Node<String> nodeF = new Node<>("F");
         root.addChild(nodeB);
         root.addChild(nodeC);
         nodeB.addChild(nodeD);
