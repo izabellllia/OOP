@@ -237,23 +237,26 @@ class TreeIterableBfs<T> implements Iterable<Node<T>> {
     }
 }
 
-/**класс, который реализует интерфейс Iterable<Node<T>>. Он позволяет
+/**класс, который реализует интерфейс iterator node. Он позволяет
  * создать итератор для обхода узлов дерева в порядке DFS.*/
-class TreeIterableDFS<T> implements Iterable<Node<T>> {
+class TreeIterableDfs<T> implements Iterable<Node<T>> {
     /**приватное поле, хранящее корневой узел дерева.*/
     private Node<T> root;
 
-    /** реализует интерфейс Iterable<Node<T>>, поэтому он должен предоставить реализацию метода iterator().*/
-    public TreeIterableDFS(Node<T> root) {
+    /** реализует интерфейс iterator node, поэтому он
+     * должен предоставить реализацию метода iterator().*/
+    public TreeIterableDfs(Node<T> root) {
         this.root = root;
     }
 
-    /** создает новый объект DepthFirstIterator, который будет использоваться для итерации по дереву.*/
+    /** создает новый объект DepthFirstIterator,
+     * который будет использоваться для итерации по дереву.*/
     @Override
     public Iterator<Node<T>> iterator() {
         return new DepthFirstIterator();
     }
-    /**реализует интерфейс Iterator<Node<T>> и предоставляет методы для итерации по дереву в глубоком порядке.*/
+    /**реализует интерфейс iterator node и предоставляет
+     * методы для итерации по дереву в глубоком порядке.*/
     private class DepthFirstIterator implements Iterator<Node<T>> {
         private Stack<Node<T>> stack = new Stack<>();
 

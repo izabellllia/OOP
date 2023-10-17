@@ -155,7 +155,7 @@ public class TreeTest {
         nodeC.addChild(nodeF);
 
         StringBuilder output = new StringBuilder();
-        for (Node<String> node : new TreeIterableDFS<>(root)) {
+        for (Node<String> node : new TreeIterableDfs<>(root)) {
             output.append(node.getData()).append(" ");
         }
 
