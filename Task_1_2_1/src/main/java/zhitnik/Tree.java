@@ -205,12 +205,13 @@ class TreeIterableBfs<T> implements Iterable<Node<T>> {
         private Queue<Node<T>> queue = new LinkedList<>();
 
         public BreadthFirstIterator(Node<T> root) {
-            if (root != null) {
-            queue.add(root);
+                if (root != null) {
+                queue.add(root);
+                }
         }
-    }
         /**переопределенный метод hasNext Iterator. Возвращает true,если очередь не пуста
         * (есть еще узлы для обхода), и false в противном случае.*/
+
         @Override
         public boolean hasNext() {
             return !queue.isEmpty();
@@ -224,14 +225,14 @@ class TreeIterableBfs<T> implements Iterable<Node<T>> {
         * очередь. Возвращается извлеченный узел.*/
         @Override
         public Node<T> next() {
-            if (!hasNext()) {
-              throw new NoSuchElementException();
-            }
+                if (!hasNext()) {
+                throw new NoSuchElementException();
+                }
          Node<T> current = queue.poll();
-            for (Node<T> child : current.getChildren()) {
-               queue.offer(child);
-            }
-            return current;
+                for (Node<T> child : current.getChildren()) {
+                queue.offer(child);
+                }
+                return current;
         }
     }
 }
