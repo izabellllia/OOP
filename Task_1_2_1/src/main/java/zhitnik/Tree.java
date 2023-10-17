@@ -236,23 +236,23 @@ private class BreadthFirstIterator<T> implements Iterator<Node<T>> {
     }
 }
 }
-
+/**класс, который реализует интерфейс Iterable<Node<T>>. Он позволяет
+ * создать итератор для обхода узлов дерева в порядке DFS.*/
 class TreeIterableDFS<T> implements Iterable<Node<T>> {
     /**приватное поле, хранящее корневой узел дерева.*/
     private Node<T> root;
 
-    /**конструктор класса.Инициализирует поле root переданным узлом.*/
+    /** реализует интерфейс Iterable<Node<T>>, поэтому он должен предоставить реализацию метода iterator().*/
     public TreeIterableDFS(Node<T> root) {
         this.root = root;
     }
 
-    /**переопределенный метод iterator интерфейса Iterable. Создает и возвращает новый
-     * объект Iterator,который будет использоваться для итерации по дереву.*/
+    /** создает новый объект DepthFirstIterator, который будет использоваться для итерации по дереву.*/
     @Override
     public Iterator<Node<T>> iterator() {
         return new DepthFirstIterator();
     }
-
+    /**реализует интерфейс Iterator<Node<T>> и предоставляет методы для итерации по дереву в глубоком порядке.*/
     private class DepthFirstIterator implements Iterator<Node<T>> {
         private Stack<Node<T>> stack = new Stack<>();
 
@@ -260,11 +260,19 @@ class TreeIterableDFS<T> implements Iterable<Node<T>> {
             stack.push(root);
         }
 
+        /**переопределенный метод hasNext Iterator. Возвращает true,если очередь не пуста
+         * (есть еще узлы для обхода), и false в противном случае.*/
         @Override
         public boolean hasNext() {
             return !stack.isEmpty();
         }
 
+        /**переопределенный метод next интерфейса Iterator.
+         *  Возвращает следующий узел для обхода в ширину.
+         * Если очередь пуста, генерируется исключение NoSuchElementException.
+         * Иначе, извлекается первый узел из очереди, и для каждого дочернего
+         * узла текущего узла добавляется в
+         * очередь. Возвращается извлеченный узел.*/
         @Override
         public Node<T> next() {
             if (!hasNext()) {
