@@ -2,6 +2,7 @@ package zhitnik;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import java.util.Iterator;
 
 /**Test.*/
 public class TreeTest {
@@ -194,5 +195,26 @@ public class TreeTest {
 
         // Try to remove a node that doesn't exist in the tree, should throw an exception
         Assertions.assertThrows(IllegalArgumentException.class, () -> root.removeLeaf(child));
+    }
+
+    @Test
+    public void testNextOnEmptyTree() {
+        Node<Integer> root = new Node<>(3);  // предполагается, что узел без детей
+        TreeIterableDfs<Integer> tree = new TreeIterableDfs<>(root);
+        Iterator<Node<Integer>> iterator = tree.iterator();
+
+        iterator.next(); // first call should be valid
+        iterator.next(); // second call should throw NoSuchElementException
+    }
+
+    @Test
+    public void testConcurrentModification() {
+        Node<Integer> root = new Node<>(3);
+        TreeIterableDfs<Integer> tree = new TreeIterableDfs<>(root);
+        Iterator<Node<Integer>> iterator = tree.iterator();
+
+        iterator.next();
+        root.addChild(new Node<>(4));  // modify tree structure
+        iterator.next(); // should throw ConcurrentModificationException
     }
 }

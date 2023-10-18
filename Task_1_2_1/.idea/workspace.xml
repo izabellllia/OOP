@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed mistakes5 test4">
-      <change beforePath="$PROJECT_DIR$/src/main/java/zhitnik/TreeIterableBfs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/zhitnik/TreeIterableBfs.java" afterDir="false" />
+    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed mistakes6 and dogs:(">
+      <change beforePath="$PROJECT_DIR$/src/test/java/zhitnik/TreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/zhitnik/TreeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -321,7 +321,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697640042698</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="fixed mistakes6 :(">
+      <option name="closed" value="true" />
+      <created>1697640456962</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1697640456962</updated>
+    </task>
+    <task id="LOCAL-00034" summary="fixed mistakes6 and dogs:(">
+      <option name="closed" value="true" />
+      <created>1697640560915</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1697640560915</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -336,8 +352,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test8 javadoc and dogs" />
-    <MESSAGE value="test9 dogs" />
     <MESSAGE value="test10 dogs" />
     <MESSAGE value="test11 dogs" />
     <MESSAGE value="test12 dogs" />
@@ -361,6 +375,8 @@
     <MESSAGE value="fixed mistakes5 test2" />
     <MESSAGE value="fixed mistakes5 test3" />
     <MESSAGE value="fixed mistakes5 test4" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed mistakes5 test4" />
+    <MESSAGE value="fixed mistakes6 :(" />
+    <MESSAGE value="fixed mistakes6 and dogs:(" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed mistakes6 and dogs:(" />
   </component>
 </project>
