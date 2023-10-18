@@ -1,5 +1,6 @@
 package zhitnik;
 
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
@@ -23,21 +24,26 @@ class TreeIterableBfs<T> implements Iterable<Node<T>> {
         return new zhitnik.TreeIterableBfs.BreadthFirstIterator(root);
     }
 
-
     /**это вложенный класс, который реализует интерфейс
      * iterator node. Он реализует итерацию по узлам дерева в порядке BFS.*/
     private class BreadthFirstIterator<T> implements Iterator<Node<T>> {
         /**приватное поле, хранящее очередь узлов для обхода в ширину.*/
         private Queue<Node<T>> queue = new LinkedList<>();
 
+        // модифицированное поле счетчика
+        private int modCount = 0;
+        private int expectedModCount = 0;
+
         public BreadthFirstIterator(Node<T> root) {
             if (root != null) {
                 queue.add(root);
+                modCount++;
             }
         }
-        /**переопределенный метод hasNext Iterator. Возвращает true,если очередь не пуста
-         * (есть еще узлы для обхода), и false в противном случае.*/
 
+        /**переопределенный метод hasNext Iterator.
+         * Возвращает true,если очередь не пуста
+         * (есть еще узлы для обхода), и false в противном случае.*/
         @Override
         public boolean hasNext() {
             return !queue.isEmpty();
@@ -51,14 +57,22 @@ class TreeIterableBfs<T> implements Iterable<Node<T>> {
          * очередь. Возвращается извлеченный узел.*/
         @Override
         public Node<T> next() {
+            checkForComodification();
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
             Node<T> current = queue.poll();
             for (Node<T> child : current.getChildren()) {
                 queue.offer(child);
+                modCount++;
             }
+            expectedModCount = modCount;
             return current;
+        }
+
+        final void checkForComodification() {
+            if (modCount != expectedModCount)
+                throw new ConcurrentModificationException();
         }
     }
 }
