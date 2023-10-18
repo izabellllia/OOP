@@ -1,13 +1,6 @@
 package zhitnik;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Objects;
-import java.util.Queue;
-import java.util.Stack;
 
 /**Класс Tree представляет дерево и имеет корневой узел. Он предоставляет
  * методы для проверки, пустое ли дерево, и для получения высоты дерева.*/

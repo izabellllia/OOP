@@ -3,6 +3,7 @@ package zhitnik;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Iterator;
 
 /**Представляет узел в дереве. Каждый узел имеет данные типа T и список дочерних узлов.
  * Он предоставляет методы для получения и установки данных и дочерних узлов,
@@ -26,20 +27,9 @@ class Node<T> {
         return data;
     }
 
-    /** метод, устанавливающий переданные данные как данные узла.*/
-    public void setData(T data) {
-        this.data = data;
-    }
-
     /**метод, возвращающий список дочерних узлов текущего узла.*/
     public List<Node<T>> getChildren() {
         return children;
-    }
-
-    /**метод, устанавливающий переданный список
-     * дочерних узлов как список дочерних узлов текущего узла.*/
-    public void setChildren(List<Node<T>> children) {
-        this.children = children;
     }
 
     /**метод, добавляющий переданный узел в список дочерних узлов текущего узла.*/
@@ -63,8 +53,16 @@ class Node<T> {
             throw new IllegalArgumentException("Node is not part of the tree");
         }
 
-        parent.getChildren().remove(leaf);
+        Iterator<Node<T>> iterator = parent.getChildren().iterator();
+        while (iterator.hasNext()) {
+            Node<T> child = iterator.next();
+            if (child.equals(leaf)) {
+                iterator.remove();
+                break;
+            }
+        }
     }
+
 
     /**Это вспомогательный метод, используемый методом RemoveLeaf
      * для поиска родительского узла targetNode в дереве.*/
