@@ -1,6 +1,5 @@
 package zhitnik;
 
-import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
@@ -8,10 +7,11 @@ import java.util.Queue;
 
 /**класс, который реализует интерфейс iterable node. Он позволяет
  * создать итератор для обхода узлов дерева в порядке BFS.*/
-class TreeIterableBfs<T> implements Iterable<Node<T>> {
+public class TreeIterableBfs<T> implements Iterable<Node<T>> {
     /**приватное поле, хранящее корневой узел дерева.*/
     private Node<T> root;
 
+    /**конструктор класса.*/
     public TreeIterableBfs(Node<T> root) {
         this.root = root;
     }
@@ -21,23 +21,17 @@ class TreeIterableBfs<T> implements Iterable<Node<T>> {
      * который будет использоваться для итерации по дереву.*/
     @Override
     public Iterator<Node<T>> iterator() {
-        return new zhitnik.TreeIterableBfs.BreadthFirstIterator(root);
+        return new BreadthFirstIterator(root);
     }
 
     /**это вложенный класс, который реализует интерфейс
      * iterator node. Он реализует итерацию по узлам дерева в порядке BFS.*/
-    private class BreadthFirstIterator<T> implements Iterator<Node<T>> {
-        /**приватное поле, хранящее очередь узлов для обхода в ширину.*/
+    private class BreadthFirstIterator implements Iterator<Node<T>> {
         private Queue<Node<T>> queue = new LinkedList<>();
-
-        // модифицированное поле счетчика
-        private int modCount = 0;
-        private int expectedModCount = 0;
 
         public BreadthFirstIterator(Node<T> root) {
             if (root != null) {
                 queue.add(root);
-                modCount++;
             }
         }
 
@@ -57,22 +51,14 @@ class TreeIterableBfs<T> implements Iterable<Node<T>> {
          * очередь. Возвращается извлеченный узел.*/
         @Override
         public Node<T> next() {
-            checkForComodification();
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
             Node<T> current = queue.poll();
             for (Node<T> child : current.getChildren()) {
                 queue.offer(child);
-                modCount++;
             }
-            expectedModCount = modCount;
             return current;
-        }
-
-        final void checkForComodification() {
-            if (modCount != expectedModCount)
-                throw new ConcurrentModificationException();
         }
     }
 }

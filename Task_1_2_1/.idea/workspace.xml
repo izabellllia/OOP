@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed mistakes5 test3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed mistakes5 test4">
+      <change beforePath="$PROJECT_DIR$/src/main/java/zhitnik/TreeIterableBfs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/zhitnik/TreeIterableBfs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,7 +313,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697638596480</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="fixed mistakes5 test4">
+      <option name="closed" value="true" />
+      <created>1697640042698</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1697640042698</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -328,7 +336,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test7" />
     <MESSAGE value="test8 javadoc and dogs" />
     <MESSAGE value="test9 dogs" />
     <MESSAGE value="test10 dogs" />
@@ -353,6 +360,7 @@
     <MESSAGE value="fixed mistakes5 test" />
     <MESSAGE value="fixed mistakes5 test2" />
     <MESSAGE value="fixed mistakes5 test3" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed mistakes5 test3" />
+    <MESSAGE value="fixed mistakes5 test4" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed mistakes5 test4" />
   </component>
 </project>
