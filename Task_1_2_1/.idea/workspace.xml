@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed mistakes10 :((">
+    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed mistakes12 :(((((((">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/zhitnik/TreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/zhitnik/TreeTest.java" afterDir="false" />
     </list>
@@ -362,7 +362,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697647810140</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="fixed mistakes11 :((">
+      <option name="closed" value="true" />
+      <created>1697648452118</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1697648452118</updated>
+    </task>
+    <task id="LOCAL-00039" summary="fixed mistakes12 :(((((((">
+      <option name="closed" value="true" />
+      <created>1697648536878</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1697648536878</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -377,8 +393,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test13 hatedogs" />
-    <MESSAGE value="test14 hatedogs" />
     <MESSAGE value="add DFS" />
     <MESSAGE value="BFS iter" />
     <MESSAGE value="all add i think" />
@@ -402,6 +416,8 @@
     <MESSAGE value="fixed mistakes7 :((" />
     <MESSAGE value="fixed mistakes9 :((" />
     <MESSAGE value="fixed mistakes10 :((" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed mistakes10 :((" />
+    <MESSAGE value="fixed mistakes11 :((" />
+    <MESSAGE value="fixed mistakes12 :(((((((" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed mistakes12 :(((((((" />
   </component>
 </project>

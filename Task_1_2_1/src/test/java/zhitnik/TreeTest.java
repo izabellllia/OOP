@@ -218,11 +218,11 @@ public class TreeTest {
     }
 
     @Test
-    void testAddChildSetsParent() {
-        Node<String> parentNode = new Node<>("Parent");
+    void testGetTreeFromAnyNode() {
+        Tree<String> tree = new Tree<>("Root");
         Node<String> childNode = new Node<>("Child");
-        parentNode.addChild(childNode);
-        Assertions.assertEquals(parentNode, childNode.getData());
+        tree.getRoot().addChild(childNode);
+        Assertions.assertEquals(tree, childNode.getData());
     }
 
 }
