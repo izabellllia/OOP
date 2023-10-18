@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed mistakes3 and build mistake">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed mistakes4" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -281,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697618864472</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="fixed mistakes4">
+      <option name="closed" value="true" />
+      <created>1697636864608</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1697636864608</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,7 +302,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test3" />
     <MESSAGE value="test4" />
     <MESSAGE value="test5" />
     <MESSAGE value="test6" />
@@ -321,6 +326,7 @@
     <MESSAGE value="fixed dogs2" />
     <MESSAGE value="fixed mistakes2" />
     <MESSAGE value="fixed mistakes3 and build mistake" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed mistakes3 and build mistake" />
+    <MESSAGE value="fixed mistakes4" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed mistakes4" />
   </component>
 </project>
