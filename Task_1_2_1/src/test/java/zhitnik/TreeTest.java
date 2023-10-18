@@ -218,11 +218,29 @@ public class TreeTest {
     }
 
     @Test
-    void testGetTreeFromAnyNode() {
-        Tree<String> tree = new Tree<>("Root");
-        Node<String> childNode = new Node<>("Child");
-        tree.getRoot().addChild(childNode);
-        Assertions.assertEquals(tree, childNode.getData());
+    public void testGetData() {
+        Node<String> node = new Node<>("A");
+        Assertions.assertEquals("A", node.getData());
     }
+
+    @Test
+    public void testRemoveLeafRootException() {
+        Node<String> rootNode = new Node<>("A");
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            rootNode.removeLeaf(rootNode);
+        });
+    }
+
+    @Test
+    public void testRemoveLeafNotInTreeException() {
+        Node<String> parentNode = new Node<>("A");
+        Node<String> nonChildNode = new Node<>("B");
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            parentNode.removeLeaf(nonChildNode);
+        });
+    }
+
 
 }
