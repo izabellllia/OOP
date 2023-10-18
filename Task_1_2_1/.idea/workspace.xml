@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed mistakes5 test2">
+    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed mistakes5 test3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -305,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697637725760</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fixed mistakes5 test3">
+      <option name="closed" value="true" />
+      <created>1697638596480</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1697638596480</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -320,7 +328,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test6" />
     <MESSAGE value="test7" />
     <MESSAGE value="test8 javadoc and dogs" />
     <MESSAGE value="test9 dogs" />
@@ -345,6 +352,7 @@
     <MESSAGE value="fixed mistakes4" />
     <MESSAGE value="fixed mistakes5 test" />
     <MESSAGE value="fixed mistakes5 test2" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed mistakes5 test2" />
+    <MESSAGE value="fixed mistakes5 test3" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed mistakes5 test3" />
   </component>
 </project>
