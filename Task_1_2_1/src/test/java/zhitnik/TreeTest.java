@@ -92,8 +92,8 @@ public class TreeTest {
         Node<String> nodeB = new Node<>("B");
         Node<String> nodeC = new Node<>("C");
         Node<String> nodeD = new Node<>("D");
-        Node<String> nodeE = new Node<>("E");
-        Node<String> nodeF = new Node<>("F");
+        final Node<String> nodeE = new Node<>("E");
+        final Node<String> nodeF = new Node<>("F");
 
         tree.getRoot().addChild(nodeB); // "A" -> "B", "C", "D", "E"
         tree.getRoot().addChild(nodeC);
