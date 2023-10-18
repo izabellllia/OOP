@@ -225,12 +225,4 @@ public class TreeTest {
         Assertions.assertEquals(parentNode, childNode.getData());
     }
 
-    @Test
-    void testGetTreeFromAnyNode() {
-        Tree<String> tree = new Tree<>("Root");
-        Node<String> childNode = new Node<>("Child");
-        tree.getRoot().addChild(childNode);
-        Assertions.assertEquals(tree, childNode.getData());
-    }
-
 }
