@@ -3,7 +3,6 @@ package zhitnik;
 import java.util.ConcurrentModificationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import java.util.Iterator;
 
 /**Test.*/
 public class TreeTest {
@@ -217,4 +216,21 @@ public class TreeTest {
             }
         });
     }
+
+    @Test
+    void testAddChildSetsParent() {
+        Node<String> parentNode = new Node<>("Parent");
+        Node<String> childNode = new Node<>("Child");
+        parentNode.addChild(childNode);
+        Assertions.assertEquals(parentNode, childNode.getData());
+    }
+
+    @Test
+    void testGetTreeFromAnyNode() {
+        Tree<String> tree = new Tree<>("Root");
+        Node<String> childNode = new Node<>("Child");
+        tree.getRoot().addChild(childNode);
+        Assertions.assertEquals(tree, childNode.getData());
+    }
+
 }
