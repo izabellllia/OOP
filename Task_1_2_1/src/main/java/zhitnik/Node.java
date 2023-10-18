@@ -1,8 +1,8 @@
 package zhitnik;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Objects;
 
 /**Представляет узел в дереве. Каждый узел имеет данные типа T и список дочерних узлов.
