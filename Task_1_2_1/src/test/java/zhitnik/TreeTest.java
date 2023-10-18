@@ -88,6 +88,26 @@ public class TreeTest {
     }
 
     @Test
+    void testCorrectHierarchy() {
+        Tree<String> tree = new Tree<>("A");
+        Node<String> nodeB = new Node<>("B");
+        Node<String> nodeC = new Node<>("C");
+        Node<String> nodeD = new Node<>("D");
+        Node<String> nodeE = new Node<>("E");
+        Node<String> nodeF = new Node<>("F");
+
+        tree.getRoot().addChild(nodeB); // "A" -> "B", "C", "D", "E"
+        tree.getRoot().addChild(nodeC);
+        tree.getRoot().addChild(nodeD);
+        tree.getRoot().addChild(nodeE);
+
+        nodeE.addChild(nodeF); // "E" -> "F"
+
+        Assertions.assertEquals(4, tree.getRoot().getChildren().size());
+        Assertions.assertEquals("F", nodeE.getChildren().get(0).getData());
+    }
+
+    @Test
     void testNotEquals() {
         Tree<String> tree1 = new Tree<>("A");
         Node<String> nodeB1 = new Node<>("B");

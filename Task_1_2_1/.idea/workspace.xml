@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed mistakes7 :((">
+    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed mistakes9 :((">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/zhitnik/TreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/zhitnik/TreeTest.java" afterDir="false" />
     </list>
@@ -346,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697643407636</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="fixed mistakes9 :((">
+      <option name="closed" value="true" />
+      <created>1697647202018</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1697647202018</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -361,7 +369,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test11 dogs" />
     <MESSAGE value="test12 dogs" />
     <MESSAGE value="test13 hatedogs" />
     <MESSAGE value="test14 hatedogs" />
@@ -386,6 +393,7 @@
     <MESSAGE value="fixed mistakes6 :(" />
     <MESSAGE value="fixed mistakes6 and dogs:(" />
     <MESSAGE value="fixed mistakes7 :((" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed mistakes7 :((" />
+    <MESSAGE value="fixed mistakes9 :((" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed mistakes9 :((" />
   </component>
 </project>
