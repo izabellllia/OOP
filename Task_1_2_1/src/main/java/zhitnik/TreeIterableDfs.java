@@ -54,8 +54,9 @@ class TreeIterableDfs<T> implements Iterable<Node<T>> {
         }
 
         final void checkForComodification() {
-            if (modCount != expectedModCount)
+            if (modCount != expectedModCount) {
                 throw new ConcurrentModificationException();
+            }
         }
     }
 }
