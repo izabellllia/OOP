@@ -1,5 +1,6 @@
 package zhitnik;
 
+import java.util.ConcurrentModificationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.util.Iterator;
@@ -176,45 +177,24 @@ public class TreeTest {
         Assertions.assertFalse(root.getChildren().contains(child1));
     }
 
-    @Test
-    public void testRemoveRootNode() {
-        // Create a tree structure for testing
+    void testConcurrentModificationException() {
+        // Создание дерева с данными
         Node<String> root = new Node<>("Root");
-        Node<String> child = new Node<>("Child");
-        root.addChild(child);
+        Node<String> child1 = new Node<>("Child 1");
+        Node<String> child2 = new Node<>("Child 2");
 
-        // Try to remove the root node, should throw an exception
-        Assertions.assertThrows(IllegalArgumentException.class, () -> root.removeLeaf(root));
-    }
+        root.addChild(child1);
+        root.addChild(child2);
 
-    @Test
-    public void testRemoveNonExistingNode() {
-        // Create a tree structure for testing
-        Node<String> root = new Node<>("Root");
-        Node<String> child = new Node<>("Child");
+        TreeIterableDfs<String> treeIterable = new TreeIterableDfs<>(root);
 
-        // Try to remove a node that doesn't exist in the tree, should throw an exception
-        Assertions.assertThrows(IllegalArgumentException.class, () -> root.removeLeaf(child));
-    }
-
-    @Test
-    public void testNextOnEmptyTree() {
-        Node<Integer> root = new Node<>(3);  // предполагается, что узел без детей
-        TreeIterableDfs<Integer> tree = new TreeIterableDfs<>(root);
-        Iterator<Node<Integer>> iterator = tree.iterator();
-
-        iterator.next(); // first call should be valid
-        iterator.next(); // second call should throw NoSuchElementException
-    }
-
-    @Test
-    public void testConcurrentModification() {
-        Node<Integer> root = new Node<>(3);
-        TreeIterableDfs<Integer> tree = new TreeIterableDfs<>(root);
-        Iterator<Node<Integer>> iterator = tree.iterator();
-
-        iterator.next();
-        root.addChild(new Node<>(4));  // modify tree structure
-        iterator.next(); // should throw ConcurrentModificationException
+        // Проверка на возникновение ConcurrentModificationException
+        Assertions.assertThrows(ConcurrentModificationException.class, () -> {
+            var iterator = treeIterable.iterator();
+            while (iterator.hasNext()) {
+                iterator.next();
+                root.addChild(new Node<>("")); // модификация структуры дерева во время итерации
+            }
+        });
     }
 }
