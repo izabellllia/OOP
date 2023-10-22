@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed mistakes13 :(((((((((">
+      <change beforePath="$PROJECT_DIR$/src/test/java/zhitnik/TreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/zhitnik/TreeTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2WLXdu3dgmVA2jSzV3uoxMwUy3y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;task-1-2-1&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/elizavetazhitnik/OOP/Task_1_2_1/src/main/java/zhitnik/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/zhitnik" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="" />
+      <created>1696512925756</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696512925756</updated>
+    </task>
+    <task id="LOCAL-00001" summary="test2">
+      <option name="closed" value="true" />
+      <created>1696698026256</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696698026256</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test3">
+      <option name="closed" value="true" />
+      <created>1696698401465</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696698401465</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test4">
+      <option name="closed" value="true" />
+      <created>1696700535796</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696700535796</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test5">
+      <option name="closed" value="true" />
+      <created>1696771443332</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696771443332</updated>
+    </task>
+    <task id="LOCAL-00005" summary="test6">
+      <option name="closed" value="true" />
+      <created>1696772916476</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696772916476</updated>
+    </task>
+    <task id="LOCAL-00006" summary="test7">
+      <option name="closed" value="true" />
+      <created>1696774051914</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696774051914</updated>
+    </task>
+    <task id="LOCAL-00007" summary="test8 javadoc and dogs">
+      <option name="closed" value="true" />
+      <created>1696775179953</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696775179953</updated>
+    </task>
+    <task id="LOCAL-00008" summary="test9 dogs">
+      <option name="closed" value="true" />
+      <created>1696775729760</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696775729760</updated>
+    </task>
+    <task id="LOCAL-00009" summary="test10 dogs">
+      <option name="closed" value="true" />
+      <created>1696776259924</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696776259924</updated>
+    </task>
+    <task id="LOCAL-00010" summary="test11 dogs">
+      <option name="closed" value="true" />
+      <created>1696779999017</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696779999017</updated>
+    </task>
+    <task id="LOCAL-00011" summary="test12 dogs">
+      <option name="closed" value="true" />
+      <created>1696780282704</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696780282704</updated>
+    </task>
+    <task id="LOCAL-00012" summary="test13 hatedogs">
+      <option name="closed" value="true" />
+      <created>1696780616128</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696780616128</updated>
+    </task>
+    <task id="LOCAL-00013" summary="test14 hatedogs">
+      <option name="closed" value="true" />
+      <created>1696780826461</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696780826461</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add DFS">
+      <option name="closed" value="true" />
+      <created>1697534009362</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1697534009362</updated>
+    </task>
+    <task id="LOCAL-00015" summary="BFS iter">
+      <option name="closed" value="true" />
+      <created>1697550069028</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1697550069028</updated>
+    </task>
+    <task id="LOCAL-00016" summary="all add i think">
+      <option name="closed" value="true" />
+      <created>1697554943096</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1697554943096</updated>
+    </task>
+    <task id="LOCAL-00017" summary="all add i think">
+      <option name="closed" value="true" />
+      <created>1697554983468</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1697554983468</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fixed some rewiewdogs">
+      <option name="closed" value="true" />
+      <created>1697555508347</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1697555508347</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fixed some rewiewdogs2">
+      <option name="closed" value="true" />
+      <created>1697555786845</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1697555786845</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fixed some rewiewdogs3">
+      <option name="closed" value="true" />
+      <created>1697556018694</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1697556018694</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fixed some rewiewdogs4">
+      <option name="closed" value="true" />
+      <created>1697556305262</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1697556305262</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fixed some rewiewdogs5">
+      <option name="closed" value="true" />
+      <created>1697557967223</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1697557967223</updated>
+    </task>
+    <task id="LOCAL-00023" summary="fixed some mistakes">
+      <option name="closed" value="true" />
+      <created>1697602066784</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1697602066784</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fixed dogs">
+      <option name="closed" value="true" />
+      <created>1697602159389</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1697602159389</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fixed dogs2">
+      <option name="closed" value="true" />
+      <created>1697602279636</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1697602279636</updated>
+    </task>
+    <task id="LOCAL-00026" summary="fixed mistakes2">
+      <option name="closed" value="true" />
+      <created>1697618651178</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1697618651178</updated>
+    </task>
+    <task id="LOCAL-00027" summary="fixed mistakes3 and build mistake">
+      <option name="closed" value="true" />
+      <created>1697618864472</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1697618864472</updated>
+    </task>
+    <task id="LOCAL-00028" summary="fixed mistakes4">
+      <option name="closed" value="true" />
+      <created>1697636864608</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1697636864608</updated>
+    </task>
+    <task id="LOCAL-00029" summary="fixed mistakes5 test">
+      <option name="closed" value="true" />
+      <created>1697637087613</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1697637087613</updated>
+    </task>
+    <task id="LOCAL-00030" summary="fixed mistakes5 test2">
+      <option name="closed" value="true" />
+      <created>1697637725760</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1697637725760</updated>
+    </task>
+    <task id="LOCAL-00031" summary="fixed mistakes5 test3">
+      <option name="closed" value="true" />
+      <created>1697638596480</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1697638596480</updated>
+    </task>
+    <task id="LOCAL-00032" summary="fixed mistakes5 test4">
+      <option name="closed" value="true" />
+      <created>1697640042698</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1697640042698</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fixed mistakes6 :(">
+      <option name="closed" value="true" />
+      <created>1697640456962</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1697640456962</updated>
+    </task>
+    <task id="LOCAL-00034" summary="fixed mistakes6 and dogs:(">
+      <option name="closed" value="true" />
+      <created>1697640560915</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1697640560915</updated>
+    </task>
+    <task id="LOCAL-00035" summary="fixed mistakes7 :((">
+      <option name="closed" value="true" />
+      <created>1697643407636</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1697643407636</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fixed mistakes9 :((">
+      <option name="closed" value="true" />
+      <created>1697647202018</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1697647202018</updated>
+    </task>
+    <task id="LOCAL-00037" summary="fixed mistakes10 :((">
+      <option name="closed" value="true" />
+      <created>1697647810140</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1697647810140</updated>
+    </task>
+    <task id="LOCAL-00038" summary="fixed mistakes11 :((">
+      <option name="closed" value="true" />
+      <created>1697648452118</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1697648452118</updated>
+    </task>
+    <task id="LOCAL-00039" summary="fixed mistakes12 :(((((((">
+      <option name="closed" value="true" />
+      <created>1697648536878</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1697648536878</updated>
+    </task>
+    <task id="LOCAL-00040" summary="fixed mistakes13 :(((((((((">
+      <option name="closed" value="true" />
+      <created>1697649260798</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1697649260798</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="BFS iter" />
+    <MESSAGE value="all add i think" />
+    <MESSAGE value="fixed some rewiewdogs" />
+    <MESSAGE value="fixed some rewiewdogs2" />
+    <MESSAGE value="fixed some rewiewdogs3" />
+    <MESSAGE value="fixed some rewiewdogs4" />
+    <MESSAGE value="fixed some rewiewdogs5" />
+    <MESSAGE value="fixed some mistakes" />
+    <MESSAGE value="fixed dogs" />
+    <MESSAGE value="fixed dogs2" />
+    <MESSAGE value="fixed mistakes2" />
+    <MESSAGE value="fixed mistakes3 and build mistake" />
+    <MESSAGE value="fixed mistakes4" />
+    <MESSAGE value="fixed mistakes5 test" />
+    <MESSAGE value="fixed mistakes5 test2" />
+    <MESSAGE value="fixed mistakes5 test3" />
+    <MESSAGE value="fixed mistakes5 test4" />
+    <MESSAGE value="fixed mistakes6 :(" />
+    <MESSAGE value="fixed mistakes6 and dogs:(" />
+    <MESSAGE value="fixed mistakes7 :((" />
+    <MESSAGE value="fixed mistakes9 :((" />
+    <MESSAGE value="fixed mistakes10 :((" />
+    <MESSAGE value="fixed mistakes11 :((" />
+    <MESSAGE value="fixed mistakes12 :(((((((" />
+    <MESSAGE value="fixed mistakes13 :(((((((((" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed mistakes13 :(((((((((" />
+  </component>
+</project>
