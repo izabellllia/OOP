@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed mistakes13 :(((((((((">
-      <change beforePath="$PROJECT_DIR$/src/test/java/zhitnik/TreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/zhitnik/TreeTest.java" afterDir="false" />
+    <list default="true" id="095cbd2a-1cf1-454d-8a35-7ac327aa8ac2" name="Changes" comment="fixed rdog :(">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -385,7 +385,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697649260798</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="fixed mistakes14 :((((((((((((">
+      <option name="closed" value="true" />
+      <created>1697649783851</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1697649783851</updated>
+    </task>
+    <task id="LOCAL-00042" summary="fixed rdog :(">
+      <option name="closed" value="true" />
+      <created>1697650755966</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1697650755966</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -400,8 +416,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="BFS iter" />
-    <MESSAGE value="all add i think" />
     <MESSAGE value="fixed some rewiewdogs" />
     <MESSAGE value="fixed some rewiewdogs2" />
     <MESSAGE value="fixed some rewiewdogs3" />
@@ -425,6 +439,8 @@
     <MESSAGE value="fixed mistakes11 :((" />
     <MESSAGE value="fixed mistakes12 :(((((((" />
     <MESSAGE value="fixed mistakes13 :(((((((((" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed mistakes13 :(((((((((" />
+    <MESSAGE value="fixed mistakes14 :((((((((((((" />
+    <MESSAGE value="fixed rdog :(" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed rdog :(" />
   </component>
 </project>
