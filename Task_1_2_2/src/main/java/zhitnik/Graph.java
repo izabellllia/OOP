@@ -18,7 +18,7 @@ public class Graph<T> {
 
     /**Конструктор класса инициализирует
      * поля vertices, edges и distances.*/
-     public Graph() {
+    public Graph() {
         vertices = new ArrayList<>();
         edges = new ArrayList<>();
         distances = new HashMap<>();
@@ -31,50 +31,50 @@ public class Graph<T> {
 
     /**удаляет вершину из списка vertices и
      * все ребра, связанные с данной вершиной.*/
-     public void removeVertex(Vertex<T> vertex) {
+    public void removeVertex(Vertex<T> vertex) {
         vertices.remove(vertex);
         edges.removeIf(edge -> edge.getStart().equals(vertex) || edge.getEnd().equals(vertex));
     }
 
     /**добавляет ребро между вершинами start и end
      * с заданным весом weight в список edges.*/
-     public void addEdge(Vertex<T> start, Vertex<T> end, int weight) {
+    public void addEdge(Vertex<T> start, Vertex<T> end, int weight) {
         Edge<T> edge = new Edge<>(start, end, weight);
         edges.add(edge);
     }
 
     /**удаляет ребро из списка edges.*/
-     public void removeEdge(Edge<T> edge) {
+    public void removeEdge(Edge<T> edge) {
         edges.remove(edge);
     }
 
     /**озвращает данные, хранящиеся в вершине vertex.*/
-     public T getVertexData(Vertex<T> vertex) {
+    public T getVertexData(Vertex<T> vertex) {
         return vertex.getData();
     }
 
     /**устанавливает данные data для вершины vertex.*/
-     public void setVertexData(Vertex<T> vertex, T data) {
+    public void setVertexData(Vertex<T> vertex, T data) {
         vertex.setData(data);
     }
 
     /**возвращает данные, хранящиеся в ребре edge.*/
-     public T getEdgeData(Edge<T> edge) {
+    public T getEdgeData(Edge<T> edge) {
         return edge.getData();
     }
 
     /**устанавливает данные data для ребра edge.*/
-     public void setEdgeData(Edge<T> edge, T data) {
+    public void setEdgeData(Edge<T> edge, T data) {
         edge.setData(data);
     }
 
     /**возвращает список вершин графа.*/
-     public List<Vertex<T>> getVertices() {
+    public List<Vertex<T>> getVertices() {
         return vertices;
     }
 
     /**возвращает список ребер графа.*/
-     public List<Edge<T>> getEdges() {
+    public List<Edge<T>> getEdges() {
         return edges;
     }
 
@@ -83,7 +83,7 @@ public class Graph<T> {
      * Для определения расстояния используется алгоритм обхода графа
      * в глубину (DFS) с подсчетом расстояний от начальной вершины до
      * каждой другой вершины.*/
-     public List<Vertex<T>> sortVerticesByDistance(Vertex<T> source) {
+    public List<Vertex<T>> sortVerticesByDistance(Vertex<T> source) {
         distances.clear();
         distances.put(source, 0);
 
