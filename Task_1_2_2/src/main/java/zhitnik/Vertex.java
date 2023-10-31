@@ -1,21 +1,26 @@
 package zhitnik;
 
+/**представление вершины графа.*/
 public class Vertex<T> {
     private T data;
 
+    /**конструктор, который принимает данные вершины.*/
     public Vertex(T data) {
         this.data = data;
     }
 
+    /**возвращает данные вершины.*/
     public T getData() {
         return data;
     }
 
+    /**устанавливает данные вершины.*/
     public void setData(T data) {
         this.data = data;
     }
 
-    @Override
+    /** переопределенный метод для сравнения вершин по их данным.*/
+     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -27,7 +32,8 @@ public class Vertex<T> {
         return data.equals(vertex.data);
     }
 
-    @Override
+    /**переопределенный метод для вычисления хэш-кода вершины на основе ее данных.*/
+     @Override
     public int hashCode() {
         return data.hashCode();
     }

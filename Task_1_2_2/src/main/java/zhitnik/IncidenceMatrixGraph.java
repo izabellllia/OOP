@@ -4,21 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 
+/**Матрица инцидентности.Граф является
+ * обобщенным и параметризуется типом данных T,
+ * который представляет данные, хранящиеся в
+ * вершинах и ребрах графа.*/
 public class IncidenceMatrixGraph<T> {
     private List<Vertex<T>> vertices;
     private List<Edge<T>> edges;
     private int[][] incidenceMatrix;
 
+    /**конструктор класс.*/
     public IncidenceMatrixGraph(int vertexCount, int edgeCount) {
         vertices = new ArrayList<>();
         edges = new ArrayList<>();
         incidenceMatrix = new int[vertexCount][edgeCount];
     }
 
+    /**добавляет вершину.*/
     public void addVertex(Vertex<T> vertex) {
         vertices.add(vertex);
     }
 
+    /**удаляет вершину из списка vertices и
+     * сдвигает остальные вершины в случае
+     * удаления текущей вершины. Также удаляется
+     * последний столбец и строка в матрице
+     * инцидентности, так как они теперь неиспользуемые.*/
     public void removeVertex(Vertex<T> vertex) {
         int index = vertices.indexOf(vertex);
         if (index >= 0) {
@@ -39,6 +50,7 @@ public class IncidenceMatrixGraph<T> {
         }
     }
 
+    /**добавляет ребро.*/
     public void addEdge(Edge<T> edge) {
         edges.add(edge);
         int startIndex = vertices.indexOf(edge.getStart());
@@ -49,6 +61,8 @@ public class IncidenceMatrixGraph<T> {
         }
     }
 
+    /**удаляет ребро из списка edges и сдвигает
+     * остальные значения в матрице инцидентности.*/
     public void removeEdge(Edge<T> edge) {
         int index = edges.indexOf(edge);
         if (index >= 0) {
@@ -61,10 +75,12 @@ public class IncidenceMatrixGraph<T> {
         }
     }
 
+    /**возвращает список всех вершин.*/
     public List<Vertex<T>> getVertices() {
         return vertices;
     }
 
+    /**возвращает список всех ребер.*/
     public List<Edge<T>> getEdges() {
         return edges;
     }

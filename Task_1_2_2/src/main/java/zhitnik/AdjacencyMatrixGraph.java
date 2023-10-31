@@ -4,19 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 
+/**Матрица смежности.
+ * является обобщенным и параметризуется типом данных T,
+ * который представляет данные, хранящиеся
+ * в вершинах и ребрах графа.*/
 public class AdjacencyMatrixGraph<T> {
     private List<Vertex<T>> vertices;
     private int[][] adjacencyMatrix;
 
+    /**Конструктор класса инициализирует поля vertices и adjacencyMatrix.*/
     public AdjacencyMatrixGraph(int vertexCount) {
         vertices = new ArrayList<>();
         adjacencyMatrix = new int[vertexCount][vertexCount];
     }
 
+    /**добавляет вершину в список vertices.*/
     public void addVertex(Vertex<T> vertex) {
         vertices.add(vertex);
     }
 
+    /**удаляет вершину из списка vertices и все ребра,
+     * связанные с данной вершиной. При удалении вершины
+     * также происходит сдвиг остальных вершин в матрице
+     * смежности и удаление последнего столбца и строки.*/
     public void removeVertex(Vertex<T> vertex) {
         int index = vertices.indexOf(vertex);
         if (index >= 0) {
@@ -29,7 +39,6 @@ public class AdjacencyMatrixGraph<T> {
                 }
             }
 
-
             // Удаляем последний столбец и строку, так как они теперь неиспользуемые
             for (int i = 0; i < vertices.size(); i++) {
                 adjacencyMatrix[i] = adjacencyMatrix[i].clone();
@@ -38,6 +47,8 @@ public class AdjacencyMatrixGraph<T> {
         }
     }
 
+    /**добавляет ребро между вершинами start и end с
+     * заданным весом weight в матрицу смежности.*/
     public void addEdge(Vertex<T> start, Vertex<T> end, int weight) {
         int startIndex = vertices.indexOf(start);
         int endIndex = vertices.indexOf(end);
@@ -46,6 +57,7 @@ public class AdjacencyMatrixGraph<T> {
         }
     }
 
+    /**удаляет ребро между вершинами start и end из матрицы смежности.*/
     public void removeEdge(Vertex<T> start, Vertex<T> end) {
         int startIndex = vertices.indexOf(start);
         int endIndex = vertices.indexOf(end);
@@ -54,6 +66,7 @@ public class AdjacencyMatrixGraph<T> {
         }
     }
 
+    /**возвращает вес ребра между вершинами start и end из матрицы смежности.*/
     public int getEdgeWeight(Vertex<T> start, Vertex<T> end) {
         int startIndex = vertices.indexOf(start);
         int endIndex = vertices.indexOf(end);
@@ -63,6 +76,7 @@ public class AdjacencyMatrixGraph<T> {
         return 0;
     }
 
+    /**возвращает список вершин графа.*/
     public List<Vertex<T>> getVertices() {
         return vertices;
     }
