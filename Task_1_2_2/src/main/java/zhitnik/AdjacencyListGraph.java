@@ -14,18 +14,18 @@ public class AdjacencyListGraph<T> {
 
     /**словарь, где ключом является вершина графа,
      * а значением - список ребер, связанных с данной вершиной.*/
-     public AdjacencyListGraph() {
+    public AdjacencyListGraph() {
         adjacencyList = new HashMap<>();
     }
 
     /**добавляет вершину в словарь adjacencyList со списком пустых ребер.*/
-     public void addVertex(Vertex<T> vertex) {
+    public void addVertex(Vertex<T> vertex) {
         adjacencyList.put(vertex, new ArrayList<>());
     }
 
     /**удаляет вершину из словаря adjacencyList
      * и все ребра, связанные с данной вершиной.*/
-     public void removeVertex(Vertex<T> vertex) {
+    public void removeVertex(Vertex<T> vertex) {
         adjacencyList.remove(vertex);
         adjacencyList.values().forEach(edges -> edges.removeIf(edge -> edge.getStart().equals(vertex) || edge.getEnd().equals(vertex)));
     }
@@ -33,13 +33,13 @@ public class AdjacencyListGraph<T> {
     /**добавляет ребро между вершинами start и end
      * с заданным весом weight в список ребер,
      * связанных с вершиной start.*/
-     public void addEdge(Vertex<T> start, Vertex<T> end, int weight) {
+    public void addEdge(Vertex<T> start, Vertex<T> end, int weight) {
         Edge<T> edge = new Edge<>(start, end, weight);
         adjacencyList.get(start).add(edge);
     }
 
     /**удаляет ребро из списка ребер, связанных с каждой вершиной графа.*/
-     public void removeEdge(Edge<T> edge) {
+    public void removeEdge(Edge<T> edge) {
         adjacencyList.values().forEach(edges -> edges.remove(edge));
     }
 

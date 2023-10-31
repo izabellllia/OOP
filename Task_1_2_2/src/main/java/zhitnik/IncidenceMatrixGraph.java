@@ -1,8 +1,8 @@
 package zhitnik;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Arrays;
+import java.util.List;
 
 /**Матрица инцидентности.Граф является
  * обобщенным и параметризуется типом данных T,
