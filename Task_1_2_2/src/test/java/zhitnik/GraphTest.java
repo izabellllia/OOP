@@ -29,7 +29,7 @@ public class GraphTest {
         graph.addEdge(c, d, 3);
         graph.addEdge(d, e, 2);
 
-        List<Vertex<String>> sortedVertices = graph.sortVerticesByDistance(A);
+        List<Vertex<String>> sortedVertices = graph.sortVerticesByDistance(a);
 
         Assertions.assertEquals(a, sortedVertices.get(0));
         Assertions.assertEquals(b, sortedVertices.get(1));
