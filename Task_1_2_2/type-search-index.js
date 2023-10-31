@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"zhitnik","l":"AdjacencyListGraph"},{"p":"zhitnik","l":"AdjacencyMatrixGraph"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"zhitnik","l":"Edge"},{"p":"zhitnik","l":"Graph"},{"p":"zhitnik","l":"IncidenceMatrixGraph"},{"p":"zhitnik","l":"Vertex"}]
