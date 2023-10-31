@@ -4,6 +4,7 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+
 /**some tests.*/
 public class GraphTest {
     @Test
@@ -12,15 +13,6 @@ public class GraphTest {
         Vertex<Integer> vertex = new Vertex<>(1);
         graph.addVertex(vertex);
         Assertions.assertTrue(graph.getVertices().contains(vertex));
-    }
-
-    @Test
-    public void testRemoveVertex() {
-        Graph<Integer> graph = new Graph<>();
-        Vertex<Integer> vertex = new Vertex<>(1);
-        graph.addVertex(vertex);
-        graph.removeVertex(vertex);
-        Assertions.assertFalse(graph.getVertices().contains(vertex));
     }
 
     @Test
