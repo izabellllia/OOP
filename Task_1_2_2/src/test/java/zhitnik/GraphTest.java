@@ -1,6 +1,10 @@
 package zhitnik;
 
 import java.util.List;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -37,7 +41,7 @@ public class GraphTest {
         Assertions.assertEquals(d, sortedVertices.get(3));
         Assertions.assertEquals(e, sortedVertices.get(4));
     }
-    
+
     @Test
     public void testAddVertexAmG() {
         AdjacencyMatrixGraph<String> graph = new AdjacencyMatrixGraph<>(4);
@@ -136,5 +140,94 @@ public class GraphTest {
         Assertions.assertTrue(vertices.contains(vertexA));
         Assertions.assertTrue(vertices.contains(vertexB));
         Assertions.assertTrue(vertices.contains(vertexC));
+    }
+
+    @Test
+    public void testAddVertexAlG() {
+        AdjacencyListGraph<Integer> graph = new AdjacencyListGraph<>();
+        Vertex<Integer> vertex = new Vertex<>(1);
+        graph.addVertex(vertex);
+        Assertions.assertTrue(graph.getVertexData(vertex) == 1);
+    }
+
+    @Test
+    public void testRemoveVertexAlG() {
+        AdjacencyListGraph<Integer> graph = new AdjacencyListGraph<>();
+        Vertex<Integer> vertex1 = new Vertex<>(1);
+        Vertex<Integer> vertex2 = new Vertex<>(2);
+        graph.addVertex(vertex1);
+        graph.addVertex(vertex2);
+        graph.addEdge(vertex1, vertex2, 10);
+
+        graph.removeVertex(vertex1);
+        Assertions.assertNull(graph.getVertexData(vertex1));
+        Assertions.assertNull(graph.getEdgeData(new Edge<>(vertex1, vertex2, 10)));
+    }
+
+    @Test
+    public void testAddEdgeAlG() {
+        AdjacencyListGraph<Integer> graph = new AdjacencyListGraph<>();
+        Vertex<Integer> vertex1 = new Vertex<>(1);
+        Vertex<Integer> vertex2 = new Vertex<>(2);
+        graph.addVertex(vertex1);
+        graph.addVertex(vertex2);
+
+        graph.addEdge(vertex1, vertex2, 10);
+        Assertions.assertTrue(graph.getEdgeData(new Edge<>(vertex1, vertex2, 10)) == 10);
+    }
+
+    @Test
+    public void testRemoveEdgeAlG() {
+        AdjacencyListGraph<Integer> graph = new AdjacencyListGraph<>();
+        Vertex<Integer> vertex1 = new Vertex<>(1);
+        Vertex<Integer> vertex2 = new Vertex<>(2);
+        graph.addVertex(vertex1);
+        graph.addVertex(vertex2);
+
+        graph.addEdge(vertex1, vertex2, 10);
+        Edge<Integer> edge = new Edge<>(vertex1, vertex2, 10);
+
+        graph.removeEdge(edge);
+        Assertions.assertNull(graph.getEdgeData(edge));
+    }
+
+    @Test
+    public void testSetVertexDataAlG() {
+        AdjacencyListGraph<String> graph = new AdjacencyListGraph<>();
+        Vertex<String> vertex = new Vertex<>("A");
+        graph.addVertex(vertex);
+
+        graph.setVertexData(vertex, "B");
+        Assertions.assertTrue(graph.getVertexData(vertex).equals("B"));
+    }
+
+    @Test
+    public void testAddVertexImG() {
+        IncidenceMatrixGraph<Integer> graph = new IncidenceMatrixGraph<>(5, 6);
+        Vertex<Integer> vertex = new Vertex<>(1);
+        graph.addVertex(vertex);
+        Assertions.assertTrue(graph.getVertices().contains(vertex));
+    }
+
+    @Test
+    public void testRemoveVertexImG() {
+        IncidenceMatrixGraph<Integer> graph = new IncidenceMatrixGraph<>(5, 6);
+        Vertex<Integer> vertex = new Vertex<>(1);
+        graph.addVertex(vertex);
+        graph.removeVertex(vertex);
+        Assertions.assertFalse(graph.getVertices().contains(vertex));
+    }
+
+    @Test
+    public void testGetVerticesImG() {
+        IncidenceMatrixGraph<Integer> graph = new IncidenceMatrixGraph<>(5, 6);
+        Vertex<Integer> vertex1 = new Vertex<>(1);
+        Vertex<Integer> vertex2 = new Vertex<>(2);
+        graph.addVertex(vertex1);
+        graph.addVertex(vertex2);
+        List<Vertex<Integer>> vertices = graph.getVertices();
+        Assertions.assertEquals(2, vertices.size());
+        Assertions.assertTrue(vertices.contains(vertex1));
+        Assertions.assertTrue(vertices.contains(vertex2));
     }
 }

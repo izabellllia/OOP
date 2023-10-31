@@ -20,7 +20,7 @@ public class Vertex<T> {
     }
 
     /** переопределенный метод для сравнения вершин по их данным.*/
-     @Override
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -33,7 +33,7 @@ public class Vertex<T> {
     }
 
     /**переопределенный метод для вычисления хэш-кода вершины на основе ее данных.*/
-     @Override
+    @Override
     public int hashCode() {
         return data.hashCode();
     }
