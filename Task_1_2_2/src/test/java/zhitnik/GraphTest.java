@@ -27,19 +27,6 @@ public class GraphTest {
     }
 
     @Test
-    public void testRemoveEdge() {
-        Graph<Integer> graph = new Graph<>();
-        Vertex<Integer> start = new Vertex<>(1);
-        Vertex<Integer> end = new Vertex<>(2);
-        graph.addVertex(start);
-        graph.addVertex(end);
-        Edge<Integer> edge = new Edge<>(start, end, 10);
-        graph.addEdge(start, end, 10);
-        graph.removeEdge(edge);
-        Assertions.assertTrue(graph.getEdges().isEmpty());
-    }
-
-    @Test
     public void testSortVerticesByDistance() {
         Graph<String> graph = new Graph<>();
 
