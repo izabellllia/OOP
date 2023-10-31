@@ -7,6 +7,47 @@ import org.junit.jupiter.api.Test;
 /**some tests.*/
 public class GraphTest {
     @Test
+    public void testAddVertex() {
+        Graph<Integer> graph = new Graph<>();
+        Vertex<Integer> vertex = new Vertex<>(1);
+        graph.addVertex(vertex);
+        Assertions.assertTrue(graph.getVertices().contains(vertex));
+    }
+
+    @Test
+    public void testRemoveVertex() {
+        Graph<Integer> graph = new Graph<>();
+        Vertex<Integer> vertex = new Vertex<>(1);
+        graph.addVertex(vertex);
+        graph.removeVertex(vertex);
+        Assertions.assertFalse(graph.getVertices().contains(vertex));
+    }
+
+    @Test
+    public void testAddEdge() {
+        Graph<Integer> graph = new Graph<>();
+        Vertex<Integer> start = new Vertex<>(1);
+        Vertex<Integer> end = new Vertex<>(2);
+        graph.addVertex(start);
+        graph.addVertex(end);
+        graph.addEdge(start, end, 10);
+        Assertions.assertTrue(graph.getEdges().size() == 1);
+    }
+
+    @Test
+    public void testRemoveEdge() {
+        Graph<Integer> graph = new Graph<>();
+        Vertex<Integer> start = new Vertex<>(1);
+        Vertex<Integer> end = new Vertex<>(2);
+        graph.addVertex(start);
+        graph.addVertex(end);
+        Edge<Integer> edge = new Edge<>(start, end, 10);
+        graph.addEdge(start, end, 10);
+        graph.removeEdge(edge);
+        Assertions.assertTrue(graph.getEdges().isEmpty());
+    }
+
+    @Test
     public void testSortVerticesByDistance() {
         Graph<String> graph = new Graph<>();
 
@@ -144,6 +185,30 @@ public class GraphTest {
         Vertex<Integer> vertex = new Vertex<>(1);
         graph.addVertex(vertex);
         Assertions.assertTrue(graph.getVertexData(vertex) == 1);
+    }
+
+    @Test
+    public void testRemoveVertexAlG() {
+        AdjacencyListGraph<Integer> graph = new AdjacencyListGraph<>();
+        Vertex<Integer> vertex = new Vertex<>(1);
+
+        graph.addVertex(vertex);
+        graph.removeVertex(vertex);
+
+        Assertions.assertFalse(graph.getVertices().contains(vertex));
+    }
+
+    @Test
+    public void testAddEdgeAlG() {
+        AdjacencyListGraph<Integer> graph = new AdjacencyListGraph<>();
+        Vertex<Integer> vertex1 = new Vertex<>(1);
+        Vertex<Integer> vertex2 = new Vertex<>(2);
+
+        graph.addVertex(vertex1);
+        graph.addVertex(vertex2);
+        graph.addEdge(vertex1, vertex2, 10);
+
+        Assertions.assertTrue(graph.getEdges().size() > 0);
     }
 
     @Test
