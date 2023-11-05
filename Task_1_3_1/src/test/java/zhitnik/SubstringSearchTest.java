@@ -1,14 +1,14 @@
 package zhitnik;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
 /**some tests.*/
 public class SubstringSearchTest {
 
     @Test
-    public void BasicTest() {
+    public void basicTest() {
         List<Integer> indices = SubstringSearch.find("/Test1.txt", "бра");
         Assertions.assertEquals(2, indices.size());
         Assertions.assertEquals(1, (int) indices.get(0));

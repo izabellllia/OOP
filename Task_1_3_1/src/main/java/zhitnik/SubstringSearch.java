@@ -3,9 +3,9 @@ package zhitnik;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 
 /**основной класс, содержит метод find.*/
 public class SubstringSearch {
@@ -13,15 +13,15 @@ public class SubstringSearch {
      * список целых чисел,которые представляют индексы
      * вхождений подстроки в файле.*/
     public static List<Integer> find(String filename, String substring) {
-        /**создается пустой список, который будет содержать найденнын индексы.*/
+        //создается пустой список, который будет содержать найденнын индексы
         List<Integer> indices = new ArrayList<>();
         try (InputStream inputStream = SubstringSearch.class.getResourceAsStream(filename);
              BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
-            /**index - хранение текущего элемента,
-             * line - для чтения каждой строки файла.*/
+            //index - хранение текущего элемента
+            //line - для чтения каждой строки файла
             int index = 0;
             String line;
-            /**цикл чтения строк из файла.*/
+            //цикл чтения строк из файла
             while ((line = reader.readLine()) != null) {
                 int lineIndex = line.indexOf(substring);
                 while (lineIndex >= 0) {
