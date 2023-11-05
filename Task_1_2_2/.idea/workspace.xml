@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="13f5502a-cc94-48e4-a64a-ff7f92475376" name="Changes" comment="add test AlG2" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2X6oXbqzCOszbou2q07Tx8UuIIb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;task-1-2-2&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/elizavetazhitnik/OOP/Task_1_2_2/src/main/java/zhitnik/Main.java&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="13f5502a-cc94-48e4-a64a-ff7f92475376" name="Changes" comment="" />
+      <created>1697958931421</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697958931421</updated>
+    </task>
+    <task id="LOCAL-00001" summary="draft">
+      <option name="closed" value="true" />
+      <created>1698589186400</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698589186400</updated>
+    </task>
+    <task id="LOCAL-00002" summary="draft2 (but need add more tests)">
+      <option name="closed" value="true" />
+      <created>1698720996283</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698720996283</updated>
+    </task>
+    <task id="LOCAL-00003" summary="draft3 gradle prob">
+      <option name="closed" value="true" />
+      <created>1698721354880</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698721354880</updated>
+    </task>
+    <task id="LOCAL-00004" summary="draft4 gradle prob2">
+      <option name="closed" value="true" />
+      <created>1698721628617</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698721628617</updated>
+    </task>
+    <task id="LOCAL-00005" summary="draf5 javadoc and coco">
+      <option name="closed" value="true" />
+      <created>1698722040128</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698722040128</updated>
+    </task>
+    <task id="LOCAL-00006" summary="stupid mistake">
+      <option name="closed" value="true" />
+      <created>1698722116100</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698722116100</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add some tests">
+      <option name="closed" value="true" />
+      <created>1698743065317</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698743065317</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add some tests2">
+      <option name="closed" value="true" />
+      <created>1698743231451</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698743231451</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add test AlG">
+      <option name="closed" value="true" />
+      <created>1698761057735</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1698761057735</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add test AlG">
+      <option name="closed" value="true" />
+      <created>1698761585722</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1698761585722</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add test AlG2">
+      <option name="closed" value="true" />
+      <created>1698761722592</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1698761722592</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="draft" />
+    <MESSAGE value="draft2 (but need add more tests)" />
+    <MESSAGE value="draft3 gradle prob" />
+    <MESSAGE value="draft4 gradle prob2" />
+    <MESSAGE value="draf5 javadoc and coco" />
+    <MESSAGE value="stupid mistake" />
+    <MESSAGE value="add some tests" />
+    <MESSAGE value="add some tests2" />
+    <MESSAGE value="add test AlG" />
+    <MESSAGE value="add test AlG2" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test AlG2" />
+  </component>
+</project>
