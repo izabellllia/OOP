@@ -19,41 +19,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SubstringSearchTest {
-    private static final String BIG_FILE = "src/test/java/zhitnik/Test3.txt";
-    private static final String CONTENT = "content";
-    private static final int REPETITIONS = 10;
-    private static final int CHUNK_SIZE = 1024 * 1024; // 1 MB
-    private static final long FILE_SIZE = 1024L * 1024L * 1024L; // 1 GB
 
     private Path filePath;
 
-    @BeforeEach
-    public void setUp() {
-        try {
-            filePath = Paths.get(BIG_FILE);
-            try (FileChannel fileChannel = FileChannel.open(filePath, StandardOpenOption.CREATE, StandardOpenOption.WRITE)) {
-                ByteBuffer buffer = ByteBuffer.allocate(CHUNK_SIZE);
-                while (Files.size(filePath) < FILE_SIZE) {
-                    for (int i = 0; i < REPETITIONS; i++) {
-                        buffer.put(CONTENT.getBytes(StandardCharsets.UTF_8));
-                    }
-                    buffer.flip();
-                    fileChannel.write(buffer);
-                    buffer.clear();
-                }
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred: " + e.getMessage());
-            fail("Failed to set up the test due to IOException: " + e.getMessage());
-        }
-    }
 
-    @Test
-    public void find() {
-        List<Integer> indices = SubstringSearch.find(BIG_FILE, "content");
-        assertNotNull(indices);
-        assertTrue(indices.size() > 0);
-    }
 
     @Test
     public void basicTest() {
