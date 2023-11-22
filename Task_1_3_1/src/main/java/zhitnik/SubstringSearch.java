@@ -1,34 +1,37 @@
 package zhitnik;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-/**основной класс, содержит метод find.*/
 public class SubstringSearch {
-    /**метод принимает имя файла и подстроку - возвращает
-     * список целых чисел,которые представляют индексы
-     * вхождений подстроки в файле.*/
     public static List<Integer> find(String filename, String substring) {
-        //создается пустой список, который будет содержать найденнын индексы
         List<Integer> indices = new ArrayList<>();
-        try (InputStream inputStream = SubstringSearch.class.getResourceAsStream(filename);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
-            //index - хранение текущего элемента
-            //line - для чтения каждой строки файла
+        InputStream resourceAsStream = SubstringSearch.class.getResourceAsStream(filename);
+        if (resourceAsStream == null) {
+            try {
+                resourceAsStream = new FileInputStream(filename);
+            } catch (FileNotFoundException e){
+                System.err.println("Не удается найти файл " + filename);
+                return indices;
+            }
+        }
+
+        try (InputStreamReader inputStreamReader = new InputStreamReader(resourceAsStream, StandardCharsets.UTF_8);
+             BufferedReader reader = new BufferedReader(inputStreamReader)) {
             int index = 0;
-            String line;
-            //цикл чтения строк из файла
-            while ((line = reader.readLine()) != null) {
+            char[] buffer = new char[1024];
+            int bytesRead;
+            while ((bytesRead = reader.read(buffer)) != -1) {
+                String line = new String(buffer, 0, bytesRead);
                 int lineIndex = line.indexOf(substring);
+                int lineStartIndex = 0;
                 while (lineIndex >= 0) {
-                    indices.add(index + lineIndex);
+                    indices.add(index + lineStartIndex + lineIndex);
                     lineIndex = line.indexOf(substring, lineIndex + 1);
                 }
-                index += line.length();
+                index += bytesRead;
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -36,4 +39,3 @@ public class SubstringSearch {
         return indices;
     }
 }
-
