@@ -1,5 +1,6 @@
 package zhitnik;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -22,6 +23,23 @@ public class ElectronicGradeBook {
         this.finalExamGrade = finalExamGrade;
         this.qualificationWorkGrade = qualificationWorkGrade;
     }
+
+    /**Добавляет оценку на карту оценок по предметам.*/
+    public void addGrade(String subject, int grade) {
+        if (gradesBySubject.containsKey(subject)) {
+            gradesBySubject.get(subject).add(grade);
+        } else {
+            List<Integer> grades = new ArrayList<>();
+            grades.add(grade);
+            gradesBySubject.put(subject, grades);
+        }
+    }
+
+    /**Возвращает список оценок по определенному предмету.*/
+    public List<Integer> getGradesForSubject(String subject) {
+        return gradesBySubject.get(subject);
+    }
+
 
     /**Рассчитывает общий средний балл путем суммирования
      * всех оценок и деления на общее количество оценок.*/
@@ -49,9 +67,9 @@ public class ElectronicGradeBook {
                 }
             }
         }
-        return excellentGradesCount >= calculateOverallGpa() * 0.75 &&
-                finalExamGrade == 5 &&
-                qualificationWorkGrade == 5;
+        return excellentGradesCount >= calculateOverallGpa() * 0.75
+                && finalExamGrade == 5
+                && qualificationWorkGrade == 5;
     }
 
     /**Проверяет, нет ли у учащегося оценок ниже 4,
