@@ -1,19 +1,17 @@
 package zhitnik;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        double[] grades = {4.5, 4.8, 4.9, 5.0};
+        ElectronicGradeBook gradeBook = new ElectronicGradeBook("John Doe", grades, 4.7, 5.0);
 
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        double overallGPA = gradeBook.calculateOverallGPA();
+        System.out.println("Overall GPA: " + overallGPA);
 
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
-        }
+        boolean isEligibleForHonorsDegree = gradeBook.isEligibleForHonorsDegree();
+        System.out.println("Eligible for honors degree: " + isEligibleForHonorsDegree);
+
+        boolean isEligibleForIncreasedScholarship = gradeBook.isEligibleForIncreasedScholarship();
+        System.out.println("Eligible for increased scholarship: " + isEligibleForIncreasedScholarship);
     }
 }
