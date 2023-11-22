@@ -153,13 +153,14 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,double%5B%5D,double,double)">ElectronicGradeBook</a></span>&#8203;(java.lang.String&nbsp;studentName,
-                   double[]&nbsp;grades,
-                   double&nbsp;finalExamGrade,
-                   double&nbsp;qualificationWorkGrade)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.util.Map,int,int)">ElectronicGradeBook</a></span>&#8203;(java.lang.String&nbsp;studentName,
+                   java.util.Map&lt;java.lang.String,&#8203;java.util.List&lt;java.lang.Integer&gt;&gt;&nbsp;gradesBySubject,
+                   int&nbsp;finalExamGrade,
+                   int&nbsp;qualificationWorkGrade)</code></th>
 <td class="colLast">
-<div class="block">Конструктор принимает 4 аргумента, используется для
- инициализации экземпляра класса с этими значениями.</div>
+<div class="block">Инициализирует имя учащегося, оценки
+ по предмету, оценку итогового экзамена
+ и оценку квалификационной работы.</div>
 </td>
 </tr>
 </table>
@@ -184,25 +185,25 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#calculateOverallGpa()">calculateOverallGpa</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Вычисляется средний балл.</div>
+<div class="block">Рассчитывает общий средний балл путем суммирования
+ всех оценок и деления на общее количество оценок.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isEligibleForHonorsDegree()">isEligibleForHonorsDegree</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Проверяет возможность получения красного диплома,
- большинство оценок (как минимум 75%) должны быть равны 5.0,
- а также оценка за финальный экзамен и квалификационную работу
- также должны быть равны 5.0.</div>
+<div class="block">Проверяет, имеет ли студент достаточно отличных оценок,
+ высоких оценок за выпускной экзамен и квалификационную
+ работу, чтобы иметь право на получение степени с отличием.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isEligibleForIncreasedScholarship()">isEligibleForIncreasedScholarship</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Проверка на возможность получения стипендии,
- для этого все оценки студента должны быть не ниже 4.0.</div>
+<div class="block">Проверяет, нет ли у учащегося оценок ниже 4,
+ что дает ему право на повышенную стипендию.</div>
 </td>
 </tr>
 </table>
@@ -229,18 +230,19 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(java.lang.String,double[],double,double)">
+<a id="&lt;init&gt;(java.lang.String,java.util.Map,int,int)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ElectronicGradeBook</h4>
 <pre>public&nbsp;ElectronicGradeBook&#8203;(java.lang.String&nbsp;studentName,
-                           double[]&nbsp;grades,
-                           double&nbsp;finalExamGrade,
-                           double&nbsp;qualificationWorkGrade)</pre>
-<div class="block">Конструктор принимает 4 аргумента, используется для
- инициализации экземпляра класса с этими значениями.</div>
+                           java.util.Map&lt;java.lang.String,&#8203;java.util.List&lt;java.lang.Integer&gt;&gt;&nbsp;gradesBySubject,
+                           int&nbsp;finalExamGrade,
+                           int&nbsp;qualificationWorkGrade)</pre>
+<div class="block">Инициализирует имя учащегося, оценки
+ по предмету, оценку итогового экзамена
+ и оценку квалификационной работы.</div>
 </li>
 </ul>
 </li>
@@ -260,7 +262,8 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>calculateOverallGpa</h4>
 <pre class="methodSignature">public&nbsp;double&nbsp;calculateOverallGpa()</pre>
-<div class="block">Вычисляется средний балл.</div>
+<div class="block">Рассчитывает общий средний балл путем суммирования
+ всех оценок и деления на общее количество оценок.</div>
 </li>
 </ul>
 <a id="isEligibleForHonorsDegree()">
@@ -270,11 +273,9 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>isEligibleForHonorsDegree</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isEligibleForHonorsDegree()</pre>
-<div class="block">Проверяет возможность получения красного диплома,
- большинство оценок (как минимум 75%) должны быть равны 5.0,
- а также оценка за финальный экзамен и квалификационную работу
- также должны быть равны 5.0. Если условия выполняются,
- метод возвращает true, иначе - false.</div>
+<div class="block">Проверяет, имеет ли студент достаточно отличных оценок,
+ высоких оценок за выпускной экзамен и квалификационную
+ работу, чтобы иметь право на получение степени с отличием.</div>
 </li>
 </ul>
 <a id="isEligibleForIncreasedScholarship()">
@@ -284,10 +285,8 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>isEligibleForIncreasedScholarship</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isEligibleForIncreasedScholarship()</pre>
-<div class="block">Проверка на возможность получения стипендии,
- для этого все оценки студента должны быть не ниже 4.0.
- Если условие выполняется, метод возвращает true,
- если хотя бы одна оценка ниже 4.0, метод возвращает false.</div>
+<div class="block">Проверяет, нет ли у учащегося оценок ниже 4,
+ что дает ему право на повышенную стипендию.</div>
 </li>
 </ul>
 </li>

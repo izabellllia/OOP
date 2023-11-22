@@ -98,7 +98,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="memberNameLink"><a href="zhitnik/ElectronicGradeBook.html#calculateOverallGpa()">calculateOverallGpa()</a></span> - Method in class zhitnik.<a href="zhitnik/ElectronicGradeBook.html" title="class in zhitnik">ElectronicGradeBook</a></dt>
 <dd>
-<div class="block">Вычисляется средний балл.</div>
+<div class="block">Рассчитывает общий средний балл путем суммирования
+ всех оценок и деления на общее количество оценок.</div>
 </dd>
 </dl>
 <a id="I:E">
@@ -110,10 +111,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Класс-электронный журнал оценок студентов.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="zhitnik/ElectronicGradeBook.html#%3Cinit%3E(java.lang.String,double%5B%5D,double,double)">ElectronicGradeBook(String, double[], double, double)</a></span> - Constructor for class zhitnik.<a href="zhitnik/ElectronicGradeBook.html" title="class in zhitnik">ElectronicGradeBook</a></dt>
+<dt><span class="memberNameLink"><a href="zhitnik/ElectronicGradeBook.html#%3Cinit%3E(java.lang.String,java.util.Map,int,int)">ElectronicGradeBook(String, Map&lt;String, List&lt;Integer&gt;&gt;, int, int)</a></span> - Constructor for class zhitnik.<a href="zhitnik/ElectronicGradeBook.html" title="class in zhitnik">ElectronicGradeBook</a></dt>
 <dd>
-<div class="block">Конструктор принимает 4 аргумента, используется для
- инициализации экземпляра класса с этими значениями.</div>
+<div class="block">Инициализирует имя учащегося, оценки
+ по предмету, оценку итогового экзамена
+ и оценку квалификационной работы.</div>
 </dd>
 </dl>
 <a id="I:I">
@@ -123,15 +125,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="memberNameLink"><a href="zhitnik/ElectronicGradeBook.html#isEligibleForHonorsDegree()">isEligibleForHonorsDegree()</a></span> - Method in class zhitnik.<a href="zhitnik/ElectronicGradeBook.html" title="class in zhitnik">ElectronicGradeBook</a></dt>
 <dd>
-<div class="block">Проверяет возможность получения красного диплома,
- большинство оценок (как минимум 75%) должны быть равны 5.0,
- а также оценка за финальный экзамен и квалификационную работу
- также должны быть равны 5.0.</div>
+<div class="block">Проверяет, имеет ли студент достаточно отличных оценок,
+ высоких оценок за выпускной экзамен и квалификационную
+ работу, чтобы иметь право на получение степени с отличием.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="zhitnik/ElectronicGradeBook.html#isEligibleForIncreasedScholarship()">isEligibleForIncreasedScholarship()</a></span> - Method in class zhitnik.<a href="zhitnik/ElectronicGradeBook.html" title="class in zhitnik">ElectronicGradeBook</a></dt>
 <dd>
-<div class="block">Проверка на возможность получения стипендии,
- для этого все оценки студента должны быть не ниже 4.0.</div>
+<div class="block">Проверяет, нет ли у учащегося оценок ниже 4,
+ что дает ему право на повышенную стипендию.</div>
 </dd>
 </dl>
 <a id="I:Z">
