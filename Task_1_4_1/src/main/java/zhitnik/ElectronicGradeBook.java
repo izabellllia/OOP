@@ -9,7 +9,9 @@ public class ElectronicGradeBook {
 
     /**Конструктор принимает 4 аргумента, используется для
      * инициализации экземпляра класса с этими значениями.*/
-    public ElectronicGradeBook(String studentName, double[] grades, double finalExamGrade, double qualificationWorkGrade) {
+    public ElectronicGradeBook(String studentName,
+                               double[] grades, double finalExamGrade,
+                               double qualificationWorkGrade) {
         this.studentName = studentName;
         this.grades = grades;
         this.finalExamGrade = finalExamGrade;
@@ -17,7 +19,7 @@ public class ElectronicGradeBook {
     }
 
     /**Вычисляется средний балл.*/
-    public double calculateOverallGPA() {
+    public double calculateOverallGpa() {
         double sum = 0;
         for (double grade : grades) {
             sum += grade;
@@ -37,7 +39,9 @@ public class ElectronicGradeBook {
                 excellentGradesCount++;
             }
         }
-        return excellentGradesCount >= grades.length * 0.75 && finalExamGrade == 5.0 && qualificationWorkGrade == 5.0;
+        return excellentGradesCount >= grades.length * 0.75 &&
+                finalExamGrade == 5.0 &&
+                qualificationWorkGrade == 5.0;
     }
 
     /**Проверка на возможность получения стипендии,
