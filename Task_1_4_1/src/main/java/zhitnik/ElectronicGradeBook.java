@@ -1,60 +1,69 @@
 package zhitnik;
 
+import java.util.List;
+import java.util.Map;
+
 /**Класс-электронный журнал оценок студентов.*/
 public class ElectronicGradeBook {
     private String studentName;
-    private double[] grades;
-    private double finalExamGrade;
-    private double qualificationWorkGrade;
+    private Map<String, List<Integer>> gradesBySubject;
+    private int finalExamGrade;
+    private int qualificationWorkGrade;
 
-    /**Конструктор принимает 4 аргумента, используется для
-     * инициализации экземпляра класса с этими значениями.*/
+    /**Инициализирует имя учащегося, оценки
+     * по предмету, оценку итогового экзамена
+     * и оценку квалификационной работы.*/
     public ElectronicGradeBook(String studentName,
-                               double[] grades, double finalExamGrade,
-                               double qualificationWorkGrade) {
+                               Map<String, List<Integer>> gradesBySubject,
+                               int finalExamGrade,
+                               int qualificationWorkGrade) {
         this.studentName = studentName;
-        this.grades = grades;
+        this.gradesBySubject = gradesBySubject;
         this.finalExamGrade = finalExamGrade;
         this.qualificationWorkGrade = qualificationWorkGrade;
     }
 
-    /**Вычисляется средний балл.*/
+    /**Рассчитывает общий средний балл путем суммирования
+     * всех оценок и деления на общее количество оценок.*/
     public double calculateOverallGpa() {
         double sum = 0;
-        for (double grade : grades) {
-            sum += grade;
-        }
-        return sum / grades.length;
-    }
-
-    /**Проверяет возможность получения красного диплома,
-     * большинство оценок (как минимум 75%) должны быть равны 5.0,
-     * а также оценка за финальный экзамен и квалификационную работу
-     * также должны быть равны 5.0. Если условия выполняются,
-     * метод возвращает true, иначе - false.*/
-    public boolean isEligibleForHonorsDegree() {
-        int excellentGradesCount = 0;
-        for (double grade : grades) {
-            if (grade == 5.0) {
-                excellentGradesCount++;
+        int count = 0;
+        for (List<Integer> subjectGrades : gradesBySubject.values()) {
+            for (int grade : subjectGrades) {
+                sum += grade;
+                count++;
             }
         }
-        return excellentGradesCount >= grades.length * 0.75 &&
-                finalExamGrade == 5.0 &&
-                qualificationWorkGrade == 5.0;
+        return sum / count;
     }
 
-    /**Проверка на возможность получения стипендии,
-     * для этого все оценки студента должны быть не ниже 4.0.
-     * Если условие выполняется, метод возвращает true,
-     * если хотя бы одна оценка ниже 4.0, метод возвращает false.*/
+    /**Проверяет, имеет ли студент достаточно отличных оценок,
+     * высоких оценок за выпускной экзамен и квалификационную
+     * работу, чтобы иметь право на получение степени с отличием.*/
+    public boolean isEligibleForHonorsDegree() {
+        int excellentGradesCount = 0;
+        for (List<Integer> subjectGrades : gradesBySubject.values()) {
+            for (int grade : subjectGrades) {
+                if (grade == 5) {
+                    excellentGradesCount++;
+                }
+            }
+        }
+        return excellentGradesCount >= calculateOverallGpa() * 0.75 &&
+                finalExamGrade == 5 &&
+                qualificationWorkGrade == 5;
+    }
+
+    /**Проверяет, нет ли у учащегося оценок ниже 4,
+     * что дает ему право на повышенную стипендию.*/
     public boolean isEligibleForIncreasedScholarship() {
-        for (double grade : grades) {
-            if (grade < 4.0) {
-                return false;
+        for (List<Integer> subjectGrades : gradesBySubject.values()) {
+            for (int grade : subjectGrades) {
+                if (grade < 4) {
+                    return false;
+                }
             }
         }
         return true;
     }
 }
-
