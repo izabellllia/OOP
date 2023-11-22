@@ -20,10 +20,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SubstringSearchTest {
 
-    private Path filePath;
-
-
-
     @Test
     public void basicTest() {
         List<Integer> indices = SubstringSearch.find("/Test1.txt", "бра");
