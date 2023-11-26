@@ -61,13 +61,14 @@ public class ElectronicGradeBook {
     public boolean isEligibleForHonorsDegree() {
         int excellentGradesCount = 0;
         for (List<Integer> subjectGrades : gradesBySubject.values()) {
-            for (int grade : subjectGrades) {
-                if (grade == 5) {
+            if (!subjectGrades.isEmpty()) {
+                int lastGrade = subjectGrades.get(subjectGrades.size() - 1);
+                if (lastGrade == 5) {
                     excellentGradesCount++;
                 }
             }
         }
-        return excellentGradesCount >= calculateOverallGpa() * 0.75
+        return excellentGradesCount >= 0.75 * gradesBySubject.size()
                 && finalExamGrade == 5
                 && qualificationWorkGrade == 5;
     }
@@ -76,10 +77,9 @@ public class ElectronicGradeBook {
      * что дает ему право на повышенную стипендию.*/
     public boolean isEligibleForIncreasedScholarship() {
         for (List<Integer> subjectGrades : gradesBySubject.values()) {
-            for (int grade : subjectGrades) {
-                if (grade < 4) {
-                    return false;
-                }
+            int lastGrade = subjectGrades.get(subjectGrades.size() - 1);
+            if (lastGrade < 4) {
+                return false;
             }
         }
         return true;
