@@ -1,15 +1,8 @@
 package zhitnik;
 
 import java.util.*;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Arrays;
-
 
 /**test class.*/
 public class ElectronicGradeBookTest {
