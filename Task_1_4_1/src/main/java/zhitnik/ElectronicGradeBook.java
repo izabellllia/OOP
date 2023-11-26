@@ -50,7 +50,8 @@ public class ElectronicGradeBook {
      * работу, чтобы иметь право на получение степени с отличием.*/
     public boolean isEligibleForHonorsDegree() {
         long excellentGradesCount = gradesBySubject.values().stream()
-                .filter(subjectGrades -> !subjectGrades.isEmpty() && subjectGrades.get(subjectGrades.size() - 1) == 5)
+                .filter(subjectGrades -> !subjectGrades.isEmpty()
+                        && subjectGrades.get(subjectGrades.size() - 1) == 5)
                 .count();
         return excellentGradesCount >= 0.75 * gradesBySubject.size()
                 && finalExamGrade == 5
