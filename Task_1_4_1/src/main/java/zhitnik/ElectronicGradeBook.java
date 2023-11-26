@@ -3,6 +3,7 @@ package zhitnik;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**Класс-электронный журнал оценок студентов.*/
 public class ElectronicGradeBook {
@@ -26,13 +27,7 @@ public class ElectronicGradeBook {
 
     /**Добавляет оценку на карту оценок по предметам.*/
     public void addGrade(String subject, int grade) {
-        if (gradesBySubject.containsKey(subject)) {
-            gradesBySubject.get(subject).add(grade);
-        } else {
-            List<Integer> grades = new ArrayList<>();
-            grades.add(grade);
-            gradesBySubject.put(subject, grades);
-        }
+        gradesBySubject.computeIfAbsent(subject, k -> new ArrayList<>()).add(grade);
     }
 
     /**Возвращает список оценок по определенному предмету.*/
@@ -40,34 +35,23 @@ public class ElectronicGradeBook {
         return gradesBySubject.get(subject);
     }
 
-
     /**Рассчитывает общий средний балл путем суммирования
      * всех оценок и деления на общее количество оценок.*/
     public double calculateOverallGpa() {
-        double sum = 0;
-        int count = 0;
-        for (List<Integer> subjectGrades : gradesBySubject.values()) {
-            for (int grade : subjectGrades) {
-                sum += grade;
-                count++;
-            }
-        }
-        return sum / count;
+        return gradesBySubject.values().stream()
+                .flatMap(List::stream)
+                .mapToDouble(Integer::doubleValue)
+                .average()
+                .orElse(0.0);
     }
 
     /**Проверяет, имеет ли студент достаточно отличных оценок,
      * высоких оценок за выпускной экзамен и квалификационную
      * работу, чтобы иметь право на получение степени с отличием.*/
     public boolean isEligibleForHonorsDegree() {
-        int excellentGradesCount = 0;
-        for (List<Integer> subjectGrades : gradesBySubject.values()) {
-            if (!subjectGrades.isEmpty()) {
-                int lastGrade = subjectGrades.get(subjectGrades.size() - 1);
-                if (lastGrade == 5) {
-                    excellentGradesCount++;
-                }
-            }
-        }
+        long excellentGradesCount = gradesBySubject.values().stream()
+                .filter(subjectGrades -> !subjectGrades.isEmpty() && subjectGrades.get(subjectGrades.size() - 1) == 5)
+                .count();
         return excellentGradesCount >= 0.75 * gradesBySubject.size()
                 && finalExamGrade == 5
                 && qualificationWorkGrade == 5;
@@ -76,12 +60,7 @@ public class ElectronicGradeBook {
     /**Проверяет, нет ли у учащегося оценок ниже 4,
      * что дает ему право на повышенную стипендию.*/
     public boolean isEligibleForIncreasedScholarship() {
-        for (List<Integer> subjectGrades : gradesBySubject.values()) {
-            int lastGrade = subjectGrades.get(subjectGrades.size() - 1);
-            if (lastGrade < 4) {
-                return false;
-            }
-        }
-        return true;
+        return gradesBySubject.values().stream()
+                .allMatch(subjectGrades -> subjectGrades.get(subjectGrades.size() - 1) >= 4);
     }
 }
