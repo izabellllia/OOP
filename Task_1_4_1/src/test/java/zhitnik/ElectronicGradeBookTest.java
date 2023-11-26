@@ -1,8 +1,13 @@
 package zhitnik;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 
 /**test class.*/
 public class ElectronicGradeBookTest {
@@ -60,7 +65,8 @@ public class ElectronicGradeBookTest {
         gradesBySubject.put("Math", Arrays.asList(4, 3));
         gradesBySubject.put("English", Arrays.asList(4, 3));
         gradesBySubject.put("Programming", Arrays.asList(4, 4));
-        ElectronicGradeBook gradeBook = new ElectronicGradeBook("Begaykin Vyacheslav", gradesBySubject, 4, 5);
+        ElectronicGradeBook gradeBook =
+                new ElectronicGradeBook("Begaykin Vyacheslav", gradesBySubject, 4, 5);
 
         Assertions.assertFalse(gradeBook.isEligibleForIncreasedScholarship());
     }
