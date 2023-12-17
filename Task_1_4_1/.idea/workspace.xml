@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="58d10cad-89b7-42e4-beb6-c110839783a6" name="Changes" comment="fix rdog" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2YWXAaeBwgOQ4GTJGdJa8LmOuay" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.ide.FileNotInSourceRootChecker.no.check": "true",
+    "git-widget-placeholder": "task-1-5-1",
+    "onboarding.tips.debug.path": "/Users/elizavetazhitnik/OOP/Task_1_4_1/src/main/java/zhitnik/Main.java"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/zhitnik" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="58d10cad-89b7-42e4-beb6-c110839783a6" name="Changes" comment="" />
+      <created>1700642166870</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700642166870</updated>
+    </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1700642382649</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700642382649</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix dogs">
+      <option name="closed" value="true" />
+      <created>1700653678610</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700653678610</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix gradlew">
+      <option name="closed" value="true" />
+      <created>1700654008549</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700654008549</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix type of marks and add subjects">
+      <option name="closed" value="true" />
+      <created>1700665837854</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700665837854</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix type of marks and add subjects">
+      <option name="closed" value="true" />
+      <created>1700667663853</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700667663853</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix dogs">
+      <option name="closed" value="true" />
+      <created>1700667818224</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700667818224</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix dogs2">
+      <option name="closed" value="true" />
+      <created>1700667903973</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700667903973</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix dogs3">
+      <option name="closed" value="true" />
+      <created>1700668062270</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700668062270</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix dogs4 with import">
+      <option name="closed" value="true" />
+      <created>1700668283234</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700668283234</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fixed logic in tests">
+      <option name="closed" value="true" />
+      <created>1700969144916</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700969144916</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fixed import location for rdogs">
+      <option name="closed" value="true" />
+      <created>1700969345491</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700969345491</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fixed import for rdogs2.0">
+      <option name="closed" value="true" />
+      <created>1700969577076</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700969577076</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fixed import for rdogs3.0((">
+      <option name="closed" value="true" />
+      <created>1700970732166</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700970732166</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixed import for rdogs4.0((((((">
+      <option name="closed" value="true" />
+      <created>1700970826797</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700970826797</updated>
+    </task>
+    <task id="LOCAL-00015" summary="with StreamAPI">
+      <option name="closed" value="true" />
+      <created>1700990868781</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1700990868781</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix rdog">
+      <option name="closed" value="true" />
+      <created>1700991023844</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700991023844</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <MESSAGE value="fix gradlew" />
+    <MESSAGE value="fix type of marks and add subjects" />
+    <MESSAGE value="fix dogs" />
+    <MESSAGE value="fix dogs2" />
+    <MESSAGE value="fix dogs3" />
+    <MESSAGE value="fix dogs4 with import" />
+    <MESSAGE value="fixed logic in tests" />
+    <MESSAGE value="fixed import location for rdogs" />
+    <MESSAGE value="fixed import for rdogs2.0" />
+    <MESSAGE value="fixed import for rdogs3.0((" />
+    <MESSAGE value="fixed import for rdogs4.0((((((" />
+    <MESSAGE value="with StreamAPI" />
+    <MESSAGE value="fix rdog" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix rdog" />
+  </component>
+</project>
