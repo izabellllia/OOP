@@ -375,11 +375,56 @@ public class GraphTest {
     }
 
     @Test
-    public void testEquality() {
+    public void testAddVertexImG4() {
+        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(5, 5); // создаем граф
+
+        Vertex<String> vertex = new Vertex<>("A");
+        graph.addVertex(vertex); // добавляем вершину
+
+        Assertions.assertTrue(graph.getVertices().contains(vertex)); // проверяем, что вершина добавлена
+    }
+
+    @Test
+    public void testRemoveVertexImG3() {
+        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(5, 5); // создаем граф
+
+        Vertex<String> vertex = new Vertex<>("A");
+        graph.addVertex(vertex); // добавляем вершину
+
+        graph.removeVertex(vertex); // удаляем вершину
+
+        Assertions.assertFalse(graph.getVertices().contains(vertex)); // проверяем, что вершина удалена
+    }
+
+    @Test
+    public void testAddEdgeImG2() {
+        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(5, 5); // создаем граф
+
         Vertex<String> vertex1 = new Vertex<>("A");
         Vertex<String> vertex2 = new Vertex<>("B");
-        Edge<String> edge = new Edge<>(vertex1, vertex2, 1);
+        graph.addVertex(vertex1);
+        graph.addVertex(vertex2);
 
-        assertEquals(vertex1, vertex1); // Проверка равенства двух рёбер
+        Edge<String> edge = new Edge<>(vertex1, vertex2, 1);
+        graph.addEdge(edge); // добавляем ребро
+
+        Assertions.assertTrue(graph.getEdges().contains(edge)); // проверяем, что ребро добавлено
+    }
+
+    @Test
+    public void testRemoveEdgeImG2() {
+        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(5, 5); // создаем граф
+
+        Vertex<String> vertex1 = new Vertex<>("A");
+        Vertex<String> vertex2 = new Vertex<>("B");
+        graph.addVertex(vertex1);
+        graph.addVertex(vertex2);
+
+        Edge<String> edge = new Edge<>(vertex1, vertex2, 1);
+        graph.addEdge(edge); // добавляем ребро
+
+        graph.removeEdge(edge); // удаляем ребро
+
+        Assertions.assertFalse(graph.getEdges().contains(edge)); // проверяем, что ребро удалено
     }
 }
