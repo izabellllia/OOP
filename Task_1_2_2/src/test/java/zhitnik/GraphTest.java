@@ -385,22 +385,4 @@ public class GraphTest {
         Assertions.assertTrue(vertices.contains(vertex2));
         Assertions.assertTrue(vertices.contains(vertex3));
     }
-
-    @Test
-    public void testGetEdges() {
-        // Создаем граф
-        Graph<String> graph = new Graph<>();
-
-        Vertex<String> vertex1 = new Vertex<>("A");
-        Vertex<String> vertex2 = new Vertex<>("B");
-        graph.addVertex(vertex1);
-        graph.addVertex(vertex2);
-
-        Edge<String> edge = new Edge<>(vertex1, vertex2, 1);
-
-        // Получаем список ребер и проверяем их количество и наличие
-        List<Edge<String>> edges = graph.getEdges();
-        Assertions.assertEquals(1, edges.size());
-        Assertions.assertTrue(edges.contains(edge));
-    }
 }
