@@ -255,6 +255,14 @@ public class GraphTest {
     }
 
     @Test
+    void testGetVertexDataAlG() {
+        AdjacencyListGraph<String> graph = new AdjacencyListGraph<>();
+        Vertex<String> v1 = new Vertex<>("A");
+        graph.addVertex(v1);
+        Assertions.assertEquals("A", graph.getVertexData(v1));
+    }
+
+    @Test
     public void testAddVertexImG() {
         IncidenceMatrixGraph<Integer> graph = new IncidenceMatrixGraph<>(5, 6);
         Vertex<Integer> vertex = new Vertex<>(1);
