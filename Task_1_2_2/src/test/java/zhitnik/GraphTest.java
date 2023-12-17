@@ -362,43 +362,34 @@ public class GraphTest {
 
         Assertions.assertFalse(graph.getEdges().contains(edge)); // проверяем, что ребро удалено
     }
-    @Test
-    public void testRemoveVertexImG2() {
-        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(5, 5); // создаем граф
 
+    @Test
+    public void testGetVertices() {
+        // Создаем граф
+        Graph<String> graph = new Graph<>();
+
+        // Создаем вершины
         Vertex<String> vertex1 = new Vertex<>("A");
-        graph.addVertex(vertex1); // добавляем вершину
+        Vertex<String> vertex2 = new Vertex<>("B");
+        Vertex<String> vertex3 = new Vertex<>("C");
 
-        graph.removeVertex(vertex1); // удаляем вершину
+        // Добавляем вершины в граф
+        graph.addVertex(vertex1);
+        graph.addVertex(vertex2);
+        graph.addVertex(vertex3);
 
-        Assertions.assertFalse(graph.getVertices().contains(vertex1)); // проверяем, что вершина удалена
+        // Получаем список вершин и проверяем их количество и наличие
+        List<Vertex<String>> vertices = graph.getVertices();
+        Assertions.assertEquals(3, vertices.size());
+        Assertions.assertTrue(vertices.contains(vertex1));
+        Assertions.assertTrue(vertices.contains(vertex2));
+        Assertions.assertTrue(vertices.contains(vertex3));
     }
 
     @Test
-    public void testAddVertexImG4() {
-        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(5, 5); // создаем граф
-
-        Vertex<String> vertex = new Vertex<>("A");
-        graph.addVertex(vertex); // добавляем вершину
-
-        Assertions.assertTrue(graph.getVertices().contains(vertex)); // проверяем, что вершина добавлена
-    }
-
-    @Test
-    public void testRemoveVertexImG3() {
-        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(5, 5); // создаем граф
-
-        Vertex<String> vertex = new Vertex<>("A");
-        graph.addVertex(vertex); // добавляем вершину
-
-        graph.removeVertex(vertex); // удаляем вершину
-
-        Assertions.assertFalse(graph.getVertices().contains(vertex)); // проверяем, что вершина удалена
-    }
-
-    @Test
-    public void testAddEdgeImG2() {
-        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(5, 5); // создаем граф
+    public void testGetEdges() {
+        // Создаем граф
+        Graph<String> graph = new Graph<>();
 
         Vertex<String> vertex1 = new Vertex<>("A");
         Vertex<String> vertex2 = new Vertex<>("B");
@@ -406,25 +397,10 @@ public class GraphTest {
         graph.addVertex(vertex2);
 
         Edge<String> edge = new Edge<>(vertex1, vertex2, 1);
-        graph.addEdge(edge); // добавляем ребро
 
-        Assertions.assertTrue(graph.getEdges().contains(edge)); // проверяем, что ребро добавлено
-    }
-
-    @Test
-    public void testRemoveEdgeImG2() {
-        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(5, 5); // создаем граф
-
-        Vertex<String> vertex1 = new Vertex<>("A");
-        Vertex<String> vertex2 = new Vertex<>("B");
-        graph.addVertex(vertex1);
-        graph.addVertex(vertex2);
-
-        Edge<String> edge = new Edge<>(vertex1, vertex2, 1);
-        graph.addEdge(edge); // добавляем ребро
-
-        graph.removeEdge(edge); // удаляем ребро
-
-        Assertions.assertFalse(graph.getEdges().contains(edge)); // проверяем, что ребро удалено
+        // Получаем список ребер и проверяем их количество и наличие
+        List<Edge<String>> edges = graph.getEdges();
+        Assertions.assertEquals(1, edges.size());
+        Assertions.assertTrue(edges.contains(edge));
     }
 }
