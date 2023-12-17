@@ -373,4 +373,13 @@ public class GraphTest {
 
         Assertions.assertFalse(graph.getVertices().contains(vertex1)); // проверяем, что вершина удалена
     }
+
+    @Test
+    public void testEquality() {
+        Vertex<String> vertex1 = new Vertex<>("A");
+        Vertex<String> vertex2 = new Vertex<>("B");
+        Edge<String> edge = new Edge<>(vertex1, vertex2, 1);
+
+        assertEquals(vertex1, vertex1); // Проверка равенства двух рёбер
+    }
 }
