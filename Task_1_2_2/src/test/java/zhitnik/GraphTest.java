@@ -401,6 +401,34 @@ public class GraphTest {
     }
 
     @Test
+    void testGetEdgesImG() {
+        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(3, 3);
+        Vertex<String> vertex1 = new Vertex<>("A");
+        Vertex<String> vertex2 = new Vertex<>("B");
+        Edge<String> edge = new Edge<>(vertex1, vertex2, 1);
+        graph.addVertex(vertex1);
+        graph.addVertex(vertex2);
+        List<Edge<String>> edges = graph.getEdges();
+
+        assertEquals(1, edges.size());
+        Assertions.assertTrue(edges.contains(edge));
+    }
+
+    @Test
+    void testGetVerticesImG3() {
+        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(3, 3);
+        Vertex<String> vertex1 = new Vertex<>("A");
+        Vertex<String> vertex2 = new Vertex<>("B");
+        graph.addVertex(vertex1);
+        graph.addVertex(vertex2);
+        List<Vertex<String>> vertices = graph.getVertices();
+
+        assertEquals(2, vertices.size());
+        Assertions.assertTrue(vertices.contains(vertex1));
+        Assertions.assertTrue(vertices.contains(vertex2));
+    }
+
+    @Test
     void testGetEdges() {
         IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(3, 3);
         Vertex<String> vertex1 = new Vertex<>("A");
