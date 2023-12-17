@@ -22,6 +22,7 @@ public class IncidenceMatrixGraph<T> {
 
     /**добавляет вершину.*/
     public void addVertex(Vertex<T> vertex) {
+
         vertices.add(vertex);
     }
 

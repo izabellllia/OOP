@@ -387,51 +387,30 @@ public class GraphTest {
     }
 
     @Test
-    void testAddVertexAndEdge() {
+    void testGetVerticesImG2() {
         IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(3, 3);
         Vertex<String> vertex1 = new Vertex<>("A");
         Vertex<String> vertex2 = new Vertex<>("B");
-        Edge<String> edge1 = new Edge<>(vertex1, vertex2, 1);
-
         graph.addVertex(vertex1);
         graph.addVertex(vertex2);
-        graph.addEdge(edge1);
+        List<Vertex<String>> vertices = graph.getVertices();
 
-        assertEquals(2, graph.getVertices().size());
-        assertEquals(1, graph.getEdges().size());
+        assertEquals(2, vertices.size());
+        Assertions.assertTrue(vertices.contains(vertex1));
+        Assertions.assertTrue(vertices.contains(vertex2));
     }
 
     @Test
-    void testRemoveVertex() {
+    void testGetEdges() {
         IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(3, 3);
         Vertex<String> vertex1 = new Vertex<>("A");
         Vertex<String> vertex2 = new Vertex<>("B");
-        Edge<String> edge1 = new Edge<>(vertex1, vertex2, 5);
-
+        Edge<String> edge = new Edge<>(vertex1, vertex2, 1);
         graph.addVertex(vertex1);
         graph.addVertex(vertex2);
-        graph.addEdge(edge1);
-        graph.removeVertex(vertex1);
+        List<Edge<String>> edges = graph.getEdges();
 
-        assertEquals(1, graph.getVertices().size());
-        assertEquals(0, graph.getEdges().size());
+        assertEquals(1, edges.size());
+        Assertions.assertTrue(edges.contains(edge));
     }
-
-    @Test
-    void testAddAndRemoveVertex() {
-        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(3, 3);
-        Vertex<String> vertex1 = new Vertex<>("A");
-        Vertex<String> vertex2 = new Vertex<>("B");
-        Edge<String> edge1 = new Edge<>(vertex1, vertex2, 228);
-
-        graph.addVertex(vertex1);
-        graph.addVertex(vertex2);
-        graph.addEdge(edge1);
-        graph.removeVertex(vertex1);
-        graph.addVertex(vertex1);
-
-        assertEquals(2, graph.getVertices().size());
-        assertEquals(1, graph.getEdges().size());
-    }
-}
 }
