@@ -71,6 +71,7 @@ public class IncidenceMatrixGraph<T> {
                 for (int j = index; j < edges.size(); j++) {
                     incidenceMatrix[i][j] = incidenceMatrix[i][j + 1];
                 }
+                incidenceMatrix[i] = Arrays.copyOf(incidenceMatrix[i], edges.size());
             }
         }
     }

@@ -321,4 +321,28 @@ public class GraphTest {
         graph.addVertex(new Vertex<>("C"));
         assertEquals(3, graph.getVertices().size());
     }
+
+    @Test
+    public void testAddVertexImG3() {
+        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(5, 5); // создаем граф
+
+        Vertex<String> vertex1 = new Vertex<>("A");
+        graph.addVertex(vertex1); // добавляем вершину
+
+        Assertions.assertTrue(graph.getVertices().contains(vertex1)); // проверяем, что вершина добавлена
+    }
+
+    @Test
+    public void testRemoveVertexImG2() {
+        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(5, 5); // создаем граф
+
+        Vertex<String> vertex1 = new Vertex<>("A");
+        graph.addVertex(vertex1); // добавляем вершину
+
+        graph.removeVertex(vertex1); // удаляем вершину
+
+        Assertions.assertFalse(graph.getVertices().contains(vertex1)); // проверяем, что вершина удалена
+    }
+
+    
 }
