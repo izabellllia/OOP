@@ -263,6 +263,38 @@ public class GraphTest {
     }
 
     @Test
+    public void testAddEdgeAlG2() {
+        AdjacencyListGraph<String> graph = new AdjacencyListGraph<>();
+        Vertex<String> vertexA = new Vertex<>("A");
+        Vertex<String> vertexB = new Vertex<>("B");
+        graph.addVertex(vertexA);
+        graph.addVertex(vertexB);
+        graph.addEdge(vertexA, vertexB, 5);
+        Assertions.assertEquals(1, graph.getEdges().size());
+    }
+
+    @Test
+    public void testRemoveEdgeAlG2() {
+        AdjacencyListGraph<String> graph = new AdjacencyListGraph<>();
+        Vertex<String> vertexA = new Vertex<>("A");
+        Vertex<String> vertexB = new Vertex<>("B");
+        graph.addVertex(vertexA);
+        graph.addVertex(vertexB);
+        Edge<String> edge = new Edge<>(vertexA, vertexB, 5);
+        graph.addEdge(vertexA, vertexB, 5);
+        graph.removeEdge(edge);
+        Assertions.assertTrue(graph.getEdges().isEmpty());
+    }
+
+    @Test
+    public void testGetVertexDataAlg() {
+        AdjacencyListGraph<String> graph = new AdjacencyListGraph<>();
+        Vertex<String> vertex = new Vertex<>("A");
+        graph.addVertex(vertex);
+        Assertions.assertEquals("A", graph.getVertexData(vertex));
+    }
+
+    @Test
     public void testAddVertexImG() {
         IncidenceMatrixGraph<Integer> graph = new IncidenceMatrixGraph<>(5, 6);
         Vertex<Integer> vertex = new Vertex<>(1);
