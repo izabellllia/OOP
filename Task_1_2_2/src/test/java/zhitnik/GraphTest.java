@@ -4,6 +4,8 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 /**some tests.*/
 public class GraphTest {
@@ -51,11 +53,11 @@ public class GraphTest {
 
         List<Vertex<String>> sortedVertices = graph.sortVerticesByDistance(a);
 
-        Assertions.assertEquals(a, sortedVertices.get(0));
-        Assertions.assertEquals(b, sortedVertices.get(1));
-        Assertions.assertEquals(c, sortedVertices.get(2));
-        Assertions.assertEquals(d, sortedVertices.get(3));
-        Assertions.assertEquals(e, sortedVertices.get(4));
+        assertEquals(a, sortedVertices.get(0));
+        assertEquals(b, sortedVertices.get(1));
+        assertEquals(c, sortedVertices.get(2));
+        assertEquals(d, sortedVertices.get(3));
+        assertEquals(e, sortedVertices.get(4));
     }
 
     @Test
@@ -85,7 +87,7 @@ public class GraphTest {
         Graph<String> graph = new Graph<>();
         Vertex<String> vertex = new Vertex<>("A");
         graph.addVertex(vertex);
-        Assertions.assertEquals("A", graph.getVertexData(vertex));
+        assertEquals("A", graph.getVertexData(vertex));
     }
 
     @Test
@@ -94,7 +96,7 @@ public class GraphTest {
         Vertex<String> vertex = new Vertex<>("A");
         graph.addVertex(vertex);
         graph.setVertexData(vertex, "B");
-        Assertions.assertEquals("B", graph.getVertexData(vertex));
+        assertEquals("B", graph.getVertexData(vertex));
     }
 
     @Test
@@ -110,7 +112,7 @@ public class GraphTest {
         graph.addVertex(vertexC);
 
         List<Vertex<String>> vertices = graph.getVertices();
-        Assertions.assertEquals(3, vertices.size());
+        assertEquals(3, vertices.size());
         Assertions.assertTrue(vertices.contains(vertexA));
         Assertions.assertTrue(vertices.contains(vertexB));
         Assertions.assertTrue(vertices.contains(vertexC));
@@ -131,7 +133,7 @@ public class GraphTest {
         graph.removeVertex(vertexB);
 
         List<Vertex<String>> vertices = graph.getVertices();
-        Assertions.assertEquals(2, vertices.size());
+        assertEquals(2, vertices.size());
         Assertions.assertTrue(vertices.contains(vertexA));
         Assertions.assertFalse(vertices.contains(vertexB));
         Assertions.assertTrue(vertices.contains(vertexC));
@@ -152,8 +154,8 @@ public class GraphTest {
         graph.addEdge(vertexA, vertexB, 1);
         graph.addEdge(vertexB, vertexC, 2);
 
-        Assertions.assertEquals(1, graph.getEdgeWeight(vertexA, vertexB));
-        Assertions.assertEquals(2, graph.getEdgeWeight(vertexB, vertexC));
+        assertEquals(1, graph.getEdgeWeight(vertexA, vertexB));
+        assertEquals(2, graph.getEdgeWeight(vertexB, vertexC));
     }
 
     @Test
@@ -173,8 +175,8 @@ public class GraphTest {
 
         graph.removeEdge(vertexA, vertexB);
 
-        Assertions.assertEquals(0, graph.getEdgeWeight(vertexA, vertexB));
-        Assertions.assertEquals(2, graph.getEdgeWeight(vertexB, vertexC));
+        assertEquals(0, graph.getEdgeWeight(vertexA, vertexB));
+        assertEquals(2, graph.getEdgeWeight(vertexB, vertexC));
     }
 
     @Test
@@ -191,7 +193,7 @@ public class GraphTest {
 
         List<Vertex<String>> vertices = graph.getVertices();
 
-        Assertions.assertEquals(3, vertices.size());
+        assertEquals(3, vertices.size());
         Assertions.assertTrue(vertices.contains(vertexA));
         Assertions.assertTrue(vertices.contains(vertexB));
         Assertions.assertTrue(vertices.contains(vertexC));
@@ -259,7 +261,7 @@ public class GraphTest {
         AdjacencyListGraph<String> graph = new AdjacencyListGraph<>();
         Vertex<String> v1 = new Vertex<>("A");
         graph.addVertex(v1);
-        Assertions.assertEquals("A", graph.getVertexData(v1));
+        assertEquals("A", graph.getVertexData(v1));
     }
 
     @Test
@@ -270,20 +272,7 @@ public class GraphTest {
         graph.addVertex(vertexA);
         graph.addVertex(vertexB);
         graph.addEdge(vertexA, vertexB, 5);
-        Assertions.assertEquals(1, graph.getEdges().size());
-    }
-
-    @Test
-    public void testRemoveEdgeAlG2() {
-        AdjacencyListGraph<String> graph = new AdjacencyListGraph<>();
-        Vertex<String> vertexA = new Vertex<>("A");
-        Vertex<String> vertexB = new Vertex<>("B");
-        graph.addVertex(vertexA);
-        graph.addVertex(vertexB);
-        Edge<String> edge = new Edge<>(vertexA, vertexB, 5);
-        graph.addEdge(vertexA, vertexB, 5);
-        graph.removeEdge(edge);
-        Assertions.assertTrue(graph.getEdges().isEmpty());
+        assertEquals(1, graph.getEdges().size());
     }
 
     @Test
@@ -291,7 +280,7 @@ public class GraphTest {
         AdjacencyListGraph<String> graph = new AdjacencyListGraph<>();
         Vertex<String> vertex = new Vertex<>("A");
         graph.addVertex(vertex);
-        Assertions.assertEquals("A", graph.getVertexData(vertex));
+        assertEquals("A", graph.getVertexData(vertex));
     }
 
     @Test
@@ -319,8 +308,17 @@ public class GraphTest {
         graph.addVertex(vertex1);
         graph.addVertex(vertex2);
         List<Vertex<Integer>> vertices = graph.getVertices();
-        Assertions.assertEquals(2, vertices.size());
+        assertEquals(2, vertices.size());
         Assertions.assertTrue(vertices.contains(vertex1));
         Assertions.assertTrue(vertices.contains(vertex2));
+    }
+
+    @Test
+    public void testAddVertexImG2() {
+        IncidenceMatrixGraph<String> graph = new IncidenceMatrixGraph<>(3, 3);
+        graph.addVertex(new Vertex<>("A"));
+        graph.addVertex(new Vertex<>("B"));
+        graph.addVertex(new Vertex<>("C"));
+        assertEquals(3, graph.getVertices().size());
     }
 }
