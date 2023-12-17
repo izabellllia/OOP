@@ -59,6 +59,45 @@ public class GraphTest {
     }
 
     @Test
+    public void testRemoveVertex() {
+        Graph<String> graph = new Graph<>();
+        Vertex<String> vertex = new Vertex<>("A");
+        graph.addVertex(vertex);
+        graph.removeVertex(vertex);
+        Assertions.assertFalse(graph.getVertices().contains(vertex));
+    }
+
+    @Test
+    public void testRemoveEdge() {
+        Graph<String> graph = new Graph<>();
+        Vertex<String> start = new Vertex<>("A");
+        Vertex<String> end = new Vertex<>("B");
+        graph.addVertex(start);
+        graph.addVertex(end);
+        Edge<String> edge = new Edge<>(start, end, 5);
+        graph.addEdge(start, end, 5);
+        graph.removeEdge(edge);
+        Assertions.assertFalse(graph.getEdges().contains(edge));
+    }
+
+    @Test
+    public void testGetVertexData() {
+        Graph<String> graph = new Graph<>();
+        Vertex<String> vertex = new Vertex<>("A");
+        graph.addVertex(vertex);
+        Assertions.assertEquals("A", graph.getVertexData(vertex));
+    }
+
+    @Test
+    public void testSetVertexData() {
+        Graph<String> graph = new Graph<>();
+        Vertex<String> vertex = new Vertex<>("A");
+        graph.addVertex(vertex);
+        graph.setVertexData(vertex, "B");
+        Assertions.assertEquals("B", graph.getVertexData(vertex));
+    }
+
+    @Test
     public void testAddVertexAmG() {
         AdjacencyMatrixGraph<String> graph = new AdjacencyMatrixGraph<>(4);
 
