@@ -408,6 +408,7 @@ public class GraphTest {
         Edge<String> edge = new Edge<>(vertex1, vertex2, 1);
         graph.addVertex(vertex1);
         graph.addVertex(vertex2);
+        graph.addEdge(edge);
         List<Edge<String>> edges = graph.getEdges();
 
         assertEquals(1, edges.size());
@@ -436,6 +437,7 @@ public class GraphTest {
         Edge<String> edge = new Edge<>(vertex1, vertex2, 1);
         graph.addVertex(vertex1);
         graph.addVertex(vertex2);
+        graph.addEdge(edge);
         List<Edge<String>> edges = graph.getEdges();
 
         assertEquals(1, edges.size());
