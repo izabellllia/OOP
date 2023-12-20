@@ -10,7 +10,6 @@ import java.util.List;
  * основной метод взаимодействия с записной книжкой через
  * аргументы командной строки.
  */
-
 public class NotebookApp {
     public static void main(String[] args) {
         // Создаем новый блокнот
@@ -22,7 +21,7 @@ public class NotebookApp {
             switch (arg) {
                 case "-add":
                     // Добавляем запись в блокнот
-                    notebook.addNote(args[i+1], args[i+2]);
+                    notebook.addNote(args[i + 1], args[i + 2]);
                     i += 2;
                     break;
                 case "-rm":

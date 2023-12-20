@@ -1,18 +1,18 @@
 package zhitnik;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
+/**super-tests.*/
 public class NotebookTest {
     @Test
     public void testAddNote() {
         Notebook notebook = new Notebook();
         notebook.addNote("AHAnote", "lalala");
         List<Note> notes = notebook.getAllNotes();
-        assertEquals(1, notes.size());
+        Assertions.assertEquals(1, notes.size());
     }
 
     @Test
@@ -20,10 +20,10 @@ public class NotebookTest {
         Notebook notebook = new Notebook();
         notebook.addNote("SuperTitle", "aoaoaoaoa");
         notebook.addNote("MegaTitle", "hihihaha");
-        assertEquals(2, notebook.getAllNotes().size());
+        Assertions.assertEquals(2, notebook.getAllNotes().size());
 
         notebook.removeNote("SuperTitle");
-        assertEquals(1, notebook.getAllNotes().size());
+        Assertions.assertEquals(1, notebook.getAllNotes().size());
     }
 
     @Test
