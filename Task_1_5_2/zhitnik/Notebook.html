@@ -264,11 +264,6 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;addNote&#8203;(java.lang.String&nbsp;title,
                     java.lang.String&nbsp;content)</pre>
 <div class="block">Добавляет новую заметку в блокнот.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>title</code> - Название заметки.</dd>
-<dd><code>content</code> - Содержимое заметки.</dd>
-</dl>
 </li>
 </ul>
 <a id="removeNote(java.lang.String)">
@@ -279,10 +274,6 @@ extends java.lang.Object</pre>
 <h4>removeNote</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;removeNote&#8203;(java.lang.String&nbsp;title)</pre>
 <div class="block">Удаляет заметку из блокнота по названию.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>title</code> - Название заметки.</dd>
-</dl>
 </li>
 </ul>
 <a id="getAllNotes()">
@@ -293,10 +284,6 @@ extends java.lang.Object</pre>
 <h4>getAllNotes</h4>
 <pre class="methodSignature">public&nbsp;java.util.List&lt;<a href="Note.html" title="class in zhitnik">Note</a>&gt;&nbsp;getAllNotes()</pre>
 <div class="block">Получает список всех заметок в отсортированном по времени создания порядке.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>Список всех заметок.</dd>
-</dl>
 </li>
 </ul>
 <a id="getNotesInIntervalAndWithKeywords(java.time.LocalDateTime,java.time.LocalDateTime,java.lang.String...)">
@@ -309,14 +296,6 @@ extends java.lang.Object</pre>
                                                               java.time.LocalDateTime&nbsp;endTime,
                                                               java.lang.String...&nbsp;keywords)</pre>
 <div class="block">Получает список заметок, созданных в указанный временной интервал и содержащих указанные ключевые слова.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>startTime</code> - Начальное время интервала.</dd>
-<dd><code>endTime</code> - Конечное время интервала.</dd>
-<dd><code>keywords</code> - Ключевые слова для поиска.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>Отфильтрованный список заметок.</dd>
-</dl>
 </li>
 </ul>
 <a id="serializeToJson(java.lang.String)">
@@ -327,10 +306,6 @@ extends java.lang.Object</pre>
 <h4>serializeToJson</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;serializeToJson&#8203;(java.lang.String&nbsp;filePath)</pre>
 <div class="block">Сериализует объект блокнота в формат JSON и записывает его в файл.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>filePath</code> - Путь к файлу для сохранения JSON.</dd>
-</dl>
 </li>
 </ul>
 </li>
