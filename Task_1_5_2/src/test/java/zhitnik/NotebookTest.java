@@ -1,11 +1,10 @@
 package zhitnik;
 
 import java.util.List;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-/**super-tests.*/
+/**super-cool-tests.*/
 public class NotebookTest {
     @Test
     public void testAddNote() {
