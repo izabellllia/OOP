@@ -15,8 +15,6 @@ public class Notebook {
 
     /**
      * Добавляет новую заметку в блокнот.
-     * @param title Название заметки.
-     * @param content Содержимое заметки.
      */
     public void addNote(String title, String content) {
         notes.add(new Note(title, content, LocalDateTime.now()));
@@ -24,7 +22,6 @@ public class Notebook {
 
     /**
      * Удаляет заметку из блокнота по названию.
-     * @param title Название заметки.
      */
     public void removeNote(String title) {
         notes.removeIf(note -> note.getTitle().equals(title));
@@ -32,7 +29,6 @@ public class Notebook {
 
     /**
      * Получает список всех заметок в отсортированном по времени создания порядке.
-     * @return Список всех заметок.
      */
     public List<Note> getAllNotes() {
         notes.sort((note1, note2) -> note1.getCreationTime().compareTo(note2.getCreationTime()));
@@ -41,10 +37,6 @@ public class Notebook {
 
     /**
      * Получает список заметок, созданных в указанный временной интервал и содержащих указанные ключевые слова.
-     * @param startTime Начальное время интервала.
-     * @param endTime Конечное время интервала.
-     * @param keywords Ключевые слова для поиска.
-     * @return Отфильтрованный список заметок.
      */
     public List<Note> getNotesInIntervalAndWithKeywords(LocalDateTime startTime, LocalDateTime endTime, String... keywords) {
         List<Note> filteredNotes = new ArrayList<>();
@@ -60,7 +52,6 @@ public class Notebook {
 
     /**
      * Сериализует объект блокнота в формат JSON и записывает его в файл.
-     * @param filePath Путь к файлу для сохранения JSON.
      */
     public void serializeToJson(String filePath) {
         try {
