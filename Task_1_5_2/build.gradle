@@ -38,3 +38,8 @@ jacocoTestReport {
         xml.required = true
     }
 }
+
+plugins {
+    id 'java'
+    id 'jacoco'
+}

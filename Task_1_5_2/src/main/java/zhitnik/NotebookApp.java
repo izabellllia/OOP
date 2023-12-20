@@ -11,6 +11,7 @@ import java.util.List;
  * аргументы командной строки.
  */
 public class NotebookApp {
+    /**main void.*/
     public static void main(String[] args) {
         // Создаем новый блокнот
         Notebook notebook = new Notebook();
@@ -26,15 +27,15 @@ public class NotebookApp {
                     break;
                 case "-rm":
                     // Удаляем запись из блокнота
-                    notebook.removeNote(args[i+1]);
+                    notebook.removeNote(args[i + 1]);
                     i++;
                     break;
                 case "-show":
-                    if (i + 1 < args.length && args[i+1].equals("interval")) {
+                    if (i + 1 < args.length && args[i + 1].equals("interval")) {
                         // Фильтруем записи по временному интервалу и ключевым словам
-                        LocalDateTime start = LocalDateTime.parse(args[i+2]);
-                        LocalDateTime end = LocalDateTime.parse(args[i+3]);
-                        String[] keywords = Arrays.copyOfRange(args, i+4, args.length);
+                        LocalDateTime start = LocalDateTime.parse(args[i + 2]);
+                        LocalDateTime end = LocalDateTime.parse(args[i + 3]);
+                        String[] keywords = Arrays.copyOfRange(args, i + 4, args.length);
                         List<Note> filteredNotes = notebook.getNotesInIntervalAndWithKeywords(start, end, keywords);
                         // Выводим отфильтрованные записи
                         for (Note note : filteredNotes) {
