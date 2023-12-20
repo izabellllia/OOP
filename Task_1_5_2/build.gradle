@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
 
 group = 'zhitnik'
@@ -37,9 +38,4 @@ jacocoTestReport {
     reports {
         xml.required = true
     }
-}
-
-plugins {
-    id 'java'
-    id 'jacoco'
 }
