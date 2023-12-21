@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a194c468-a0be-48a1-a5c7-6032df0a0b76" name="Changes" comment="add5((" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2ZerYl2LULvoN79hRpumdKtYvDk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;task-1-2-2&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a194c468-a0be-48a1-a5c7-6032df0a0b76" name="Changes" comment="" />
+      <created>1702793435913</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702793435913</updated>
+    </task>
+    <task id="LOCAL-00001" summary="add Tests fot Graph">
+      <option name="closed" value="true" />
+      <created>1702793865532</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702793865532</updated>
+    </task>
+    <task id="LOCAL-00002" summary="delete trash files">
+      <option name="closed" value="true" />
+      <created>1702794092301</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702794092301</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add test AlG">
+      <option name="closed" value="true" />
+      <created>1702794421806</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702794421806</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add more test AlG">
+      <option name="closed" value="true" />
+      <created>1702794682937</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702794682937</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add some tests">
+      <option name="closed" value="true" />
+      <created>1702795427467</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702795427467</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add some tests2">
+      <option name="closed" value="true" />
+      <created>1702795987026</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702795987026</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add some tests3">
+      <option name="closed" value="true" />
+      <created>1702796324865</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1702796324865</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add some tests4">
+      <option name="closed" value="true" />
+      <created>1702796492236</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1702796492236</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add some tests5">
+      <option name="closed" value="true" />
+      <created>1702797073527</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1702797073528</updated>
+    </task>
+    <task id="LOCAL-00010" summary="ADD (i wnt it work :(((">
+      <option name="closed" value="true" />
+      <created>1702797263801</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1702797263801</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add((((">
+      <option name="closed" value="true" />
+      <created>1702797491045</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1702797491045</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add((((">
+      <option name="closed" value="true" />
+      <created>1702797555690</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1702797555690</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add((((( i'm exhausted">
+      <option name="closed" value="true" />
+      <created>1702798206688</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1702798206688</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add2">
+      <option name="closed" value="true" />
+      <created>1702818485287</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1702818485287</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add3((">
+      <option name="closed" value="true" />
+      <created>1702819613741</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1702819613741</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add4((">
+      <option name="closed" value="true" />
+      <created>1702819763455</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1702819763455</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add5((">
+      <option name="closed" value="true" />
+      <created>1702820314712</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1702820314712</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add Tests fot Graph" />
+    <MESSAGE value="delete trash files" />
+    <MESSAGE value="add test AlG" />
+    <MESSAGE value="add more test AlG" />
+    <MESSAGE value="add some tests" />
+    <MESSAGE value="add some tests2" />
+    <MESSAGE value="add some tests3" />
+    <MESSAGE value="add some tests4" />
+    <MESSAGE value="add some tests5" />
+    <MESSAGE value="ADD (i wnt it work :(((" />
+    <MESSAGE value="add((((" />
+    <MESSAGE value="add((((( i'm exhausted" />
+    <MESSAGE value="add2" />
+    <MESSAGE value="add3((" />
+    <MESSAGE value="add4((" />
+    <MESSAGE value="add5((" />
+    <option name="LAST_COMMIT_MESSAGE" value="add5((" />
+  </component>
+</project>

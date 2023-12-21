@@ -1,5 +1,6 @@
 package zhitnik;
 
+import java.io.File;
 import java.time.LocalDateTime;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
@@ -68,5 +69,22 @@ public class NotebookTest {
         Assertions.assertEquals(2, notes.size());
         Assertions.assertEquals("Заголовок 1", notes.get(0).getTitle());
         Assertions.assertEquals("Содержание 2", notes.get(1).getContent());
+    }
+
+    @Test
+    public void testGetAllNotes() {
+        Notebook notebook = new Notebook();
+        notebook.addNote("Title1", "Content1");
+        notebook.addNote("Title2", "Content2");
+        Assertions.assertEquals(2, notebook.getAllNotes().size());
+    }
+
+    @Test
+    public void testSerializeToJson2() {
+        Notebook notebook = new Notebook();
+        notebook.addNote("Title1", "Content1");
+        notebook.serializeToJson("testFile.json");
+        File file = new File("testFile.json");
+        Assertions.assertTrue(file.exists());
     }
 }
