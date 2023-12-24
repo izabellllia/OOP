@@ -36,21 +36,6 @@ public class Notebook {
     }
 
     /**
-     * Получает список заметок, созданных в указанный временной интервал и содержащих указанные ключевые слова.
-     */
-    public List<Note> getNotesInIntervalAndWithKeywords(LocalDateTime startTime, LocalDateTime endTime, String... keywords) {
-        List<Note> filteredNotes = new ArrayList<>();
-        for (Note note : notes) {
-            if (note.getCreationTime().isAfter(startTime) &&
-                    note.getCreationTime().isBefore(endTime) &&
-                    containsKeywords(note, keywords)) {
-                filteredNotes.add(note);
-            }
-        }
-        return filteredNotes;
-    }
-
-    /**
      * Сериализует объект блокнота в формат JSON и записывает его в файл.
      */
     public void serializeToJson(String filePath) {

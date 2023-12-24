@@ -1,13 +1,18 @@
 package zhitnik;
 
-/**Класс NotebookApp представляет собой приложение
- * для управления заметками в блокноте. Он предоставляет
- * основной метод взаимодействия с записной книжкой через
- * аргументы командной строки.
- */
 import org.apache.commons.cli.*;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+/**The NotebookApp class provides
+ *  an interactive command-line
+ *  interface for managing notes in a notebook.*/
 public class NotebookApp {
+    /**main.*/
     public static void main(String[] args) {
         Options options = new Options();
         CommandLineParser parser = new DefaultParser();
@@ -16,29 +21,44 @@ public class NotebookApp {
         options.addOption("rm", true, "Remove a note from the notebook");
         options.addOption("show", "Show notes");
         options.addOption("show_interval", true, "Show notes within a specific time interval");
+        options.addOption("save", "Save notes to file");
+
+        List<String> notes = new ArrayList<>(); // Список для хранения записей
 
         try {
             CommandLine cmd = parser.parse(options, args);
 
             if (cmd.hasOption("add")) {
                 String[] addArgs = cmd.getOptionValues("add");
-                System.out.println("notebook -add \"" + addArgs[0] + "\" \"" + addArgs[1] + "\"");
+                String note = addArgs[0] + " - " + addArgs[1];
+                notes.add(note);
+                System.out.println("Note added to the notebook: " + note);
             } else if (cmd.hasOption("rm")) {
                 String rmArg = cmd.getOptionValue("rm");
-                System.out.println("notebook -rm \"" + rmArg + "\"");
+                notes.remove(rmArg);
+                System.out.println("Note removed from the notebook: " + rmArg);
             } else if (cmd.hasOption("show")) {
-                System.out.println("notebook -show");
+                System.out.println("Showing all notes:");
+                for (String note : notes) {
+                    System.out.println(note);
+                }
             } else if (cmd.hasOption("show_interval")) {
                 String[] showIntervalArgs = cmd.getOptionValues("show_interval");
-                System.out.print("notebook -show");
-                for(String arg : showIntervalArgs){
-                    System.out.print(" \"" + arg + "\"");
+                System.out.println("Showing notes within the specified time interval:");
+                // Показать заметки в пределах заданного временного интервала
+            } else if (cmd.hasOption("save")) {
+                // Сохранить заметки в файл
+                String fileName = "notebook.json";
+                ObjectMapper objectMapper = new ObjectMapper();
+                try {
+                    objectMapper.writeValue(new File(fileName), notes);
+                    System.out.println("Notes saved to " + fileName);
+                } catch (IOException e) {
+                    System.err.println("Error saving notes to file: " + e.getMessage());
                 }
-                System.out.println();
             }
         } catch (ParseException e) {
             System.err.println("Error parsing command line arguments: " + e.getMessage());
-            // Handle parsing exception
         }
     }
 }
