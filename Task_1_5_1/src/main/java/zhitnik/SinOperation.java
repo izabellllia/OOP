@@ -2,6 +2,7 @@ package zhitnik;
 
 import java.util.Stack;
 /**sin.*/
+
 public class SinOperation implements BaseOperation<Double>{
     @Override
     public String getOperationRepresentation() {

@@ -3,7 +3,7 @@ package zhitnik;
 import java.util.Stack;
 
 /**Interface for MyCalculator operations.
- * param <T> Type of actions for Calculator.*/
+ * param T Type of actions for Calculator.*/
 public interface BaseOperation<T> {
     /**return String representation of operation.*/
     String getOperationRepresentation();

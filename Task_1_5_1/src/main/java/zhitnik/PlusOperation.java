@@ -2,6 +2,7 @@ package zhitnik;
 
 import java.util.Stack;
 /**plus.*/
+
 public class PlusOperation implements BaseOperation<Double>{
     @Override
     public String getOperationRepresentation() {

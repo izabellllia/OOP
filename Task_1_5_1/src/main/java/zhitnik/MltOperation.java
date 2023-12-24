@@ -2,6 +2,7 @@ package zhitnik;
 
 import java.util.Stack;
 /**mlt.*/
+
 public class MltOperation implements BaseOperation<Double>{
     @Override
     public String getOperationRepresentation() {
