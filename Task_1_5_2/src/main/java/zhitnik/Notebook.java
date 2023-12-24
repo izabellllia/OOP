@@ -71,4 +71,12 @@ public class Notebook {
         }
         return false;
     }
+
+    public String getText() {
+        StringBuilder allNotesText = new StringBuilder();
+        for (Note note : notes) {
+            allNotesText.append(note.getContent()).append("\n");
+        }
+        return allNotesText.toString();
+    }
 }

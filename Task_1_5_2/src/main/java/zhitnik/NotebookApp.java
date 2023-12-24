@@ -1,5 +1,7 @@
 package zhitnik;
 
+import org.apache.commons.cli.*;
+import java.io.*;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -13,46 +15,63 @@ import java.util.List;
 public class NotebookApp {
     /**main void.*/
     public static void main(String[] args) {
-        // Создаем новый блокнот
-        Notebook notebook = new Notebook();
+        Options options = new Options();
+        options.addOption("add", true, "Add a note to the notebook");
+        options.addOption("rm", true, "Remove a note from the notebook");
+        options.addOption("show", false, "Show notes in the notebook");
 
-        // Перебираем все аргументы командной строки
-        for (int i = 0; i < args.length; i++) {
-            String arg = args[i];
-            switch (arg) {
-                case "-add":
-                    // Добавляем запись в блокнот
-                    notebook.addNote(args[i + 1], args[i + 2]);
-                    i += 2;
-                    break;
-                case "-rm":
-                    // Удаляем запись из блокнота
-                    notebook.removeNote(args[i + 1]);
-                    i++;
-                    break;
-                case "-show":
-                    if (i + 1 < args.length && args[i + 1].equals("interval")) {
-                        // Фильтруем записи по временному интервалу и ключевым словам
-                        LocalDateTime start = LocalDateTime.parse(args[i + 2]);
-                        LocalDateTime end = LocalDateTime.parse(args[i + 3]);
-                        String[] keywords = Arrays.copyOfRange(args, i + 4, args.length);
-                        List<Note> filteredNotes = notebook.getNotesInIntervalAndWithKeywords(start, end, keywords);
-                        // Выводим отфильтрованные записи
-                        for (Note note : filteredNotes) {
-                            System.out.println(note.getTitle() + " - " + note.getContent());
-                        }
-                        i = args.length;
-                    } else {
-                        // Выводим все записи из блокнота
-                        List<Note> allNotes = notebook.getAllNotes();
-                        for (Note note : allNotes) {
-                            System.out.println(note.getTitle() + " - " + note.getContent());
-                        }
-                    }
-                    break;
-                default:
-                    break;
+        CommandLineParser parser = new DefaultParser();
+        CommandLine cmd;
+        try {
+            cmd = parser.parse(options, args);
+        } catch (ParseException e) {
+            System.err.println("Error parsing command line arguments: " + e.getMessage());
+            System.exit(1);
+            return;
+        }
+
+        Notebook notebook = loadNotebook(); // загрузить блокнот из файла
+
+        if (cmd.hasOption("add")) {
+            String[] addArgs = cmd.getOptionValues("add");
+            notebook.addNote(addArgs[0], addArgs[1]);
+            saveNotebook(notebook); // сохранить блокнот в файл
+        } else if (cmd.hasOption("rm")) {
+            String rmArg = cmd.getOptionValue("rm");
+            notebook.removeNote(rmArg);
+            saveNotebook(notebook); // сохранить блокнот в файл
+        } else if (cmd.hasOption("show")) {
+            String[] showArgs = cmd.getArgs();
+            if (showArgs.length > 0 && showArgs[0].equals("interval")) {
+                LocalDateTime start = LocalDateTime.parse(showArgs[1]);
+                LocalDateTime end = LocalDateTime.parse(showArgs[2]);
+                String[] keywords = Arrays.copyOfRange(showArgs, 3, showArgs.length);
+                List<Note> filteredNotes = notebook.getNotesInIntervalAndWithKeywords(start, end, keywords);
+                for (Note note : filteredNotes) {
+                    System.out.println(note.getTitle() + " - " + note.getContent());
+                }
             }
         }
     }
+
+    private static final String FILE_PATH = "notebook.txt"; // Путь к файлу с записями блокнота
+
+    private static Notebook loadNotebook() {
+        File file = new File(FILE_PATH);
+        Notebook notebook = new Notebook();
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // Разбиваем каждую строку на заголовок и текст заметки
+                String[] parts = line.split(":", 2);
+                if (parts.length == 2) {
+                    notebook.addNote(parts[0], parts[1]);
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error loading notebook from file: " + e.getMessage());
+        }
+        return notebook;
+    }
+
 }
