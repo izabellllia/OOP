@@ -1,8 +1,9 @@
 package zhitnik;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.util.HashMap;
 import java.util.Stack;
-
 
 public class MyCalculator {
     private final HashMap<String, BaseOperation<Double>> operators = new HashMap<>();
@@ -40,6 +41,7 @@ public class MyCalculator {
     public Double calc(String formula) {
         String[] tokens = formula.split(" ");
         Stack<Double> stack = new Stack<>();
+        ArrayUtils.reverse(tokens);
 
         for (var token : tokens) {
             if (isNumeric(token)) {
