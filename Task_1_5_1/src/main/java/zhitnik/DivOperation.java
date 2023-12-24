@@ -1,7 +1,7 @@
 package zhitnik;
 
 import java.util.Stack;
-
+/**div.*/
 public class DivOperation implements BaseOperation<Double> {
     @Override
     public String getOperationRepresentation() {

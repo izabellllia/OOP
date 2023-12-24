@@ -1,7 +1,7 @@
 package zhitnik;
 
 import java.util.Stack;
-
+/**cos.*/
 public class CosOperation implements BaseOperation<Double> {
     @Override
     public String getOperationRepresentation() {

@@ -1,7 +1,7 @@
 package zhitnik;
 
 import java.util.Stack;
-
+/**sqrt.*/
 public class SqrtOperation  implements BaseOperation<Double>{
     @Override
     public String getOperationRepresentation() {

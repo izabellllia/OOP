@@ -1,7 +1,7 @@
 package zhitnik;
 
 import java.util.Stack;
-
+/**pow.*/
 public class PowOperation implements BaseOperation<Double>{
     @Override
     public String getOperationRepresentation() {

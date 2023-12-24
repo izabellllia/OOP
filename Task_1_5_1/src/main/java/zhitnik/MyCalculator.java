@@ -28,8 +28,7 @@ public class MyCalculator {
     }
 
     /**param formula formula to calculate
-     * return result of calculation
-     */
+     * return result of calculation.*/
     public Double calc(String formula) {
         String[] tokens = formula.split(" ");
         Stack<Double> stack = new Stack<>();
