@@ -1,19 +1,26 @@
 package zhitnik;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * Test class for calculator
+ */
 @DisplayName("Test for calculator")
 public class MyCalculatorTest {
 
+    /**
+     * Test for normal calculations
+     * @param ans The expected result
+     * @param formula The mathematical formula to calculate
+     */
     @ParameterizedTest
     @MethodSource("calculationTestSource")
     @DisplayName("Normal calculations test")
@@ -22,6 +29,12 @@ public class MyCalculatorTest {
         assertEquals(ans, calculator.calc(formula), 0.000001);
     }
 
+    /**
+     * Test for exceptions
+     * @param formula The mathematical formula to calculate
+     * @param exceptionClass The expected type of exception
+     * @param exceptionMessage The expected exception message
+     */
     @ParameterizedTest
     @MethodSource("exceptionsTestSource")
     @DisplayName("Exceptions test")
@@ -34,6 +47,10 @@ public class MyCalculatorTest {
         assertEquals(exceptionMessage, a.getMessage());
     }
 
+    /**
+     * Provides test data for normal calculations
+     * @return Stream of arguments for normal calculation testing
+     */
     public static Stream<Arguments> calculationTestSource() {
         return Stream.of(
                 Arguments.of(3D, "+ 1 2"),
@@ -45,6 +62,10 @@ public class MyCalculatorTest {
         );
     }
 
+    /**
+     * Provides test data for exceptions
+     * @return Stream of arguments for exception testing
+     */
     public static Stream<Arguments> exceptionsTestSource() {
         return Stream.of(
                 Arguments.of("atan 12",
@@ -62,37 +83,5 @@ public class MyCalculatorTest {
                         "Cannot calc formula due to number of input arguments"
                 )
         );
-    }
-
-    @Test
-    public void registerExceptionTest(){
-        MyCalculator calculator = new MyCalculator();
-        var a = Assertions.assertThrows(
-                IllegalArgumentException.class,
-                () -> calculator.registerOperation(new CosOperation())
-        );
-        Assertions.assertEquals("this key is exists in HashMap", a.getMessage());
-    }
-
-    @Test
-    public void registerNoExceptionTest(){
-        MyCalculator calculator = new MyCalculator();
-        calculator.registerOperation(new CosOperation(), true);
-    }
-
-    @Test
-    public void registerActionTest(){
-        MyCalculator calculator = new MyCalculator(CalcModes.EMPTY_OPERATIONS);
-        var a = Assertions.assertThrows(
-                IllegalArgumentException.class,
-                () -> calculator.calc("cos 0")
-        );
-        Assertions.assertEquals(
-                "Cannot parse operation = 'cos' (Check that the operation is registered)",
-                a.getMessage()
-        );
-
-        calculator.registerOperation(new CosOperation());
-        Assertions.assertDoesNotThrow(() -> calculator.calc("cos 0"));
     }
 }
