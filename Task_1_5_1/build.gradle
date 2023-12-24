@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
 
 group = 'zhitnik'
@@ -25,8 +26,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-jacocoTestReport {
-    reports {
-        xml.required = true
-    }

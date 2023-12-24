@@ -9,17 +9,13 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-/**
- * Test class for calculator
- */
+/**Test class for calculator.*/
 @DisplayName("Test for calculator")
 public class MyCalculatorTest {
 
-    /**
-     * Test for normal calculations
-     * @param ans The expected result
-     * @param formula The mathematical formula to calculate
-     */
+    /**Test for normal calculations
+     * param ans The expected result
+     * param formula The mathematical formula to calculate.*/
     @ParameterizedTest
     @MethodSource("calculationTestSource")
     @DisplayName("Normal calculations test")
@@ -28,12 +24,10 @@ public class MyCalculatorTest {
         assertEquals(ans, calculator.calc(formula), 0.000001);
     }
 
-    /**
-     * Test for exceptions
-     * @param formula The mathematical formula to calculate
-     * @param exceptionClass The expected type of exception
-     * @param exceptionMessage The expected exception message
-     */
+    /**Test for exceptions
+     * param formula The mathematical formula to calculate
+     * param exceptionClass The expected type of exception
+     * param exceptionMessage The expected exception message.*/
     @ParameterizedTest
     @MethodSource("exceptionsTestSource")
     @DisplayName("Exceptions test")
@@ -46,10 +40,8 @@ public class MyCalculatorTest {
         assertEquals(exceptionMessage, a.getMessage());
     }
 
-    /**
-     * Provides test data for normal calculations
-     * @return Stream of arguments for normal calculation testing
-     */
+    /**Provides test data for normal calculations
+     * return Stream of arguments for normal calculation testing.*/
     public static Stream<Arguments> calculationTestSource() {
         return Stream.of(
                 Arguments.of(3D, "+ 1 2"),
@@ -61,10 +53,8 @@ public class MyCalculatorTest {
         );
     }
 
-    /**
-     * Provides test data for exceptions
-     * @return Stream of arguments for exception testing
-     */
+    /**Provides test data for exceptions
+     * return Stream of arguments for exception testing.*/
     public static Stream<Arguments> exceptionsTestSource() {
         return Stream.of(
                 Arguments.of("atan 12",
