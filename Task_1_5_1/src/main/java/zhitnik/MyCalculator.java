@@ -7,18 +7,12 @@ import java.util.Stack;
 
 public class MyCalculator {
     private final HashMap<String, BaseOperation<Double>> operators = new HashMap<>();
-
-    /**
-     * Default constructor, registers default operator.
-     */
+    /**Default constructor, registers default operator.*/
     public MyCalculator() {
         this(CalcModes.DEFAULT_OPERATIONS);
     }
 
-    /**
-     *
-     * @param mode Mode to prepare operations list
-     */
+    /** param mode Mode to prepare operations list.*/
     public MyCalculator(CalcModes mode) {
         if (mode != CalcModes.EMPTY_OPERATIONS) {
             registerOperation(new PlusOperation());
@@ -33,10 +27,8 @@ public class MyCalculator {
         }
     }
 
-    /**
-     *
-     * @param formula formula to calculate
-     * @return result of calculation
+    /**param formula formula to calculate
+     * return result of calculation
      */
     public Double calc(String formula) {
         String[] tokens = formula.split(" ");
@@ -65,18 +57,16 @@ public class MyCalculator {
         return stack.pop();
     }
 
-    /**
-     * Registers operation for calculator.
-     * @param operator Operator to register
+    /**Registers operation for calculator.
+     * param operator Operator to register
      */
     public void registerOperation(BaseOperation<Double> operator) {
         registerOperation(operator, false);
     }
 
-    /**
-     * Registers operation for calculator.
-     * @param operator operator to register
-     * @param rewriteOper if false and operator with that name exists - throws exception.
+    /**Registers operation for calculator.
+     * param  operator to register
+     * param rewriteOper if false and operator with that name exists - throws exception.
      */
     public void registerOperation(BaseOperation<Double> operator, boolean rewriteOper) {
         if (operator == null) {
