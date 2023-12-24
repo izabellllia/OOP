@@ -46,13 +46,4 @@ public class Notebook {
             e.printStackTrace();
         }
     }
-    private boolean containsKeywords(Note note, String... keywords) {
-        for (String keyword : keywords) {
-            if (note.getTitle().toLowerCase().contains(keyword.toLowerCase()) ||
-                    note.getContent().toLowerCase().contains(keyword.toLowerCase())) {
-                return true;
-            }
-        }
-        return false;
-    }
 }
