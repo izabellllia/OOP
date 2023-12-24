@@ -61,7 +61,6 @@ public class Notebook {
             e.printStackTrace();
         }
     }
-
     private boolean containsKeywords(Note note, String... keywords) {
         for (String keyword : keywords) {
             if (note.getTitle().toLowerCase().contains(keyword.toLowerCase()) ||
@@ -70,13 +69,5 @@ public class Notebook {
             }
         }
         return false;
-    }
-
-    public String getText() {
-        StringBuilder allNotesText = new StringBuilder();
-        for (Note note : notes) {
-            allNotesText.append(note.getContent()).append("\n");
-        }
-        return allNotesText.toString();
     }
 }
