@@ -35,27 +35,20 @@ public class NotebookApp {
                 String[] addArgs = cmd.getOptionValues("add");
                 String note = addArgs[0] + " - " + addArgs[1];
                 notes.add(note);
-                System.out.println("Note added to the notebook: " + note);
             } else if (cmd.hasOption("rm")) {
                 String rmArg = cmd.getOptionValue("rm");
                 notes.remove(rmArg);
-                System.out.println("Note removed from the notebook: " + rmArg);
             } else if (cmd.hasOption("show")) {
-                System.out.println("Showing all notes:");
                 for (String note : notes) {
-                    System.out.println(note);
                 }
             } else if (cmd.hasOption("show_interval")) {
                 String[] showIntervalArgs = cmd.getOptionValues("show_interval");
-                System.out.println("Showing notes within the specified time interval:");
-                // Показать заметки в пределах заданного временного интервала
             } else if (cmd.hasOption("save")) {
                 // Сохранить заметки в файл
                 String fileName = "notebook.json";
                 ObjectMapper objectMapper = new ObjectMapper();
                 try {
                     objectMapper.writeValue(new File(fileName), notes);
-                    System.out.println("Notes saved to " + fileName);
                 } catch (IOException e) {
                     System.err.println("Error saving notes to file: " + e.getMessage());
                 }
