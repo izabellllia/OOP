@@ -15,7 +15,10 @@ import org.apache.commons.cli.ParseException;
  *  an interactive command-line
  *  interface for managing notes in a notebook.*/
 public class NotebookApp {
-    /**main.*/
+    private static final String FILE_NAME = "notebook.json";
+    private static final ObjectMapper objectMapper = new ObjectMapper();
+    private static final List<String> notes = new ArrayList<>(); // List to store notes
+
     public static void main(String[] args) {
         Options options = new Options();
         CommandLineParser parser = new DefaultParser();
@@ -25,8 +28,6 @@ public class NotebookApp {
         options.addOption("show", "Show notes");
         options.addOption("show_interval", true, "Show notes within a specific time interval");
         options.addOption("save", "Save notes to file");
-
-        List<String> notes = new ArrayList<>(); // Список для хранения записей
 
         try {
             CommandLine cmd = parser.parse(options, args);
@@ -39,22 +40,29 @@ public class NotebookApp {
                 String rmArg = cmd.getOptionValue("rm");
                 notes.remove(rmArg);
             } else if (cmd.hasOption("show")) {
-                for (String note : notes) {
-                }
+                showNotes();
             } else if (cmd.hasOption("show_interval")) {
                 String[] showIntervalArgs = cmd.getOptionValues("show_interval");
+                System.out.println("Showing notes within the specified time interval:");
             } else if (cmd.hasOption("save")) {
-                // Сохранить заметки в файл
-                String fileName = "notebook.json";
-                ObjectMapper objectMapper = new ObjectMapper();
-                try {
-                    objectMapper.writeValue(new File(fileName), notes);
-                } catch (IOException e) {
-                    System.err.println("Error saving notes to file: " + e.getMessage());
-                }
+                saveNotesToFile();
             }
         } catch (ParseException e) {
             System.err.println("Error parsing command line arguments: " + e.getMessage());
+        }
+    }
+
+    private static void showNotes() {
+        for (String note : notes) {
+            System.out.println(note);
+        }
+    }
+
+    private static void saveNotesToFile() {
+        try {
+            objectMapper.writeValue(new File(FILE_NAME), notes);
+        } catch (IOException e) {
+            System.err.println("Error saving notes to file: " + e.getMessage());
         }
     }
 }
