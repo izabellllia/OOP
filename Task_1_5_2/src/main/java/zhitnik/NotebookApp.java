@@ -19,6 +19,7 @@ public class NotebookApp {
     private static final ObjectMapper objectMapper = new ObjectMapper();
     private static final List<String> notes = new ArrayList<>(); // List to store notes
 
+    /**main.*/
     public static void main(String[] args) {
         Options options = new Options();
         CommandLineParser parser = new DefaultParser();
