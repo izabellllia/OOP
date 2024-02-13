@@ -2,7 +2,10 @@ package zhitnik;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Реализация Detector для последовательного
+ * поиска простых чисел в списке.
+ */
 public class ParallelPrimeDetector implements PrimeDetector {
     private final List<Integer> numberList;
     private final int threadCount;
@@ -20,8 +23,7 @@ public class ParallelPrimeDetector implements PrimeDetector {
      * Создается список целых чисел для каждого потока
      * Список чисел разделяется на подсписки
      * Затем создается и запускается поток для каждого подсписка чисел
-     * Выполняется проверка результатов выполнения потоков
-     *
+     * Выполняется проверка результатов выполнения потоков.
      */
     @Override
     public boolean hasNonPrimeNumbers() {
@@ -40,10 +42,10 @@ public class ParallelPrimeDetector implements PrimeDetector {
      */
     private List<List<Integer>> splitDataForThreads() {
         List<List<Integer>> dataForThreads = new ArrayList<>();
-        for (int i = 0; i < threadCount; i++){
+        for (int i = 0; i < threadCount; i++) {
             dataForThreads.add(new ArrayList<>());
         }
-        for (int i = 0; i < numberList.size(); i++){
+        for (int i = 0; i < numberList.size(); i++) {
             dataForThreads.get(i % threadCount).add(numberList.get(i));
         }
         return dataForThreads;
@@ -70,7 +72,7 @@ public class ParallelPrimeDetector implements PrimeDetector {
      */
     private boolean checkResultsAndReturn(List<PrimeChecker> threadList) {
         boolean result = true;
-        for(var checker : threadList){
+        for (var checker : threadList){
             try {
                 checker.join();
             } catch (InterruptedException e) {
