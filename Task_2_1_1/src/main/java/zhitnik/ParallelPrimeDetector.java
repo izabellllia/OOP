@@ -6,6 +6,7 @@ import java.util.List;
  * Реализация Detector для последовательного
  * поиска простых чисел в списке.
  */
+
 public class ParallelPrimeDetector implements PrimeDetector {
     private final List<Integer> numberList;
     private final int threadCount;
@@ -72,7 +73,7 @@ public class ParallelPrimeDetector implements PrimeDetector {
      */
     private boolean checkResultsAndReturn(List<PrimeChecker> threadList) {
         boolean result = true;
-        for (var checker : threadList){
+        for (var checker : threadList) {
             try {
                 checker.join();
             } catch (InterruptedException e) {
