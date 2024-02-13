@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"zhitnik","l":"ParallelPrimeDetector"},{"p":"zhitnik","l":"ParallelPrimeDetector.PrimeChecker"},{"p":"zhitnik","l":"PrimeDetector"},{"p":"zhitnik","l":"SequentialPrimeDetector"}]
