@@ -105,7 +105,7 @@ public class ParallelPrimeDetector implements PrimeDetector {
         @Override
         public void run() {
             for (var number : dataList) {
-                boolean isPrime = IsPrime.PrimeMethod(number);
+                boolean isPrime = IsPrime.isPrimeMethod(number);
                 result &= isPrime;
             }
         }

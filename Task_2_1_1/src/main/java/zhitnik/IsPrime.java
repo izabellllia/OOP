@@ -4,7 +4,8 @@ package zhitnik;
  * указанное целое число number простым.
  */
 public class IsPrime {
-    public static boolean PrimeMethod(int number){
+    /**check  if the number is prime.*/
+    public static boolean isPrimeMethod(int number) {
         if (number <= 1) {
             return false;
         }

@@ -21,6 +21,6 @@ public class SequentialPrimeDetector implements PrimeDetector {
      */
     @Override
     public boolean hasNonPrimeNumbers() {
-        return list.stream().anyMatch(number -> !IsPrime.PrimeMethod(number));
+        return list.stream().anyMatch(number -> !IsPrime.isPrimeMethod(number));
     }
 }
