@@ -76,10 +76,11 @@ public class ParallelPrimeDetector implements PrimeDetector {
         for (var checker : threadList) {
             try {
                 checker.join();
+                result &= checker.getResult();
             } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
                 e.printStackTrace();
             }
-            result &= checker.getResult();
         }
         return result;
     }
@@ -104,7 +105,8 @@ public class ParallelPrimeDetector implements PrimeDetector {
         @Override
         public void run() {
             for (var number : dataList) {
-                result &= isPrime(number);
+                boolean isPrime = IsPrime.PrimeMethod(number);
+                result &= isPrime;
             }
         }
 
@@ -114,21 +116,6 @@ public class ParallelPrimeDetector implements PrimeDetector {
          */
         public boolean getResult() {
             return result;
-        }
-
-        /**Метод, проверяющий является ли
-         * указанное целое число number простым.
-         */
-        private boolean isPrime(int number) {
-            if (number <= 1) {
-                return false;
-            }
-            for (int i = 2; i <= Math.sqrt(number); i++) {
-                if (number % i == 0) {
-                    return false;
-                }
-            }
-            return true;
         }
     }
 }

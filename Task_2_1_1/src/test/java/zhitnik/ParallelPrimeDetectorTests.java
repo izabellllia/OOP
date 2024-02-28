@@ -42,4 +42,5 @@ public class ParallelPrimeDetectorTests {
         boolean result = primeDetector.hasNonPrimeNumbers();
         Assertions.assertFalse(result);
     }
+
 }

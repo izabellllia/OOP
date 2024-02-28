@@ -21,30 +21,6 @@ public class SequentialPrimeDetector implements PrimeDetector {
      */
     @Override
     public boolean hasNonPrimeNumbers() {
-        if (list.isEmpty()) {
-            return false;
-        }
-
-        for (Integer number : list) {
-            if (!isPrime(number)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Проверяет, является ли переданное число простым.
-     */
-    private boolean isPrime(int number) {
-        if (number <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(number); i++) {
-            if (number % i == 0) {
-                return false;
-            }
-        }
-        return true;
+        return list.stream().anyMatch(number -> !IsPrime.PrimeMethod(number));
     }
 }
