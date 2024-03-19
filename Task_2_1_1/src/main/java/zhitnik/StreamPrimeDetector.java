@@ -12,7 +12,7 @@ public class StreamPrimeDetector {
         this.numbers = numbers;
     }
 
-    public boolean hasNonPrimeNumbers() {
+    public boolean hasNonPrimeNumbers(List<Integer> numbers) {
         return numbers.stream().anyMatch(number -> !IsPrime.isPrimeMethod(number));
     }
 }

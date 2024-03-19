@@ -14,7 +14,7 @@ public class StreamPrimeDetectorTests {
         ArrayList<Integer> testList =
                 new ArrayList<>(Arrays.asList(6, 8, 7, 13, 5, 9));
         StreamPrimeDetector test = new StreamPrimeDetector(testList);
-        Assertions.assertTrue(test.hasNonPrimeNumbers());
+        Assertions.assertTrue(test.hasNonPrimeNumbers(testList));
     }
 
     @Test
@@ -24,6 +24,6 @@ public class StreamPrimeDetectorTests {
                         6997927, 6997937, 17858849, 6997967,
                         6998009, 6998029, 6998039, 20165149, 6998051, 6998053));
         StreamPrimeDetector test = new StreamPrimeDetector(testList);
-        Assertions.assertFalse(test.hasNonPrimeNumbers());
+        Assertions.assertFalse(test.hasNonPrimeNumbers(testList));
     }
 }

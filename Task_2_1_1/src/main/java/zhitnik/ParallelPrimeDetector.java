@@ -27,7 +27,7 @@ public class ParallelPrimeDetector implements PrimeDetector {
      * Выполняется проверка результатов выполнения потоков.
      */
     @Override
-    public boolean hasNonPrimeNumbers() {
+    public boolean hasNonPrimeNumbers(List<Integer> numbers) {
         List<List<Integer>> dataForThreads = splitDataForThreads();
         List<PrimeChecker> threadList = createAndStartThreads(dataForThreads);
 

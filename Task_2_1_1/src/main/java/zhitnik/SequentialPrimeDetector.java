@@ -20,7 +20,7 @@ public class SequentialPrimeDetector implements PrimeDetector {
      * Проверяет, есть ли хотя бы одно непростое число в списке.
      */
     @Override
-    public boolean hasNonPrimeNumbers() {
+    public boolean hasNonPrimeNumbers(List<Integer> numbers) {
         return list.stream().anyMatch(number -> !IsPrime.isPrimeMethod(number));
     }
 }
